@@ -1,0 +1,58 @@
+import { SectionHeading } from '@/components/ui/SectionHeading';
+import { ArrowUpRight } from 'lucide-react';
+
+export const BlogHero = () => {
+  return (
+    <section className="pt-28 pb-12 bg-gray-50/50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <SectionHeading 
+            tag="[Blog]"
+            title="The XInfin Growth Insights Blog"
+            italicWord="Blog"
+            align="center"
+            className="mb-0"
+          />
+        </div>
+
+        <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="h-[350px] lg:h-auto">
+              <img 
+                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" 
+                alt="Business Strategy" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8 lg:p-12 flex flex-col justify-center">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                "From Struggling to Scaling: How Business Consulting Transforms Operations, Clarifies Vision, and Drives Measurable Success Across Industries"
+              </h2>
+
+              <div className="flex items-center justify-between mt-auto pt-4">
+                <div className="flex items-center gap-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                    alt="Author" 
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-bold text-gray-900 text-sm">Zayan Daniel</div>
+                    <div className="text-xs text-gray-500">Head of Business Consultancy</div>
+                  </div>
+                </div>
+
+                <button className="flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors group">
+                  Read More 
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                    <ArrowUpRight size={14} />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
