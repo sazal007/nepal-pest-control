@@ -1,13 +1,13 @@
-import { Button } from '@/components/ui/Button';
+import { Button } from "@/components/ui/Button";
 
 export const HomeHero = () => {
   return (
-    <section className="relative min-h-[600px] lg:h-[80vh] flex items-center pt-20 overflow-hidden bg-gray-900">
+    <section className="relative min-h-[600px] lg:h-[91vh] flex items-center pt-20 overflow-hidden bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-          alt="Business Meeting" 
+        <img
+          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          alt="Business Meeting"
           className="w-full h-full object-cover opacity-50"
         />
         {/* Gradient Overlay */}
@@ -18,12 +18,17 @@ export const HomeHero = () => {
         <div className="max-w-3xl mt-10">
           <h1 className="text-5xl md:text-7xl font-semibold leading-tight mb-6">
             Navigate Business <br />
-            with <span className="font-serif italic font-normal">Confidence</span>
+            with{" "}
+            <span className="font-serif italic font-normal">Confidence</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed">
-            Expert strategic consulting to drive sustainable growth, operational innovation, and lasting business transformation across industries and markets.
+            Expert strategic consulting to drive sustainable growth, operational
+            innovation, and lasting business transformation across industries
+            and markets.
           </p>
-          <Button variant="white" className="text-blue-900 font-bold">Book a Free Call</Button>
+          <Button variant="white" className="text-blue-900 font-bold">
+            Book a Free Call
+          </Button>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Optimo - Strategic Consulting",
+  title: "Infin - Strategic Consulting",
   description:
     "Expert strategic consulting to drive sustainable growth, operational innovation, and lasting business transformation",
 };

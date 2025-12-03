@@ -1,20 +1,24 @@
-import { Button } from '@/components/ui/Button';
-import { CheckCircle2 } from 'lucide-react';
+import { Button } from "@/components/ui/Button";
+import { CheckCircle2 } from "lucide-react";
 
 export const FooterCTA = () => {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="bg-blue-700 rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
-          
           <div className="p-12 lg:p-20 lg:w-1/2 text-white relative z-10">
-            <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">[CTA]</div>
+            <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">
+              [CTA]
+            </div>
             <h2 className="text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
-              Work with Experts to <br/> Grow Faster & Run <br/> <span className="font-serif italic font-normal">Smarter</span>
+              Work with Experts to Grow Faster & Run{" "}
+              <span className="font-serif italic font-normal">Smarter</span>
             </h2>
-            
-            <Button variant="white" className="mb-10 text-blue-900">Get Started</Button>
-            
+
+            <Button variant="white" className="mb-10 text-blue-900">
+              Get Started
+            </Button>
+
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm font-medium">
                 <CheckCircle2 size={16} /> Schedule a Free Consultation
@@ -23,20 +27,20 @@ export const FooterCTA = () => {
                 <CheckCircle2 size={16} /> Discover Custom Solutions
               </div>
               <div className="flex items-center gap-3 text-sm font-medium">
-                <CheckCircle2 size={16} /> Start Building Your Competitive Advantage
+                <CheckCircle2 size={16} /> Start Building Your Competitive
+                Advantage
               </div>
             </div>
           </div>
 
           <div className="lg:w-1/2 h-64 lg:h-auto relative">
-            <img 
-              src="https://picsum.photos/id/1011/800/800" 
-              alt="Working together" 
+            <img
+              src="https://picsum.photos/id/1011/800/800"
+              alt="Working together"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-blue-900/20"></div>
           </div>
-
         </div>
       </div>
     </section>

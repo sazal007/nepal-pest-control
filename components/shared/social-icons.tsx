@@ -25,7 +25,7 @@ const SocialIconWrapper: React.FC<{
 }> = ({ href, children }) => (
   <a
     href={href}
-    className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-white hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white transition-all duration-300"
+    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-black hover:text-white hover:border-black transition-all duration-300"
   >
     {children}
   </a>

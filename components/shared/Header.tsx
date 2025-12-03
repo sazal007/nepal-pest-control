@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 
@@ -19,9 +20,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between relative">
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
-          <div className="text-3xl font-bold text-blue-700 tracking-tight font-serif">
-            OPTIMO
-          </div>
+          <Image
+            src="/infinconsultants_logo.svg"
+            alt="INFIN Consultants Logo"
+            width={120}
+            height={96}
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav - Absolutely Centered */}
@@ -57,7 +62,7 @@ export const Header = () => {
         <div className="hidden lg:block z-20">
           <Link
             href="/contact"
-            className="pl-6 pr-2 py-1.5 rounded-full bg-white border border-gray-200 text-gray-900 hover:border-blue-300 hover:shadow-md transition-all shadow-sm flex items-center gap-3 group"
+            className="pl-6 pr-2 py-1.5 rounded-full bg-white border border-gray-200 text-gray-900 hover:border-blue-300 hover:shadow-md transition-all flex items-center gap-3 group"
           >
             <span className="font-semibold text-sm">Contact Us</span>
             <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
