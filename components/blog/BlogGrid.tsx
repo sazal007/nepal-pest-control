@@ -1,54 +1,7 @@
+import Link from 'next/link';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ArrowUpRight } from 'lucide-react';
-
-const blogs = [
-  {
-    date: "September 3, 2025",
-    title: "The Growth Plan: A Playbook Toolkit for Future Success and Scalability.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80"
-  },
-  {
-    date: "September 15, 2025",
-    title: "The Strategic Edge: Insights and a Hub for Pro Consultation.",
-    linkText: "Read More",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "The Insight Engine: Interactive Brief Reports and Analysis.",
-    image: "https://images.unsplash.com/photo-1553877606-3c1395fa9133?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "Sharp insights for forward-thinking businesses.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "Fresh takes on strategy, leadership, and change your future.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "Guidance, trends, and direction for your modern businesses.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "Concise, actionable insights for today's business decision-makers.",
-    image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "Fresh ideas to scale, lead, and continuously innovate with confidence.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  },
-  {
-    date: "September 3, 2025",
-    title: "A sharp strategic view on long-term business growth opportunities.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-  }
-];
+import { blogPosts } from '@/lib/blog-data';
 
 export const BlogGrid = () => {
   return (
@@ -63,8 +16,12 @@ export const BlogGrid = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 row-gap-12">
-          {blogs.map((blog, idx) => (
-            <div key={idx} className="group cursor-pointer flex flex-col h-full">
+          {blogPosts.map((blog) => (
+            <Link 
+              key={blog.slug} 
+              href={`/blog/${blog.slug}`}
+              className="group cursor-pointer flex flex-col h-full"
+            >
               <div className="rounded-2xl overflow-hidden mb-6 h-64 shadow-sm">
                 <img 
                   src={blog.image} 
@@ -85,7 +42,7 @@ export const BlogGrid = () => {
                   <ArrowUpRight size={12} />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         
