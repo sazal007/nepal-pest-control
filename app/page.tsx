@@ -9,7 +9,6 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ComplexChallenges } from "@/components/home/ComplexChallenges";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { BlogSection } from "@/components/home/BlogSection";
-import { FooterCTA } from "@/components/shared/FooterCTA";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
       <ComplexChallenges />
       <FAQSection />
       <BlogSection />
-      <FooterCTA />
     </>
   );
 }

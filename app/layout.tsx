@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
 import { QueryProvider } from "@/providers/query-provider";
+import { FooterCTA } from "@/components/shared/FooterCTA";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,8 +36,9 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100 antialiased`}
       >
         <QueryProvider>
-        <Header />
+          <Header />
           <main className="pt-20">{children}</main>
+          <FooterCTA />
           <Footer />
         </QueryProvider>
       </body>

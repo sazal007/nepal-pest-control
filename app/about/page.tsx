@@ -6,7 +6,6 @@ import { MissionVisionSection } from "@/components/about/MissionVisionSection";
 import { PrinciplesSection } from "@/components/about/PrinciplesSection";
 import { VerticalProcessSection } from "@/components/about/VerticalProcessSection";
 import { TeamGridSection } from "@/components/about/TeamGridSection";
-import { FooterCTA } from "@/components/shared/FooterCTA";
 
 export default function AboutPage() {
   return (
@@ -19,7 +18,6 @@ export default function AboutPage() {
       <PrinciplesSection />
       <VerticalProcessSection />
       <TeamGridSection />
-      <FooterCTA />
     </>
   );
 }
