@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
-import { ServicePackages } from "./service-pakage";
+import { PricingPackages } from "./pricing-pakage";
 
 export const PricingComparison = () => {
   // We use state to store calculated styles for each card index
@@ -81,7 +81,7 @@ export const PricingComparison = () => {
         />
 
         <div className="space-y-6 relative">
-          {ServicePackages.map((pkg, idx) => (
+          {PricingPackages.map((pkg, idx) => (
             <div
               key={idx}
               ref={(el) => {

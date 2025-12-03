@@ -1,4 +1,4 @@
-export const ServicePackages = [
+export const PricingPackages = [
   {
     category: "Data Visualisation",
     model: "Project Basis / Ongoing Support",
