@@ -17,10 +17,10 @@ const FeatureList = ({ items }: { items: string[] }) => (
 
 export const MissionVisionSection = () => {
   return (
-    <section className="bg-white pb-20">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="bg-white pb-16 sm:pb-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         {/* Mission Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 lg:mb-32">
           <div>
             <SectionHeading
               tag="[Our Mission]"
@@ -50,7 +50,7 @@ export const MissionVisionSection = () => {
         </div>
 
         {/* Vision Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl order-2 lg:order-1">
             <img
               src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80"

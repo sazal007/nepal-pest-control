@@ -59,9 +59,9 @@ export const PortfolioSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex justify-between items-end mb-12">
+    <section className="py-16 sm:py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-12">
           <SectionHeading
             title="How We Helped Clients Grow Smarter"
             italicWord="Smarter"
@@ -70,13 +70,13 @@ export const PortfolioSection = () => {
           <div className="flex gap-2">
             <button
               onClick={scrollLeft}
-              className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="p-2 sm:p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
             >
               <ArrowLeft size={18} />
             </button>
             <button
               onClick={scrollRight}
-              className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="p-2 sm:p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
             >
               <ArrowRight size={18} />
             </button>

@@ -13,16 +13,18 @@ export const BlogSection = () => {
   const featuredBlogs = blogs.slice(0, 4);
 
   return (
-    <section id="blog" className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+    <section id="blog" className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-16">
           <SectionHeading
             title="Strategic Insights That Drive Business Success"
             italicWord="Success"
             className="mb-0 max-w-xl"
           />
           <Link href="/blog">
-            <Button>View More Blogs</Button>
+            <Button className="w-full md:w-auto justify-center">
+              View More Blogs
+            </Button>
           </Link>
         </div>
 
@@ -39,14 +41,14 @@ export const BlogSection = () => {
             No blogs available yet.
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {featuredBlogs.map((blog) => (
               <Link
                 key={blog.slug}
                 href={`/blog/${blog.slug}`}
                 className="group cursor-pointer"
               >
-                <div className="rounded-2xl overflow-hidden mb-6 h-48">
+                <div className="rounded-2xl overflow-hidden mb-4 sm:mb-6 h-44 sm:h-48">
                   <img
                     src={
                       blog.thumbnail_image ??

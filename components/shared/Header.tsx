@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +16,9 @@ export const Header = () => {
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 flex justify-between px-4 transition-all duration-300">
+    <header className="fixed inset-x-0 top-2 sm:top-4 z-50 flex justify-between px-3 sm:px-4 transition-all duration-300">
       {/* Desktop Header */}
-      <div className="hidden lg:flex max-w-[1240px] mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-20 items-center justify-between relative">
+      <div className="hidden lg:flex max-w-[1240px] mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-16 xl:h-20 items-center justify-between relative">
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
@@ -75,46 +75,52 @@ export const Header = () => {
 
       {/* Mobile Menu Toggle - only hamburger on mobile */}
       <button
-        className="lg:hidden ml-auto p-2 rounded-full bg-white/90 shadow-xs border border-gray-100 text-gray-700"
+        className="lg:hidden ml-auto p-1.5 sm:p-2 rounded-full bg-white/90 shadow-xs border border-gray-100 text-gray-700"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X /> : <Menu />}
       </button>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav - Fullscreen overlay on mobile */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col gap-4 shadow-xl h-[calc(100vh-80px)] overflow-y-auto z-40">
-          <Link
-            href="/"
-            className="text-lg font-medium text-gray-800 py-3 border-b border-gray-50 flex justify-between items-center"
+        <div className="lg:hidden fixed inset-0 bg-white border-b border-gray-100 px-4 pt-16 sm:pt-20 pb-5 sm:pb-6 flex flex-col gap-3 sm:gap-4 shadow-xl overflow-y-auto z-40">
+          <button
+            className="absolute top-4 right-4 p-1.5 sm:p-2 rounded-full bg-white/90 shadow-xs border border-gray-100 text-gray-700"
             onClick={() => setIsOpen(false)}
           >
-            Home <ChevronDown size={16} />
+            <X />
+          </button>
+          <Link
+            href="/"
+            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50 flex justify-between items-center"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
           </Link>
           <Link
             href="/about"
-            className="text-lg font-medium text-gray-800 py-3 border-b border-gray-50"
+            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
             onClick={() => setIsOpen(false)}
           >
             About Us
           </Link>
           <Link
             href="/services"
-            className="text-lg font-medium text-gray-800 py-3 border-b border-gray-50"
+            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
             onClick={() => setIsOpen(false)}
           >
             Services
           </Link>
           <Link
             href="/blog"
-            className="text-lg font-medium text-gray-800 py-3 border-b border-gray-50"
+            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
             onClick={() => setIsOpen(false)}
           >
             Blog
           </Link>
           <Link
             href="/pricing"
-            className="text-lg font-medium text-gray-800 py-3 border-b border-gray-50"
+            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
             onClick={() => setIsOpen(false)}
           >
             Pricing
@@ -122,7 +128,7 @@ export const Header = () => {
           <div className="mt-4">
             <Link
               href="/contact"
-              className="w-full text-center py-4 rounded-full bg-blue-600 text-white font-bold text-lg flex items-center justify-center gap-2"
+              className="w-full text-center py-3 sm:py-4 rounded-full bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center gap-2"
               onClick={() => setIsOpen(false)}
             >
               Contact Us <ArrowUpRight size={20} />

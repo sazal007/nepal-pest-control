@@ -3,8 +3,8 @@ import { Pin } from "lucide-react";
 
 export const StrategicPartnerSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <SectionHeading
             // tag="[Our Process]"
@@ -15,7 +15,7 @@ export const StrategicPartnerSection = () => {
           />
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden h-[600px] w-full group">
+        <div className="relative rounded-3xl overflow-hidden h-[420px] sm:h-[520px] lg:h-[600px] w-full group">
           <img
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80"
             alt="Infin Team"
@@ -23,7 +23,7 @@ export const StrategicPartnerSection = () => {
           />
 
           {/* Floating Card */}
-          <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 bg-white p-8 rounded-2xl shadow-xl max-w-xs md:max-w-sm">
+          <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 bg-white p-5 sm:p-7 md:p-8 rounded-2xl shadow-xl max-w-xs md:max-w-sm">
             <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-6">
               <Pin size={18} fill="currentColor" />
             </div>

@@ -45,8 +45,8 @@ export const LogoStrip = () => {
           }
         }
       `}</style>
-      <section className="py-12 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="py-10 sm:py-12 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <p className="text-center text-sm font-medium text-gray-500 mb-8">
             Trusted by
           </p>
@@ -63,14 +63,14 @@ export const LogoStrip = () => {
                     href={client.url || "#"}
                     target={client.url ? "_blank" : undefined}
                     rel={client.url ? "noopener noreferrer" : undefined}
-                    className="logo-item mx-6 md:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
                   >
                     <Image
                       src={client.logo}
                       alt={client.name}
-                      width={120}
-                      height={64}
-                      className="h-12 md:h-16 w-auto object-contain"
+                      width={110}
+                      height={60}
+                      className="h-10 sm:h-12 md:h-16 w-auto object-contain"
                       draggable={false}
                     />
                   </a>
@@ -83,14 +83,14 @@ export const LogoStrip = () => {
                     href={client.url || "#"}
                     target={client.url ? "_blank" : undefined}
                     rel={client.url ? "noopener noreferrer" : undefined}
-                    className="logo-item mx-6 md:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
                   >
                     <Image
                       src={client.logo}
                       alt={client.name}
-                      width={120}
-                      height={64}
-                      className="h-12 md:h-16 w-auto object-contain"
+                      width={110}
+                      height={60}
+                      className="h-10 sm:h-12 md:h-16 w-auto object-contain"
                       draggable={false}
                     />
                   </a>

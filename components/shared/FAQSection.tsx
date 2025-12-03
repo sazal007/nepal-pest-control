@@ -16,25 +16,32 @@ export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+    <section className="py-16 sm:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
           <div className="lg:col-span-4">
-            <h2 className="text-4xl font-semibold mb-6">Friendly Asked <br/> <span className="font-serif italic font-normal">Questions.</span></h2>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6">
-              <h4 className="font-bold text-lg mb-2">Still have a question?</h4>
-              <p className="text-sm text-gray-500 mb-6">Our team is ready to assist you with anything you need.</p>
-              <Button>Make a Call</Button>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6">
+              Friendly Asked <br />{" "}
+              <span className="font-serif italic font-normal">Questions.</span>
+            </h2>
+            <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 mb-5 sm:mb-6">
+              <h4 className="font-bold text-base sm:text-lg mb-2">
+                Still have a question?
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
+                Our team is ready to assist you with anything you need.
+              </p>
+              <Button className="w-full sm:w-auto justify-center">Make a Call</Button>
             </div>
           </div>
 
-          <div className="lg:col-span-8 space-y-4">
+          <div className="lg:col-span-8 space-y-3 sm:space-y-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-sm transition-all duration-300">
-                <button 
+                <button
                   onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between px-4 py-4 sm:p-6 text-left"
                 >
                   <span className="font-medium text-gray-900">{faq.question}</span>
                   <div className={`p-1 rounded-full ${openIndex === idx ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'}`}>

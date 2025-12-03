@@ -26,8 +26,8 @@ const team = [
 
 export const TeamGridSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <SectionHeading
           tag="[Our Team]"
           title="Meet the team behind Infin"
@@ -36,7 +36,7 @@ export const TeamGridSection = () => {
           className="mb-16"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {team.map((member, idx) => (
             <div
               key={idx}
