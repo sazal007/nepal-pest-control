@@ -1,0 +1,75 @@
+export const ServicePackages = [
+  {
+    category: "Data Visualisation",
+    model: "Project Basis / Ongoing Support",
+    tagline:
+      "See Beyond the Numbers: Transforming Data into Insightful Visuals.",
+    price:
+      "$1000 for the first time set up | $ 300 per month for ongoing support",
+    inclusions: [
+      "Create interactive and customized dashboards for real-time data monitoring",
+      "Design dashboards tailored to specific business needs and KPIs",
+      "Develop visualizations that highlight trends, correlations, and anomalies",
+      "Visualize data trends over time using line charts, heatmaps, or other time-based visualizations",
+      "Develop charts and graphs for analyzing investment portfolios and risk factors",
+      "Develop interactive reports that allow users to explore and filter data",
+      "Integrate data visualizations with business intelligence (BI) platforms",
+      "Conduct in-depth data analysis to uncover patterns and insights",
+      "Enable users to explore and interact with data to gain deeper insights",
+    ],
+  },
+  {
+    category: "Financial Modeling",
+    model: "Monthly Engagement / Project Basis",
+    tagline:
+      "Where Numbers Meet Strategy: Unlocking Financial Potential with Precision",
+    price: "$1500 per project | $200 per month for ongoing support",
+    inclusions: [
+      "Create financial models to project future revenues, expenses, and cash flows",
+      "Develop budgeting models to assist in planning and resource allocation",
+      "Build models to project and analyze cash flows over specific periods",
+      "Develop models to estimate the value of a business or its assets",
+      "Assess the synergies and risks associated with M&A transactions",
+      "Conduct sensitivity testing to changes in key assumptions",
+      "Evaluate liquidity and cash flow adequacy for operational needs",
+      "Design dashboards and visualizations to present key financial metrics",
+      "Ensure alignment with accounting standards and regulations",
+    ],
+  },
+  {
+    category: "Virtual CFO",
+    model: "Monthly Engagement / Project Basis",
+    tagline:
+      "Strategic Finance, Virtual Expertise: Redefine your Success with Our CFO Services.",
+    price: "$1500 per month",
+    inclusions: [
+      "Prepare annual budgets and financial forecasts",
+      "Optimize cash flow through effective management",
+      "Create comprehensive financial plans aligned with business objectives",
+      "Generate regular financial reports for management",
+      "Conduct in-depth financial analysis to identify trends and opportunities",
+      "Identify potential financial risks and develop mitigation strategies",
+      "Analyze cost structures and recommend cost-saving measures",
+      "Streamline financial processes for efficiency and accuracy",
+      "Financial Modeling and Cost Analysis",
+    ],
+  },
+  {
+    category: "Automated Reporting Requirements",
+    model: "Monthly Engagement / Project Basis",
+    tagline:
+      "From Complexity to Clarity: Elevate Your Reporting Standards for Informed Excellence.",
+    price: "$1000 per project | $200 per month for ongoing support",
+    inclusions: [
+      "Generate and analyze financial statements",
+      "Guarantee the accuracy of financial data for informed decision-making",
+      "Develop tailored reports based on specific organizational needs",
+      "Ensure data accuracy and consistency",
+      "Create visual dashboards for easy monitoring of critical metrics",
+      "Integrate reporting software for seamless data processing and visualization",
+      "Enhance decision-making by highlighting potential risks impacting the organization",
+      "Business KPI analysis and reporting",
+      "Provide accurate and timely submission of reports",
+    ],
+  },
+];

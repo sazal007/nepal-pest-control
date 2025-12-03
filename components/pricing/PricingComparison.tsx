@@ -1,197 +1,145 @@
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Check, ArrowUpRight } from 'lucide-react';
-
-const CheckIcon = ({ active }: { active: boolean }) => {
-  if (active) {
-    return (
-      <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center mx-auto">
-        <Check size={14} strokeWidth={3} />
-      </div>
-    );
-  }
-  return (
-    <div className="w-6 h-6 rounded-full bg-gray-200 text-white flex items-center justify-center mx-auto">
-      <Check size={14} strokeWidth={3} />
-    </div>
-  );
-};
+import React, { useEffect, useRef, useState } from "react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Check } from "lucide-react";
+import { ServicePackages } from "./service-pakage";
 
 export const PricingComparison = () => {
+  // We use state to store calculated styles for each card index
+  const [cardStyles, setCardStyles] = useState<
+    Record<number, React.CSSProperties>
+  >({});
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const newStyles: Record<number, React.CSSProperties> = {};
+      const cardElements = cardsRef.current;
+      const topOffset = 112; // 28 * 4 (top-28)
+
+      cardElements.forEach((card, index) => {
+        if (!card) return;
+
+        const rect = card.getBoundingClientRect();
+
+        // If a card is active (sticky at top) and the next card is scrolling up over it
+        if (index < cardElements.length - 1) {
+          const nextCard = cardElements[index + 1];
+          if (nextCard) {
+            const nextRect = nextCard.getBoundingClientRect();
+            const nextDistanceFromTop = nextRect.top - topOffset;
+
+            // When the next card gets close to overlapping (e.g. within 500px), start fading the current one
+            // We want the fade to happen as the next card slides UP over this one.
+            // This card is stuck at 0 (distanceFromTop is ~0). The next card is moving from positive to 0.
+
+            // If this card is sticky (rect.top <= topOffset + small buffer)
+            if (rect.top <= topOffset + 5) {
+              // Calculate how much the next card covers this one
+              // Range: 0 (next card is far down) to 1 (next card is on top)
+              // Let's say we start fading when next card is 300px away
+              const distanceThreshold = 400;
+              const progress = Math.max(
+                0,
+                Math.min(1, 1 - nextDistanceFromTop / distanceThreshold)
+              );
+
+              if (progress > 0) {
+                newStyles[index] = {
+                  transform: `scale(${1 - progress * 0.05})`, // Slight shrink
+                  opacity: 1 - progress * 0.6, // Fade out to 0.4
+                  filter: `blur(${progress * 4}px)`, // Blur up to 4px
+                };
+              }
+            }
+          }
+        }
+      });
+
+      setCardStyles(newStyles);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <SectionHeading 
-            tag="[Pricing]"
-            title="Values We Delivered" 
-            italicWord="Delivered"
-            className="mb-0"
-          />
-        </div>
+    <section className="py-16 bg-slate-50">
+      <div
+        className="container mx-auto px-4 md:px-6 lg:px-8"
+        ref={containerRef}
+      >
+        <SectionHeading
+          tag="[Services]"
+          title="Specialized Engagement Models"
+          italicWord="Models"
+          align="center"
+          className="mb-12"
+        />
 
-        {/* Comparison Table Header */}
-        <div className="hidden md:grid grid-cols-4 gap-4 mb-8 sticky top-20 bg-white z-20 py-4 border-b border-gray-100">
-          <div className="col-span-1"></div>
-          
-          <div className="col-span-1 p-6 border border-gray-100 rounded-2xl text-left bg-white shadow-sm">
-            <div className="text-lg font-bold text-gray-900 mb-2">Starter plan</div>
-            <p className="text-xs text-gray-500 mb-4">Great for individuals or early-stage projects</p>
-            <div className="text-3xl font-bold mb-4">$80</div>
-            <button className="w-full py-2 bg-blue-600 text-white rounded-full text-xs font-bold flex items-center justify-center gap-1 hover:bg-blue-700">
-              Get started <ArrowUpRight size={10} className="bg-white text-blue-600 rounded-full p-0.5"/>
-            </button>
-          </div>
+        <div className="space-y-6 relative">
+          {ServicePackages.map((pkg, idx) => (
+            <div
+              key={idx}
+              ref={(el) => {
+                if (cardsRef.current) cardsRef.current[idx] = el;
+              }}
+              className="sticky top-28 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-7 border border-slate-200 shadow-sm transition-all duration-150 ease-linear origin-top"
+              style={{
+                zIndex: idx + 10,
+                ...cardStyles[idx],
+              }}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                {/* Header Info */}
+                <div className="lg:col-span-5 flex flex-col">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
+                    {pkg.category}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2">
+                    {pkg.model}
+                  </h3>
+                  <p className="text-slate-500 mb-5 text-sm leading-relaxed">
+                    &quot;{pkg.tagline}&quot;
+                  </p>
 
-          <div className="col-span-1 p-6 border-2 border-blue-600 rounded-2xl text-left bg-blue-600 text-white shadow-lg relative transform scale-105">
-            <div className="text-lg font-bold mb-2">Growth plan</div>
-            <p className="text-xs text-blue-100 mb-4">Best for growing teams and advanced features</p>
-            <div className="text-3xl font-bold mb-4">$120</div>
-            <button className="w-full py-2 bg-white text-blue-800 rounded-full text-xs font-bold flex items-center justify-center gap-1 hover:bg-blue-50">
-              Get started <ArrowUpRight size={10} className="bg-blue-800 text-white rounded-full p-0.5"/>
-            </button>
-          </div>
-
-          <div className="col-span-1 p-6 border border-gray-100 rounded-2xl text-left bg-white shadow-sm">
-            <div className="text-lg font-bold text-gray-900 mb-2">Enterprise plan</div>
-            <p className="text-xs text-gray-500 mb-4">Tailored solutions for large teams</p>
-            <div className="text-3xl font-bold mb-4">$260</div>
-            <button className="w-full py-2 bg-blue-600 text-white rounded-full text-xs font-bold flex items-center justify-center gap-1 hover:bg-blue-700">
-              Get started <ArrowUpRight size={10} className="bg-white text-blue-600 rounded-full p-0.5"/>
-            </button>
-          </div>
-        </div>
-
-        {/* Feature Rows */}
-        <div className="space-y-12">
-          
-          {/* Community Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Community</h3>
-            <div className="space-y-0 text-sm">
-              <div className="grid grid-cols-2 md:grid-cols-4 py-4 border-b border-gray-50">
-                <div className="text-gray-600">Best For</div>
-                <div className="text-center text-gray-500">Small teams</div>
-                <div className="text-center text-gray-500">Teams & startups</div>
-                <div className="text-center text-gray-500">Big teams & enterprises</div>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 py-4 border-b border-gray-50">
-                <div className="text-gray-600">Users</div>
-                <div className="text-center text-gray-500">1-5 users</div>
-                <div className="text-center text-gray-500">6-20 users</div>
-                <div className="text-center text-gray-500">20+ user</div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Access to core tools</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
+                  <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div className="text-[11px] text-slate-400 mb-1 uppercase tracking-[0.16em] font-semibold">
+                      Pricing Structure
+                    </div>
+                    <div className="text-base md:text-lg font-semibold text-blue-700">
+                      {pkg.price}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Custom Integrations</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={false} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
+
+                {/* Inclusions List */}
+                <div className="lg:col-span-7 pt-2 lg:pt-0">
+                  <h4 className="font-semibold text-slate-400 mb-3 text-xs uppercase tracking-[0.18em]">
+                    Inclusions
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+                    {pkg.inclusions.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="mt-1 min-w-[18px] h-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                          <Check size={10} strokeWidth={2.5} />
+                        </div>
+                        <span className="text-[13px] md:text-sm text-slate-600 leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Reporting Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Reporting and Analysis</h3>
-            <div className="space-y-0 text-sm">
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Onboarding Assistance</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={false} />
-                </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Access to core features</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={false} />
-                  <CheckIcon active={false} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Custom integrations</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={false} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Reports & analytics</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={false} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Support Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Support</h3>
-            <div className="space-y-0 text-sm">
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Email support</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Help center access</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={false} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-              <div className="grid grid-cols-4 py-4 border-b border-gray-50 items-center">
-                <div className="text-gray-600 col-span-1">Priority support</div>
-                <div className="col-span-3 grid grid-cols-3">
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                  <CheckIcon active={true} />
-                </div>
-              </div>
-            </div>
-          </div>
-
+          ))}
+          {/* Spacer to ensure the last card has scroll space if needed */}
+          <div className="h-20"></div>
         </div>
-
-        {/* Bottom CTA Row */}
-        <div className="hidden md:grid grid-cols-4 gap-4 mt-12">
-          <div className="col-span-1"></div>
-          <div className="col-span-1 px-4">
-            <button className="w-full py-3 bg-blue-600 text-white rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-blue-700">
-              Get started <ArrowUpRight size={14} className="bg-white text-blue-600 rounded-full p-0.5"/>
-            </button>
-          </div>
-          <div className="col-span-1 px-4">
-            <button className="w-full py-3 bg-blue-600 text-white rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-blue-700">
-              Get started <ArrowUpRight size={14} className="bg-white text-blue-600 rounded-full p-0.5"/>
-            </button>
-          </div>
-          <div className="col-span-1 px-4">
-            <button className="w-full py-3 bg-blue-600 text-white rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-blue-700">
-              Get started <ArrowUpRight size={14} className="bg-white text-blue-600 rounded-full p-0.5"/>
-            </button>
-          </div>
-        </div>
-
       </div>
     </section>
   );
