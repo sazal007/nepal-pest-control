@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
+import { QueryProvider } from "@/providers/query-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,9 +34,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100 antialiased`}
       >
+        <QueryProvider>
         <Header />
-        <main className="pt-20">{children}</main>
-        <Footer />
+          <main className="pt-20">{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
