@@ -22,7 +22,7 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
   if (!blog) return <div>Blog not found</div>;
 
   return (
-    <div className="pt-12 pb-0 bg-white">
+    <div className="pt-40 pb-0 bg-white">
       <div className="container mx-auto px-4 md:px-8 mb-12">
         <Link
           href="/blog"

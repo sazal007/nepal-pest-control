@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowUpRight } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
+import { useRouter } from "next/navigation";
 
 interface BlogHeroProps {
   latestBlog?: BlogPost | null;
@@ -12,6 +14,8 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
   latestBlog,
   onBlogClick,
 }) => {
+  const router = useRouter();
+
   if (!latestBlog) return null;
 
   const image =
@@ -26,7 +30,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
   const createdDate = new Date(latestBlog.created_at).toLocaleDateString();
 
   return (
-    <section className="pt-28 pb-12 bg-gray-50/50">
+    <section className="pt-40 pb-12 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-4xl mx-auto mb-12">
           <SectionHeading
@@ -40,7 +44,10 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
 
         <div
           className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
-          onClick={() => onBlogClick && onBlogClick(latestBlog)}
+          onClick={() => {
+            if (onBlogClick) onBlogClick(latestBlog);
+            router.push(`/blog/${latestBlog.slug}`);
+          }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-[350px] lg:h-auto">

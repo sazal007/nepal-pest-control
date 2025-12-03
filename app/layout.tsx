@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <Header />
-          <main className="pt-20">{children}</main>
+          <main>{children}</main>
           <FooterCTA />
           <Footer />
         </QueryProvider>

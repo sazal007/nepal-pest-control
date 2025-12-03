@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <section className="relative min-h-[600px] lg:h-[91vh] flex items-center pt-20 overflow-hidden bg-gray-900">
+    <section className="relative min-h-[600px] lg:h-screen flex items-center pt-20 overflow-hidden bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

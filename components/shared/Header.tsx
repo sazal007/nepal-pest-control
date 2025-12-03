@@ -16,8 +16,8 @@ export const Header = () => {
     }`;
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-      <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between relative">
+    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 transition-all duration-300">
+      <div className="max-w-6xl w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-20 flex items-center justify-between relative">
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
