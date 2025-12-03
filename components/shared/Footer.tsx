@@ -34,11 +34,11 @@ export const Footer = () => {
                 Visit Us
               </h3>
               <address className="text-gray-600 text-sm not-italic leading-relaxed">
-                123 Wellness Avenue, Suite
+                Baluwatar-04, Kathmandu
                 <br />
-                405, New York, NY 10016
+                info@infinconsultants.com
                 <br />
-                United States
+                +977: 9808467274
               </address>
             </div>
           </div>
@@ -50,18 +50,14 @@ export const Footer = () => {
             </h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3">
               <div className="flex flex-col space-y-3">
-                <FooterLink href="#">Home</FooterLink>
-                <FooterLink href="#">Service</FooterLink>
-                <FooterLink href="#">Case Study</FooterLink>
-                <FooterLink href="#">About Us</FooterLink>
-                <FooterLink href="#">Blog</FooterLink>
+                <FooterLink href="/">Home</FooterLink>
+                <FooterLink href="/services">Service</FooterLink>
+                <FooterLink href="/about">About Us</FooterLink>
+                <FooterLink href="/blog">Blog</FooterLink>
               </div>
               <div className="flex flex-col space-y-3">
-                <FooterLink href="#">Style Guide</FooterLink>
-                <FooterLink href="#">License</FooterLink>
-                <FooterLink href="#">Changelog</FooterLink>
-                <FooterLink href="#">404</FooterLink>
-                <FooterLink href="#">Password Protect</FooterLink>
+                <FooterLink href="/pricing">Pricing</FooterLink>
+                <FooterLink href="/contact">Contact Us</FooterLink>
               </div>
             </div>
           </div>
@@ -101,7 +97,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-xs">
-            © Copywrite 2025 All rights reserved.
+            © Copywrite {new Date().getFullYear()} All rights reserved.
           </p>
           <SocialIcons />
         </div>
