@@ -17,13 +17,13 @@ export const HomeHero = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
         <div className="max-w-3xl mt-10">
           <h1 className="text-5xl md:text-7xl font-semibold leading-tight mb-6">
-            Delivering innovative solutions <br />
-            for clients to achieve their <span className="font-serif italic font-normal">financial goals</span>
+            Navigate Business <br />
+            with <span className="font-serif italic font-normal">Confidence</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed">
-            We believe in the power of collaboration and partnerships to provide the best possible service to our clients. We are always looking for opportunities to work with other businesses and professionals to enhance our offerings and expand our reach.
+            Expert strategic consulting to drive sustainable growth, operational innovation, and lasting business transformation across industries and markets.
           </p>
-          <Button variant="white" className="text-blue-900 font-bold">Learn more about us</Button>
+          <Button variant="white" className="text-blue-900 font-bold">Book a Free Call</Button>
         </div>
       </div>
     </section>

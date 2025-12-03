@@ -10,20 +10,20 @@ export const FooterCTA = () => {
           <div className="p-12 lg:p-20 lg:w-1/2 text-white relative z-10">
             <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">[CTA]</div>
             <h2 className="text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
-              Collaborate with us <br/> to enhance your <br/> <span className="font-serif italic font-normal">offerings</span>
+              Work with Experts to <br/> Grow Faster & Run <br/> <span className="font-serif italic font-normal">Smarter</span>
             </h2>
             
-            <Button variant="white" className="mb-10 text-blue-900">Collaborate Now</Button>
+            <Button variant="white" className="mb-10 text-blue-900">Get Started</Button>
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm font-medium">
-                <CheckCircle2 size={16} /> Work with businesses and professionals worldwide
+                <CheckCircle2 size={16} /> Schedule a Free Consultation
               </div>
               <div className="flex items-center gap-3 text-sm font-medium">
-                <CheckCircle2 size={16} /> One-time projects or ongoing partnerships
+                <CheckCircle2 size={16} /> Discover Custom Solutions
               </div>
               <div className="flex items-center gap-3 text-sm font-medium">
-                <CheckCircle2 size={16} /> Better outcomes for our clients and businesses
+                <CheckCircle2 size={16} /> Start Building Your Competitive Advantage
               </div>
             </div>
           </div>

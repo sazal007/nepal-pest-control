@@ -18,16 +18,10 @@ export const Header = () => {
     <header className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
       <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between relative">
         {/* Logo - Left aligned */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 cursor-pointer z-20 relative h-full py-2"
-        >
-          <img
-            src="/infinconsultants_logo.svg"
-            alt="XInfin Logo"
-            className="h-full max-h-16 w-auto object-contain"
-            style={{ minWidth: "140px", maxHeight: "64px" }}
-          />
+        <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
+          <div className="text-3xl font-bold text-blue-700 tracking-tight font-serif">
+            OPTIMO
+          </div>
         </Link>
 
         {/* Desktop Nav - Absolutely Centered */}

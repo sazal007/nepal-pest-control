@@ -48,7 +48,7 @@ export const PrinciplesSection = () => {
               className="mb-12"
             />
             <p className="text-gray-500 mb-12">
-              At XInfin, we pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals. We believe in the power of collaboration and partnerships to provide the best possible service to our clients.
+              At Optimo, our mission is to empower businesses with strategic solutions that drive growth, efficiency, and transformation.
             </p>
 
             <div className="space-y-4">

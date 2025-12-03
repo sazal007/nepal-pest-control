@@ -25,18 +25,18 @@ export const MissionVisionSection = () => {
           <div>
             <SectionHeading 
               tag="[Our Mission]"
-              title="Delivering innovative solutions for clients to achieve their financial goals"
-              italicWord="goals"
+              title="Built to Drive Real Business Growth"
+              italicWord="Growth"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
-              XInfin is a leading provider of Process Automation, Financial Advisory, Accounting and Bookkeeping, Virtual CFO, Data Analysis, Data Visualization, Financial Modelling, and Reporting Requirements services on a global scale.
+              At Optimo, our mission is to empower businesses with strategic solutions that drive growth, efficiency, and transformation.
             </p>
             <FeatureList items={[
-              "We pride ourselves on delivering innovative solutions that help our clients streamline their operations",
-              "We believe in the power of collaboration and partnerships to provide the best possible service",
-              "We are always looking for opportunities to work with other businesses and professionals to enhance our offerings"
+              "Deliver results-driven strategies aligned with your goals",
+              "Empower organizations to grow and lead in a changing market",
+              "Foster partnerships built on trust and measurable impact"
             ]} />
-            <Button variant="blue">Collaborate With Us</Button>
+            <Button variant="blue">Get Started</Button>
           </div>
           <div className="h-[500px] rounded-3xl overflow-hidden shadow-2xl">
             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Mission" className="w-full h-full object-cover" />
@@ -51,18 +51,18 @@ export const MissionVisionSection = () => {
           <div className="order-1 lg:order-2">
             <SectionHeading 
               tag="[Our Vision]"
-              title="Expanding our reach globally through collaboration"
-              italicWord="globally"
+              title="Shaping The Future of Business Success"
+              italicWord="Success"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
-              We believe in the power of collaboration and partnerships to provide the best possible service to our clients. We are always looking for opportunities to work with other businesses and professionals to enhance our offerings and expand our reach globally.
+              At Optimo, our vision is to empower businesses with strategic solutions that drive growth, efficiency, and transformation.
             </p>
             <FeatureList items={[
-              "We are open to collaborating on projects with other businesses and professionals all over the world",
-              "Whether it's a one-time project or an ongoing partnership, we believe that working together can lead to better outcomes",
-              "We enhance our offerings and expand our reach globally"
+              "Innovate continuously to stay ahead in a changing market",
+              "Empower businesses to lead with confidence and clarity",
+              "Build sustainable growth through forward-thinking strategies"
             ]} />
-            <Button variant="blue">Collaborate With Us</Button>
+            <Button variant="blue">Get Started</Button>
           </div>
         </div>
 

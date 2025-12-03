@@ -8,7 +8,7 @@ export const BlogHero = () => {
         <div className="text-center max-w-4xl mx-auto mb-12">
           <SectionHeading 
             tag="[Blog]"
-            title="The XInfin Growth Insights Blog"
+            title="The Optimo Growth Insights Blog"
             italicWord="Blog"
             align="center"
             className="mb-0"

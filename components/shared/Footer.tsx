@@ -1,124 +1,90 @@
-"use client";
-import React from "react";
-import { ArrowUpRight } from "lucide-react";
-import SocialIcons from "./social-icons";
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
-    <footer className="w-full bg-gray-50 dark:bg-[#020205] text-gray-900 dark:text-white pt-16 pb-8 px-6 md:px-12 lg:px-24 overflow-hidden font-sans border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        {/* Big Title Section - Made more compact (reduced margins) */}
-        <div className="w-full flex justify-center mb-12 relative">
-          {/* Subtle glow effect behind the text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-blue-500/5 dark:bg-blue-900/10 blur-[80px] rounded-full pointer-events-none transition-colors duration-300"></div>
-
-          <h1 className="text-[13.5vw] leading-[0.8] font-serif font-medium tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-gray-400 to-gray-50 dark:from-white dark:via-gray-500 dark:to-[#020205] select-none text-center transition-all duration-300">
-            XINFIN CONSULTANTS
-          </h1>
+    <footer className="bg-gray-100 pt-20 pb-10">
+      <div className="container mx-auto px-4 md:px-8">
+        
+        {/* Newsletter Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-gray-200 pb-12 mb-12 gap-8">
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">Newsletter</h3>
+            <p className="text-sm text-gray-500">Let's transform your vision into results.</p>
+          </div>
+          <div className="w-full lg:w-auto flex gap-2">
+            <div className="relative w-full lg:w-96">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                className="w-full pl-6 pr-32 py-4 rounded-full bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button className="absolute right-2 top-2 bottom-2 bg-blue-600 text-white rounded-full px-6 text-sm font-medium hover:bg-blue-700 transition-colors flex items-center gap-1">
+                Subscribe <ArrowUpRight size={14}/>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Main Content Grid - Reduced gap and bottom margin */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
-          {/* Column 1: Info & Address */}
-          <div className="lg:col-span-4 flex flex-col space-y-6 pr-0 lg:pr-12">
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-sm transition-colors duration-300">
-              We&apos;re committed to delivering exceptional care with
-              compassion, trust, and integrity. From your first visit to
-              long-term support, your health and comfort are always our
-              priority.
-            </p>
-
-            <hr className="border-gray-200 dark:border-gray-900 w-full transition-colors duration-300" />
-
-            <div className="flex flex-col space-y-2">
-              <h3 className="text-gray-900 dark:text-white font-semibold text-base transition-colors duration-300">
-                Visit Us
-              </h3>
-              <address className="text-gray-600 dark:text-gray-400 text-sm not-italic leading-relaxed transition-colors duration-300">
-                123 Wellness Avenue, Suite
-                <br />
-                405, New York, NY 10016
-                <br />
-                United States
-              </address>
-            </div>
+        {/* Links Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-20">
+          <div className="col-span-2 lg:col-span-2">
+            <div className="text-sm font-medium text-gray-500 mb-2">Email</div>
+            <a href="mailto:contactinfo@gmail.com" className="text-gray-900 font-semibold block mb-8 hover:text-blue-600 transition-colors">contactinfo@gmail.com</a>
           </div>
-
-          {/* Column 2: Main Pages Links */}
-          <div className="lg:col-span-4">
-            <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-6 transition-colors duration-300">
-              Main Pages
-            </h3>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-              <div className="flex flex-col space-y-3">
-                <FooterLink href="#">Home</FooterLink>
-                <FooterLink href="#">Service</FooterLink>
-                <FooterLink href="#">Case Study</FooterLink>
-                <FooterLink href="#">About Us</FooterLink>
-                <FooterLink href="#">Blog</FooterLink>
-              </div>
-              <div className="flex flex-col space-y-3">
-                <FooterLink href="#">Style Guide</FooterLink>
-                <FooterLink href="#">License</FooterLink>
-                <FooterLink href="#">Changelog</FooterLink>
-                <FooterLink href="#">404</FooterLink>
-                <FooterLink href="#">Password Protect</FooterLink>
-              </div>
-            </div>
+          <div>
+            <h4 className="font-bold text-gray-900 mb-6">Main Pages</h4>
+            <ul className="space-y-4 text-sm text-gray-500">
+              <li><Link href="/" className="hover:text-blue-600 transition-colors">Home V1</Link></li>
+              <li><Link href="/" className="hover:text-blue-600 transition-colors">Home V2</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Case Study</Link></li>
+              <li><Link href="/about" className="hover:text-blue-600 transition-colors">About Us</Link></li>
+            </ul>
           </div>
-
-          {/* Column 3: Newsletter */}
-          <div className="lg:col-span-4 pl-0 lg:pl-8">
-            <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-4 transition-colors duration-300">
-              Newsletter
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-xs transition-colors duration-300">
-              Let&apos;s transform your vision into results and discuss your
-              vision with us.
-            </p>
-
-            <form
-              className="flex flex-col space-y-3"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="w-full bg-white dark:bg-white text-gray-900 rounded-full py-3 px-6 text-sm outline-none border border-gray-200 dark:border-transparent focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-500"
-              />
-              <button
-                type="submit"
-                className="group w-fit bg-[#2f45ff] hover:bg-blue-600 text-white rounded-full py-2 pr-2 pl-6 flex items-center space-x-3 transition-all duration-300 shadow-md shadow-blue-500/20"
-              >
-                <span className="font-medium text-sm">Subscribe</span>
-                <div className="bg-white rounded-full p-2 group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight size={16} className="text-[#2f45ff]" />
-                </div>
-              </button>
-            </form>
+          <div>
+            <h4 className="font-bold text-gray-900 mb-6">Company</h4>
+            <ul className="space-y-4 text-sm text-gray-500">
+              <li><Link href="/services" className="hover:text-blue-600 transition-colors">Service</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link></li>
+              <li><Link href="/pricing" className="hover:text-blue-600 transition-colors">Pricing</Link></li>
+            </ul>
           </div>
+          <div>
+            <h4 className="font-bold text-gray-900 mb-6">Template</h4>
+            <ul className="space-y-4 text-sm text-gray-500">
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">404 not Found</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Password Protect</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Changelog</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Style Guide</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="col-span-2 lg:col-span-1 mb-12">
+          <div className="text-sm font-medium text-gray-500 mb-2">Visit Us</div>
+          <p className="text-gray-900 font-semibold mb-2">Los Angeles, CA 90017 United States</p>
+          <div className="text-sm font-medium text-gray-500 mt-6 mb-2">Call us Now</div>
+          <p className="text-gray-900 font-semibold">+99 1234 5478</p>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 dark:border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 transition-colors duration-300">
-          <p className="text-gray-500 text-xs">
-            © Copywrite 2025 All rights reserved.
-          </p>
-          <SocialIcons />
+        <div className="bg-blue-600 text-white p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-xl font-bold tracking-tight">OPTIMO</div>
+          <div className="flex gap-6 text-sm font-medium">
+            <a href="#" className="hover:opacity-80">Twitter</a>
+            <a href="#" className="hover:opacity-80">LinkedIn</a>
+            <a href="#" className="hover:opacity-80">Facebook</a>
+            <a href="#" className="hover:opacity-80">Instagram</a>
+          </div>
+          <div className="flex gap-6 text-xs text-blue-100">
+            <Link href="#" className="hover:text-white">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white">Changelog</Link>
+            <Link href="#" className="hover:text-white">License</Link>
+            <span>© 2025. All rights reserved.</span>
+          </div>
         </div>
+
       </div>
     </footer>
   );
 };
-
-const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({
-  href,
-  children,
-}) => (
-  <a
-    href={href}
-    className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm w-fit"
-  >
-    {children}
-  </a>
-);

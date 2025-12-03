@@ -6,8 +6,8 @@ export const ServiceHero = () => {
       <div className="container mx-auto px-4 md:px-8 text-center">
         <SectionHeading 
           tag="[Our Services]"
-          title="We help you increase the efficiency and efficacy of your bookkeeping, reporting, forecasting and customer relationship management, giving you a clear technological advantage over your competitors."
-          italicWord="competitors"
+          title="Innovative Solutions That Drive Success"
+          italicWord="Success"
           align="center"
           className="mb-10 max-w-4xl mx-auto"
         />

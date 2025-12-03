@@ -18,9 +18,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "XInfin - Financial Advisory & Process Automation",
+  title: "Optimo - Strategic Consulting",
   description:
-    "Delivering innovative solutions for clients to achieve their financial goals. Process Automation, Financial Advisory, Accounting and Bookkeeping, Virtual CFO, Data Analysis, and more.",
+    "Expert strategic consulting to drive sustainable growth, operational innovation, and lasting business transformation",
 };
 
 export default function RootLayout({

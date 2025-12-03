@@ -11,12 +11,12 @@ export const ContactForm = () => {
           <div className="lg:col-span-5">
             <SectionHeading 
               tag="[Contact]"
-              title="Collaborate With Us"
-              italicWord="Us"
+              title="Drop Us a Message"
+              italicWord="Message"
               className="mb-6"
             />
             <p className="text-gray-500 mb-10 text-sm">
-              We believe in the power of collaboration and partnerships. We are always looking for opportunities to work with other businesses and professionals to enhance our offerings and expand our reach.
+              We're always happy to hear from you and will get back to you as soon as possible.
             </p>
 
             <div className="space-y-6">
@@ -57,7 +57,7 @@ export const ContactForm = () => {
             <div className="bg-gray-50 rounded-3xl p-8 lg:p-10">
               <form className="space-y-5">
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">Your Name</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Full Name</label>
                   <input 
                     type="text" 
                     placeholder="Enter your name" 
@@ -66,7 +66,7 @@ export const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">Your Email</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Email Address</label>
                   <input 
                     type="email" 
                     placeholder="Enter email address" 
@@ -75,34 +75,16 @@ export const ContactForm = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">Phone No.</label>
-                  <input 
-                    type="tel" 
-                    placeholder="Enter phone number" 
-                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">Address</label>
-                  <input 
-                    type="text" 
-                    placeholder="Enter your address" 
-                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-2">Other Requirements</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Write Your Message</label>
                   <textarea 
                     rows={4}
-                    placeholder="Tell us about your requirements" 
+                    placeholder="I want to collaborate" 
                     className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none"
                   ></textarea>
                 </div>
 
                 <button type="submit" className="w-full py-3.5 bg-blue-600 text-white rounded-full font-bold flex items-center justify-between px-6 hover:bg-blue-700 transition-colors text-sm">
-                  Submit
+                  Send Message
                   <div className="w-7 h-7 rounded-full bg-white text-blue-600 flex items-center justify-center">
                     <ArrowUpRight size={14} />
                   </div>

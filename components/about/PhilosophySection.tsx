@@ -15,7 +15,7 @@ export const PhilosophySection = () => {
             </h2>
           </div>
           <div className="flex-shrink-0 mb-1">
-            <Button variant="blue" className="px-8 py-3 text-sm rounded-full">Collaborate With Us</Button>
+            <Button variant="blue" className="px-8 py-3 text-sm rounded-full">Get Started</Button>
           </div>
         </div>
 
@@ -26,18 +26,18 @@ export const PhilosophySection = () => {
           <div className="lg:col-span-7">
             <div className="max-w-3xl pr-4">
               <p className="text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed font-medium">
-                XInfin is a leading provider of Process Automation, Financial Advisory, Accounting and Bookkeeping, Virtual CFO, Data Analysis, Data Visualization, Financial Modelling, and Reporting Requirements services on a global scale.
+                At Optimo, we believe that real business growth is rooted in strategy, insight, and execution. As a results-driven consulting firm for you.
               </p>
               <p className="text-sm md:text-base text-gray-500 mb-10 leading-relaxed">
-                We pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals. We believe in the power of collaboration and partnerships to provide the best possible service to our clients.
+                Our approach blends deep industry insight, extensive experience, and strategic thinking to solve complex challenges, innovation, and deliver measurable, lasting business value
               </p>
 
               {/* Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {[
-                  { icon: Puzzle, title: "Process Automation", desc: "Automating repetitive tasks and improving efficiency" },
-                  { icon: TrendingUp, title: "Financial Advisory", desc: "Expert financial guidance for business growth." },
-                  { icon: Lightbulb, title: "Data Analysis", desc: "Transforming data into actionable business insights." }
+                  { icon: Puzzle, title: "Strategic Planning", desc: "Defining goals and strategies for sustainable" },
+                  { icon: TrendingUp, title: "Operational Growth", desc: "Driving efficiency and scalable performance." },
+                  { icon: Lightbulb, title: "Strategic Planning", desc: "Transforming businesses through technology." }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-start h-full hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">

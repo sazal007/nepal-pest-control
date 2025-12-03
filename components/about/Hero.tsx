@@ -18,7 +18,8 @@ export const Hero = () => {
             [About Us]
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-tight mb-6 tracking-tight">
-            About <span className="font-serif italic font-normal text-blue-400">XINFIN</span>
+            Intelligence That <br />
+            Inspires <span className="font-serif italic font-normal text-blue-400">Growth</span>
           </h1>
         </div>
       </div>

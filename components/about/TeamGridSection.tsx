@@ -2,10 +2,12 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { X } from 'lucide-react';
 
 const team = [
-  { name: "Yagya Raj Bogati", role: "FOUNDER & CEO", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-  { name: "Aastha Sapkota", role: "CO-FOUNDER & CFO", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-  { name: "Nischal Adhikari", role: "CHIEF OPERATING OFFICER", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-  { name: "Umesh Kattel", role: "ANALYTICS & REPORTING MANAGER", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "David Chen", role: "Consultant", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "Jacob Jones", role: "Project Manager", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "Jenny Wilson", role: "Project Coordinator", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "Theresa Webb", role: "Operations Analyst", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "Ronald Richards", role: "Client Success Manager", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+  { name: "Cody Fisher", role: "Financial Strategy Advisor", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
 ];
 
 export const TeamGridSection = () => {
@@ -14,8 +16,8 @@ export const TeamGridSection = () => {
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading 
           tag="[Team Member]"
-          title="Our Team"
-          italicWord="Team"
+          title="Meet the Beautiful team behind Optimo"
+          italicWord="Optimo"
           align="center"
           className="mb-16"
         />

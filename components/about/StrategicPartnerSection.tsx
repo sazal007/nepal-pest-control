@@ -9,7 +9,7 @@ export const StrategicPartnerSection = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <SectionHeading 
             tag="[Our Process]" 
-            title="XInfin Your Strategic Growth Partner" 
+            title="Optimo Your Strategic Growth Partner" 
             italicWord="Partner"
             align="center"
             className="mb-0"
@@ -19,7 +19,7 @@ export const StrategicPartnerSection = () => {
         <div className="relative rounded-3xl overflow-hidden h-[600px] w-full group">
           <img 
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80" 
-            alt="XInfin Team" 
+            alt="Optimo Team" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           
@@ -29,7 +29,7 @@ export const StrategicPartnerSection = () => {
               <Pin size={18} fill="currentColor" />
             </div>
             <ul className="space-y-3">
-              {["Process Automation", "Financial Advisory", "Virtual CFO", "Data Analysis"].map((item, i) => (
+              {["Strategic Planning", "Operational Excellence", "Market Expansion", "Risk Management"].map((item, i) => (
                 <li key={i} className="text-gray-800 font-medium text-sm flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600"></div> {item}
                 </li>

@@ -8,30 +8,30 @@ import { Check } from 'lucide-react';
 const services = [
   {
     id: "01",
-    title: "Process Automation Services",
-    description: "Our process automation services help businesses automate their repetitive tasks, reducing manual errors and improving efficiency. We can help you identify areas where automation can be implemented and provide customized solutions to meet your business needs.",
-    points: ["Task Automation", "Workflow Optimization", "Error Reduction"],
+    title: "Strategy Consulting",
+    description: "Guiding individuals and businesses with smart financial planning, investment advice, and long-term wealth strategies.",
+    points: ["Personalized Financial Planning", "Investment & Portfolio Guidance", "Risk Management & Wealth Protection"],
     image: "https://picsum.photos/id/1059/800/800"
   },
   {
     id: "02",
-    title: "Accounting and Bookkeeping Services",
-    description: "We provide bookkeeping services to help you keep track of your financial transactions and maintain accurate records. Our team of experienced professionals will ensure that your books are up to date and organized.",
-    points: ["Financial Transaction Tracking", "Accurate Record Maintenance", "Professional Bookkeeping"],
+    title: "Market Insights and Analysis",
+    description: "Deep dive analysis into market trends to position your business ahead of the curve.",
+    points: ["Competitor Benchmarking", "Consumer Behavior Analysis", "Trend Forecasting"],
     image: "https://picsum.photos/id/1060/800/800"
   },
   {
     id: "03",
-    title: "Virtual CFO Services",
-    description: "Our Virtual CFO services provide small and mid-sized businesses with the financial expertise they need to make informed decisions and grow their business without the cost of a full-time CFO. Our experienced team of financial professionals can help with budgeting, forecasting, cash flow management, and financial reporting.",
-    points: ["Budgeting & Forecasting", "Cash Flow Management", "Financial Reporting"],
+    title: "Wealth & Finance Advisory",
+    description: "Comprehensive financial structures to optimize tax efficiency and capital allocation.",
+    points: ["Capital Allocation", "Tax Optimization", "M&A Advisory"],
     image: "https://picsum.photos/id/1070/800/800"
   },
   {
     id: "04",
-    title: "Data Analysis & Reporting",
-    description: "Our data analysis service helps you identify trends and opportunities in your financial data, enabling you to make strategic business decisions. We use the latest tools and techniques to analyze your data and provide you with actionable insights that can help you make informed business decisions.",
-    points: ["Trend Identification", "Strategic Insights", "Data-Driven Decisions"],
+    title: "Digital Transformation",
+    description: "Leveraging technology to streamline operations and enhance customer experiences.",
+    points: ["Tech Stack Audit", "Digital Workflow Integration", "Data Security"],
     image: "https://picsum.photos/id/118/800/800"
   }
 ];
@@ -45,11 +45,11 @@ export const ServicesSection = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <SectionHeading 
-            title="Our Services"
-            italicWord="Services"
+            title="Driving Growth Through Strategic Excellence"
+            italicWord="Excellence"
             className="mb-0 max-w-xl"
           />
-          <Button className="hidden md:inline-flex">Collaborate With Us</Button>
+          <Button className="hidden md:inline-flex">Contact Us</Button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">

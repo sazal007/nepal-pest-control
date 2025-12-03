@@ -8,8 +8,8 @@ export const AboutSection = () => {
       <div className="container mx-auto px-4 md:px-8">
         
         <SectionHeading 
-          title="About XINFIN"
-          italicWord="XINFIN"
+          title="Since 2016, we're a team of all in all experienced consultations, combine for strategic instant."
+          italicWord="experienced"
           className="max-w-4xl mb-16"
         />
 
@@ -18,16 +18,12 @@ export const AboutSection = () => {
           {/* Left Text */}
           <div className="md:col-span-3">
             <p className="text-gray-500 text-sm leading-relaxed mb-12">
-              XInfin is a leading provider of Process Automation, Financial Advisory, Accounting and Bookkeeping, Virtual CFO, Data Analysis, Data Visualization, Financial Modelling, and Reporting Requirements services on a global scale.
+              At Optimo, We help businesses navigate complexity unlock to growth achieve lasting transformation with a team of experienced consultations, We can combine for strategic instant.
             </p>
 
             <div className="border-l-2 border-gray-900 pl-6">
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                We pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals.
-              </p>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                We believe in the power of collaboration and partnerships to provide the best possible service to our clients. We are always looking for opportunities to work with other businesses and professionals to enhance our offerings and expand our reach globally.
-              </p>
+              <div className="text-6xl font-bold text-gray-900 mb-2">150+</div>
+              <div className="text-sm text-gray-500 font-medium">Successful Projects Delivered</div>
             </div>
           </div>
 
@@ -49,14 +45,14 @@ export const AboutSection = () => {
                 <Pin size={16} fill="currentColor" />
               </div>
               <ul className="space-y-3 text-sm font-medium text-gray-800">
-                <li className="flex items-center gap-2">Process Automation</li>
-                <li className="flex items-center gap-2">Financial Advisory</li>
-                <li className="flex items-center gap-2">Virtual CFO</li>
-                <li className="flex items-center gap-2">Data Analysis</li>
+                <li className="flex items-center gap-2">Strategic Planning</li>
+                <li className="flex items-center gap-2">Operational Excellence</li>
+                <li className="flex items-center gap-2">Market Expansion</li>
+                <li className="flex items-center gap-2">Risk Management</li>
               </ul>
             </div>
             
-            <Button className="w-full justify-center">Collaborate With Us</Button>
+            <Button className="w-full justify-center">Book a Free Call</Button>
           </div>
 
         </div>
