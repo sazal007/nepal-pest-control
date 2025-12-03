@@ -1,17 +1,103 @@
+"use client";
+import Image from "next/image";
+import { useGetClients } from "@/hooks/use-clients";
+
 export const LogoStrip = () => {
+  const { data: clients } = useGetClients();
+
+  if (!clients || clients.length === 0) {
+    return null;
+  }
+
   return (
-    <section className="py-12 bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4 md:px-8">
-        <p className="text-center text-sm font-medium text-gray-500 mb-8">Trusted by nearly 5000+ paying customers</p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          {/* Using placeholder text/icons for logos as generic svg placeholders */}
-          <div className="flex items-center gap-2 font-bold text-xl text-gray-800"><div className="w-6 h-6 bg-gray-800 rounded-full"></div>Logoipsum</div>
-          <div className="flex items-center gap-2 font-bold text-xl text-gray-800"><div className="w-6 h-6 bg-gray-800 rounded-full"></div>BrandName</div>
-          <div className="flex items-center gap-2 font-bold text-xl text-gray-800"><div className="w-6 h-6 bg-gray-800 rounded-full"></div>Company</div>
-          <div className="flex items-center gap-2 font-bold text-xl text-gray-800"><div className="w-6 h-6 bg-gray-800 rounded-full"></div>Business</div>
-          <div className="flex items-center gap-2 font-bold text-xl text-gray-800"><div className="w-6 h-6 bg-gray-800 rounded-full"></div>Enterprise</div>
+    <>
+      <style>{`
+        .marquee-wrapper {
+          display: flex;
+          width: max-content;
+          animation: marqueeScroll linear infinite;
+        }
+
+        .marquee-inner {
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+        }
+
+        .marquee-container:hover .marquee-wrapper {
+          animation-play-state: paused;
+        }
+
+        .logo-item:hover {
+          filter: grayscale(0) !important;
+          opacity: 1 !important;
+        }
+
+        @keyframes marqueeScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-100% / 2));
+          }
+        }
+      `}</style>
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4 md:px-8">
+          <p className="text-center text-sm font-medium text-gray-500 mb-8">
+            Trusted by
+          </p>
+          <div className="marquee-container overflow-hidden w-full relative max-w-7xl mx-auto select-none">
+            <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+            <div
+              className="marquee-wrapper will-change-transform"
+              style={{ animationDuration: "45s" }}
+            >
+              <div className="marquee-inner">
+                {clients.map((client, index) => (
+                  <a
+                    key={`${client.id}-first-${index}`}
+                    href={client.url || "#"}
+                    target={client.url ? "_blank" : undefined}
+                    rel={client.url ? "noopener noreferrer" : undefined}
+                    className="logo-item mx-6 md:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={120}
+                      height={64}
+                      className="h-12 md:h-16 w-auto object-contain"
+                      draggable={false}
+                    />
+                  </a>
+                ))}
+              </div>
+              <div className="marquee-inner">
+                {clients.map((client, index) => (
+                  <a
+                    key={`${client.id}-second-${index}`}
+                    href={client.url || "#"}
+                    target={client.url ? "_blank" : undefined}
+                    rel={client.url ? "noopener noreferrer" : undefined}
+                    className="logo-item mx-6 md:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={120}
+                      height={64}
+                      className="h-12 md:h-16 w-auto object-contain"
+                      draggable={false}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
