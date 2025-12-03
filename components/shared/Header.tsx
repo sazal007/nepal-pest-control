@@ -16,8 +16,9 @@ export const Header = () => {
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 transition-all duration-300">
-      <div className="max-w-6xl w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-20 flex items-center justify-between relative">
+    <header className="fixed inset-x-0 top-4 z-50 flex justify-between px-4 transition-all duration-300">
+      {/* Desktop Header */}
+      <div className="hidden lg:flex max-w-[1240px] mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-20 items-center justify-between relative">
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
@@ -70,15 +71,15 @@ export const Header = () => {
             </div>
           </Link>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden p-2 text-gray-600 z-20"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
       </div>
+
+      {/* Mobile Menu Toggle - only hamburger on mobile */}
+      <button
+        className="lg:hidden ml-auto p-2 rounded-full bg-white/90 shadow-xs border border-gray-100 text-gray-700"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X /> : <Menu />}
+      </button>
 
       {/* Mobile Nav */}
       {isOpen && (

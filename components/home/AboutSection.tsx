@@ -16,7 +16,7 @@ export const AboutSection = () => {
           {/* Left Text */}
           <div className="md:col-span-3">
             <p className="text-gray-500 text-sm leading-relaxed mb-36">
-              At Optimo, We help businesses navigate complexity unlock to growth
+              At Infin, We help businesses navigate complexity unlock to growth
               achieve lasting transformation with a team of experienced
               consultations, We can combine for strategic instant.
             </p>

@@ -47,7 +47,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                 Overview
               </h2>
               <p className="text-gray-500 leading-relaxed text-lg">
-                At Optimo, our Strategy Consulting service is designed to help
+                At Infin, our Strategy Consulting service is designed to help
                 businesses define their direction, sharpen their focus, and
                 unlock sustainable growth. In today&apos;s fast-changing
                 environment, organizations need more than ambition—they need a
@@ -94,7 +94,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
             {/* Testimonial Quote */}
             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-16">
               <p className="text-xl md:text-2xl font-serif italic text-gray-900 mb-8 leading-relaxed">
-                &quot;Partnering with Optimo for strategy consulting was a
+                &quot;Partnering with Infin for strategy consulting was a
                 turning point for our business. Their team brought clarity,
                 structure, and vision to our goals. Within months, we saw
                 improved efficiency, stronger alignment across departments, and

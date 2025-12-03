@@ -73,40 +73,40 @@ export const PricingComparison = () => {
         ref={containerRef}
       >
         <SectionHeading
-          tag="[Services]"
+          // tag="[Services]"
           title="Specialized Engagement Models"
           italicWord="Models"
           align="center"
           className="mb-12"
         />
 
-        <div className="space-y-6 relative">
+        <div className="space-y-8 md:space-y-10 relative">
           {PricingPackages.map((pkg, idx) => (
             <div
               key={idx}
               ref={(el) => {
                 if (cardsRef.current) cardsRef.current[idx] = el;
               }}
-              className="sticky top-28 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-7 border border-slate-200 shadow-sm transition-all duration-150 ease-linear origin-top"
+              className="lg:sticky lg:top-28 bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-7 md:px-8 md:py-9 border border-slate-200/80 shadow-md transition-all duration-150 ease-linear origin-top"
               style={{
                 zIndex: idx + 10,
                 ...cardStyles[idx],
               }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {/* Header Info */}
                 <div className="lg:col-span-5 flex flex-col">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
                     {pkg.category}
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
                     {pkg.model}
                   </h3>
-                  <p className="text-slate-500 mb-5 text-sm leading-relaxed">
+                  <p className="text-slate-500 mb-6 text-sm leading-relaxed">
                     &quot;{pkg.tagline}&quot;
                   </p>
 
-                  <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                  <div className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-100">
                     <div className="text-[11px] text-slate-400 mb-1 uppercase tracking-[0.16em] font-semibold">
                       Pricing Structure
                     </div>
@@ -117,11 +117,11 @@ export const PricingComparison = () => {
                 </div>
 
                 {/* Inclusions List */}
-                <div className="lg:col-span-7 pt-2 lg:pt-0">
+                <div className="lg:col-span-7 pt-3 lg:pt-1">
                   <h4 className="font-semibold text-slate-400 mb-3 text-xs uppercase tracking-[0.18em]">
                     Inclusions
                   </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3.5">
                     {pkg.inclusions.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <div className="mt-1 min-w-[18px] h-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">

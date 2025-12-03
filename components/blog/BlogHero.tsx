@@ -35,7 +35,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
         <div className="text-center max-w-4xl mx-auto mb-12">
           <SectionHeading
             tag="[Blog]"
-            title="The Optimo Growth Insights Blog"
+            title="The Infin Growth Insights Blog"
             italicWord="Blog"
             align="center"
             className="mb-0"

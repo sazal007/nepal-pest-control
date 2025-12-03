@@ -7,9 +7,9 @@ export const FooterCTA = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="bg-blue-700 rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
           <div className="p-12 lg:p-20 lg:w-1/2 text-white relative z-10">
-            <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">
+            {/* <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">
               [CTA]
-            </div>
+            </div> */}
             <h2 className="text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
               Work with Experts to Grow Faster & Run{" "}
               <span className="font-serif italic font-normal">Smarter</span>

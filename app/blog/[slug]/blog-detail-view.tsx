@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
 import { useGetBlogBySlug } from "@/hooks/use-blogs";
 import { Loader } from "@/components/ui/loader";
 
@@ -24,17 +23,36 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
   return (
     <div className="pt-40 pb-0 bg-white">
       <div className="container mx-auto px-4 md:px-8 mb-12">
-        <Link
-          href="/blog"
-          className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-blue-600 mb-8 transition-colors w-fit"
-        >
-          <ArrowLeft size={16} /> Back to Blog
-        </Link>
+        <nav className="mb-6">
+          <ol className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-blue-600 transition-colors font-medium"
+              >
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link
+                href="/blog"
+                className="hover:text-blue-600 transition-colors font-medium"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-gray-900 font-medium text-center line-clamp-1">
+              {blog.title}
+            </li>
+          </ol>
+        </nav>
 
         <div className="text-center max-w-4xl mx-auto mb-8">
-          <span className="text-blue-600 font-bold tracking-wide uppercase text-xs mb-4 block">
+          {/* <span className="text-blue-600 font-bold tracking-wide uppercase text-xs mb-4 block">
             [Blog Details]
-          </span>
+          </span> */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.15] mb-4">
             {blog.title}
           </h1>
@@ -56,7 +74,7 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
           </div>
         )}
 
-        <div className="max-w-3xl mx-auto prose prose-lg prose-gray">
+        <div className="max-w-4xl mx-auto space-y-6 prose prose-lg prose-gray">
           <div dangerouslySetInnerHTML={{ __html: blog.content }} />
         </div>
       </div>

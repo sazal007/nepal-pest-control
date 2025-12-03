@@ -13,7 +13,7 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <SectionHeading
-            tag="[Pricing]"
+            // tag="[Pricing]"
             title="Smart Solutions Transparent Pricing"
             italicWord="Pricing"
             align="center"
