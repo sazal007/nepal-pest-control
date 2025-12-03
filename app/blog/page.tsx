@@ -1,11 +1,9 @@
-import { BlogHero } from "@/components/blog/BlogHero";
-import { BlogGrid } from "@/components/blog/BlogGrid";
+import BlogView from "./blog-view";
 
 export default function BlogPage() {
   return (
     <>
-      <BlogHero />
-      <BlogGrid />
+      <BlogView />
     </>
   );
 }

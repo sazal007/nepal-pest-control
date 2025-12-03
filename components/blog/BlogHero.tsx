@@ -1,7 +1,30 @@
+import React from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowUpRight } from "lucide-react";
+import type { BlogPost } from "@/types/blog";
 
-export const BlogHero = () => {
+interface BlogHeroProps {
+  latestBlog?: BlogPost | null;
+  onBlogClick?: (blog: BlogPost) => void;
+}
+
+export const BlogHero: React.FC<BlogHeroProps> = ({
+  latestBlog,
+  onBlogClick,
+}) => {
+  if (!latestBlog) return null;
+
+  const image =
+    latestBlog.thumbnail_image ??
+    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80";
+
+  const authorName =
+    latestBlog.author &&
+    (`${latestBlog.author.first_name} ${latestBlog.author.last_name}`.trim() ||
+      latestBlog.author.username);
+
+  const createdDate = new Date(latestBlog.created_at).toLocaleDateString();
+
   return (
     <section className="pt-28 pb-12 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8">
@@ -15,22 +38,24 @@ export const BlogHero = () => {
           />
         </div>
 
-        <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div
+          className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
+          onClick={() => onBlogClick && onBlogClick(latestBlog)}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="h-[350px] lg:h-auto">
               <img
-                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-                alt="Business Strategy"
-                className="w-full h-full object-cover"
+                src={image}
+                alt={
+                  latestBlog.thumbnail_image_alt_description ?? latestBlog.title
+                }
+                className="w-full h-[350px] object-cover"
               />
             </div>
             <div className="p-8 lg:p-12 flex flex-col justify-center">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 leading-tight">
-                &quot;From Struggling to Scaling: How Business Consulting
-                Transforms Operations, Clarifies Vision, and Drives Measurable
-                Success Across Industries&quot;
+                {latestBlog.title}
               </h2>
-
               <div className="flex items-center justify-between mt-auto pt-4">
                 <div className="flex items-center gap-4">
                   <img
@@ -40,11 +65,9 @@ export const BlogHero = () => {
                   />
                   <div>
                     <div className="font-bold text-gray-900 text-sm">
-                      Zayan Daniel
+                      {authorName ?? "XinFin Team"}
                     </div>
-                    <div className="text-xs text-gray-500">
-                      Head of Business Consultancy
-                    </div>
+                    <div className="text-xs text-gray-500">{createdDate}</div>
                   </div>
                 </div>
 

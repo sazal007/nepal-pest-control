@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useGetClients } from "@/hooks/use-clients";
+import { Loader } from "../ui/loader";
 
 export const LogoStrip = () => {
-  const { data: clients } = useGetClients();
+  const { data: clients, isLoading, error } = useGetClients();
 
+  if (isLoading) return <Loader />;
+  if (error) return <div>Error: {error.message}</div>;
   if (!clients || clients.length === 0) {
     return null;
   }
