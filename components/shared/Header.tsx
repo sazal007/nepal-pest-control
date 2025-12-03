@@ -16,7 +16,7 @@ export const Header = () => {
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-2 sm:top-4 z-50 flex justify-between px-3 sm:px-4 transition-all duration-300">
+    <header className="absolute md:fixed inset-x-0 top-2 sm:top-4 z-50 flex justify-between items-center px-3 sm:px-4 transition-all duration-300">
       {/* Desktop Header */}
       <div className="hidden lg:flex max-w-[1240px] mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-16 xl:h-20 items-center justify-between relative">
         {/* Logo - Left aligned */}
@@ -72,6 +72,20 @@ export const Header = () => {
           </Link>
         </div>
       </div>
+
+      {/* Mobile Logo */}
+      <Link
+        href="/"
+        className="flex items-center gap-2 cursor-pointer lg:hidden"
+      >
+        <Image
+          src="/test.png"
+          alt="INFIN Consultants Logo"
+          width={200}
+          height={120}
+          className="h-14 w-auto"
+        />
+      </Link>
 
       {/* Mobile Menu Toggle - only hamburger on mobile */}
       <button
