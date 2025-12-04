@@ -54,10 +54,14 @@ export const Footer = () => {
                 <FooterLink href="/services">Service</FooterLink>
                 <FooterLink href="/about">About Us</FooterLink>
                 <FooterLink href="/blog">Blog</FooterLink>
+                <FooterLink href="/pricing">Pricing</FooterLink>
               </div>
               <div className="flex flex-col space-y-3">
-                <FooterLink href="/pricing">Pricing</FooterLink>
                 <FooterLink href="/contact">Contact Us</FooterLink>
+                <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+                <FooterLink href="/terms-and-conditions">
+                  Terms and Conditions
+                </FooterLink>
               </div>
             </div>
           </div>
