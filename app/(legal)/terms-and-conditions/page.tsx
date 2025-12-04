@@ -21,7 +21,7 @@ export default function TermsAndConditions() {
           <p className="mb-8">
             These Terms and Conditions constitute a legally binding agreement
             made between you, whether personally or on behalf of an entity
-            (&quot;you&quot;) and Optimo Consulting (&quot;we,&quot;
+            (&quot;you&quot;) and Infin Consulting (&quot;we,&quot;
             &quot;us&quot; or &quot;our&quot;), concerning your access to and
             use of our website as well as any other media form, media channel,
             mobile website or mobile application related, linked, or otherwise
@@ -80,7 +80,7 @@ export default function TermsAndConditions() {
           </h3>
           <p className="mb-8">
             These Terms shall be governed by and defined following the laws of
-            United States. Optimo Consulting and yourself irrevocably consent
+            United States. Infin Consulting and yourself irrevocably consent
             that the courts of United States shall have exclusive jurisdiction
             to resolve any dispute which may arise in connection with these
             terms.
