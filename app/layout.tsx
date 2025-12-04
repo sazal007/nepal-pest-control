@@ -5,6 +5,7 @@ import { Header } from "@/components/shared/Header";
 import { Footer } from "@/components/shared/Footer";
 import { QueryProvider } from "@/providers/query-provider";
 import { FooterCTA } from "@/components/shared/FooterCTA";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -38,6 +39,12 @@ export default function RootLayout({
         <QueryProvider>
           <Header />
           <main>{children}</main>
+          <Toaster
+            position="bottom-right"
+            richColors
+            closeButton
+            duration={3000}
+          />
           <FooterCTA />
           <Footer />
         </QueryProvider>
