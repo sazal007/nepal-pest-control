@@ -28,7 +28,7 @@ export const HomeHero = () => {
           </p>
           <Button
             variant="white"
-            className="text-ablue-900 font-bold  xs:w-auto justify-center"
+            className="text-primary-900 font-bold  xs:w-auto justify-center"
           >
             Book a Free Call
           </Button>

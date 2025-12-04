@@ -50,11 +50,11 @@ export const PartnershipSection = () => {
                 onClick={() => setActiveTab(0)}
                 className={`pb-3 sm:pb-4 border-b-2 flex items-center gap-2 ${
                   activeTab === 0
-                    ? "border-blue-600 text-blue-800 font-semibold"
+                    ? "border-primary-600 text-primary-800 font-semibold"
                     : "border-transparent text-gray-400 hover:text-gray-700"
                 }`}
               >
-                <span className="w-2 h-2 rounded-full bg-blue-600"></span>
+                <span className="w-2 h-2 rounded-full bg-primary-600"></span>
                 Deep Collaboration
               </button>
               <button

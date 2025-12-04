@@ -27,9 +27,9 @@ export const ComplexChallenges = () => {
 
           {/* Blue Card Side */}
           <div className="lg:col-span-5">
-            <div className="bg-blue-700 text-white p-6 sm:p-8 lg:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
+            <div className="bg-primary-700 text-white p-6 sm:p-8 lg:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
               {/* Decorative shapes */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600 rounded-bl-full opacity-50"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-600 rounded-bl-full opacity-50"></div>
               
               <div className="relative z-10">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
@@ -39,21 +39,21 @@ export const ComplexChallenges = () => {
                 <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
                   Schedule a Consultation
                 </h3>
-                <p className="text-blue-100 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-primary-100 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">
                   This is some text inside of our team is available during the hours below and happy to accommodate custom appointments as needed.
                 </p>
 
                 <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
-                  <div className="flex justify-between text-xs sm:text-sm border-b border-blue-600/30 pb-2.5 sm:pb-3">
-                    <span className="text-blue-200">Monday - Thursday</span>
+                  <div className="flex justify-between text-xs sm:text-sm border-b border-primary-600/30 pb-2.5 sm:pb-3">
+                    <span className="text-primary-200">Monday - Thursday</span>
                     <span className="font-medium">08:00 - 18:00</span>
                   </div>
-                  <div className="flex justify-between text-xs sm:text-sm border-b border-blue-600/30 pb-2.5 sm:pb-3">
-                    <span className="text-blue-200">Friday</span>
+                  <div className="flex justify-between text-xs sm:text-sm border-b border-primary-600/30 pb-2.5 sm:pb-3">
+                    <span className="text-primary-200">Friday</span>
                     <span className="font-medium">09:00 - 17:00</span>
                   </div>
                   <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-blue-200">Saturday & Sunday</span>
+                    <span className="text-primary-200">Saturday & Sunday</span>
                     <span className="font-medium">08:30 - 19:30</span>
                   </div>
                 </div>

@@ -33,8 +33,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {tag && (
         <span
           className={cn(
-            "inline-block text-blue-600 font-semibold text-sm mb-4 tracking-wide uppercase",
-            light && "text-blue-300"
+            "inline-block text-primary-600 font-semibold text-sm mb-4 tracking-wide uppercase",
+            light && "text-primary-300"
           )}
         >
           {tag}

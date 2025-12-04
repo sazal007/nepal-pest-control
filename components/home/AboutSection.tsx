@@ -21,7 +21,7 @@ export const AboutSection = () => {
               consultations, We can combine for strategic instant.
             </p>
 
-            <div className="border-l-2 border-blue-700 pl-4 sm:pl-6">
+            <div className="border-l-2 border-primary-700 pl-4 sm:pl-6">
               <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2">
                 150+
               </div>
@@ -45,7 +45,7 @@ export const AboutSection = () => {
           {/* Right Floating Card */}
           <div className="md:col-span-3 flex flex-col mt-10 md:mt-16 lg:mt-24 h-full">
             <div className="bg-gray-50 p-5 sm:p-6 rounded-2xl mb-6 sm:mb-8">
-              <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+              <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-4">
                 <Pin size={16} fill="currentColor" />
               </div>
               <ul className="space-y-3 text-sm font-medium text-gray-800">

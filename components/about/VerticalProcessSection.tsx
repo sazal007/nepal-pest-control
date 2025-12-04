@@ -75,7 +75,7 @@ export const VerticalProcessSection = () => {
 
             {/* Active Blue Line */}
             <div
-              className="absolute left-[15px] md:left-[19px] top-8 w-0.5 bg-blue-600 transition-all duration-100 ease-out"
+              className="absolute left-[15px] md:left-[19px] top-8 w-0.5 bg-primary-600 transition-all duration-100 ease-out"
               style={{ height: `calc(${progress * 100}% - 60px)` }}
             ></div>
 
@@ -97,7 +97,7 @@ export const VerticalProcessSection = () => {
                     <div
                       className={`absolute -left-[24px] md:-left-[36px] top-6 w-4 h-4 rounded-full border-4 transition-colors duration-500 ${
                         isActive
-                          ? "bg-white border-blue-600 scale-125"
+                          ? "bg-white border-primary-600 scale-125"
                           : "bg-gray-100 border-gray-100"
                       }`}
                     ></div>
@@ -105,18 +105,18 @@ export const VerticalProcessSection = () => {
                     <div
                       className={`p-8 rounded-2xl border transition-all duration-500 relative group overflow-hidden ${
                         isActive
-                          ? "bg-white border-blue-200 shadow-lg"
+                          ? "bg-white border-primary-200 shadow-lg"
                           : "bg-gray-50 border-gray-50"
                       }`}
                     >
-                      <div className="absolute top-4 right-4 text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-md">
+                      <div className="absolute top-4 right-4 text-xs font-bold text-primary-600 bg-primary-50 px-2 py-1 rounded-md">
                         {step.id}
                       </div>
 
                       <div
                         className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500 ${
                           isActive
-                            ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                            ? "bg-primary-600 text-white shadow-lg shadow-primary-600/20"
                             : "bg-gray-200 text-gray-500"
                         }`}
                       >

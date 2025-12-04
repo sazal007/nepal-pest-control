@@ -5,7 +5,7 @@ export const FooterCTA = () => {
   return (
     <section className="py-10 sm:py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <div className="bg-blue-700 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
+        <div className="bg-primary-700 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
           <div className="px-6 py-10 sm:p-10 lg:p-16 xl:p-20 lg:w-1/2 text-white relative z-10">
             {/* <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">
               [CTA]
@@ -17,7 +17,7 @@ export const FooterCTA = () => {
 
             <Button
               variant="white"
-              className="mb-6 sm:mb-8 lg:mb-10 text-blue-900 w-full xs:w-auto"
+              className="mb-6 sm:mb-8 lg:mb-10 text-primary-900 w-full xs:w-auto"
             >
               Get Started
             </Button>
@@ -42,7 +42,7 @@ export const FooterCTA = () => {
               alt="Working together"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-blue-900/20"></div>
+            <div className="absolute inset-0 bg-primary-900/20"></div>
           </div>
         </div>
       </div>

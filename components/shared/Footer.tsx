@@ -9,7 +9,7 @@ export const Footer = () => {
         {/* Big Title Section - Made more compact (reduced margins) */}
         <div className="w-full flex justify-center mb-10 sm:mb-12 relative">
           {/* Subtle glow effect behind the text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-blue-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-primary-500/5 blur-[80px] rounded-full pointer-events-none"></div>
 
           <h1 className="text-[17vw] xs:text-[15vw] sm:text-[13.5vw] leading-[0.85] sm:leading-[0.8] font-serif font-medium tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-gray-400 to-gray-50 select-none text-center">
             INFIN CONSULTANTS
@@ -79,17 +79,17 @@ export const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full bg-white text-gray-900 rounded-full py-2.5 sm:py-3 px-4 sm:px-6 text-xs sm:text-sm outline-none border border-gray-200 focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-500"
+                className="w-full bg-white text-gray-900 rounded-full py-2.5 sm:py-3 px-4 sm:px-6 text-xs sm:text-sm outline-none border border-gray-200 focus:ring-2 focus:ring-primary-500 transition-all placeholder:text-gray-500"
               />
               <button
                 type="submit"
-                className="group w-full xs:w-fit bg-[#2f45ff] hover:bg-blue-600 text-white rounded-full py-2 pr-2 pl-5 sm:pl-6 flex items-center justify-center xs:justify-start space-x-2.5 sm:space-x-3 transition-all duration-300 shadow-md shadow-blue-500/20"
+                className="group w-fit bg-accent hover:bg-primary-600 text-white rounded-full py-2 pr-2 pl-5 sm:pl-6 flex items-center justify-center xs:justify-start space-x-2.5 sm:space-x-3 transition-all duration-300 shadow-md shadow-primary-500/20"
               >
                 <span className="font-medium text-xs sm:text-sm">
                   Subscribe
                 </span>
                 <div className="bg-white rounded-full p-1.5 sm:p-2 group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight size={16} className="text-[#2f45ff]" />
+                  <ArrowUpRight size={16} className="text-accent" />
                 </div>
               </button>
             </form>

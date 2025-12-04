@@ -21,7 +21,7 @@ export const ContactLocations = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                <div className="w-9 h-9 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-3">
+                <div className="w-9 h-9 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-3">
                   <MapPin size={16} fill="currentColor" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-sm">
@@ -33,7 +33,7 @@ export const ContactLocations = () => {
               </div>
 
               <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                <div className="w-9 h-9 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-3">
+                <div className="w-9 h-9 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-3">
                   <MapPin size={16} fill="currentColor" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-1 text-sm">

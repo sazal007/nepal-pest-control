@@ -44,7 +44,7 @@ export const FAQSection = () => {
                   className="w-full flex items-center justify-between px-4 py-4 sm:p-6 text-left"
                 >
                   <span className="font-medium text-gray-900">{faq.question}</span>
-                  <div className={`p-1 rounded-full ${openIndex === idx ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'}`}>
+                  <div className={`p-1 rounded-full ${openIndex === idx ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 text-gray-500'}`}>
                     {openIndex === idx ? <Minus size={16} /> : <Plus size={16} />}
                   </div>
                 </button>

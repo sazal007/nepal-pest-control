@@ -27,14 +27,14 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
               key={plan.id}
               className={`rounded-3xl p-8 flex flex-col min-h-[420px] transition-all duration-300 ${
                 plan.is_popular
-                  ? "bg-blue-700 text-white shadow-xl scale-105 z-10"
+                  ? "bg-primary-700 text-white shadow-xl scale-105 z-10"
                   : "bg-white text-gray-900 shadow-sm border border-gray-100 hover:shadow-lg"
               }`}
             >
               <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
               <p
                 className={`text-sm mb-8 leading-relaxed ${
-                  plan.is_popular ? "text-blue-100" : "text-gray-500"
+                  plan.is_popular ? "text-primary-100" : "text-gray-500"
                 }`}
               >
                 {plan.description}
@@ -46,7 +46,7 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
                 </span>
                 <span
                   className={`text-sm ${
-                    plan.is_popular ? "text-blue-100" : "text-gray-500"
+                    plan.is_popular ? "text-primary-100" : "text-gray-500"
                   }`}
                 >
                   /month
@@ -62,15 +62,15 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
                     <div
                       className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
                         plan.is_popular
-                          ? "bg-white text-blue-700"
-                          : "bg-blue-50 text-blue-600"
+                          ? "bg-white text-primary-700"
+                          : "bg-primary-50 text-primary-600"
                       }`}
                     >
                       <Check size={12} strokeWidth={3} />
                     </div>
                     <span
                       className={
-                        plan.is_popular ? "text-blue-50" : "text-gray-600"
+                        plan.is_popular ? "text-primary-50" : "text-gray-600"
                       }
                     >
                       {feature.feature}

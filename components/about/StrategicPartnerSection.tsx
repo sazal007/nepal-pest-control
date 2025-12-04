@@ -24,7 +24,7 @@ export const StrategicPartnerSection = () => {
 
           {/* Floating Card */}
           <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 bg-white p-5 sm:p-7 md:p-8 rounded-2xl shadow-xl max-w-xs md:max-w-sm">
-            <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-6">
+            <div className="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center mb-6">
               <Pin size={18} fill="currentColor" />
             </div>
             <ul className="space-y-3">
@@ -38,7 +38,7 @@ export const StrategicPartnerSection = () => {
                   key={i}
                   className="text-gray-800 font-medium text-sm flex items-center gap-2"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-600"></div>{" "}
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-600"></div>{" "}
                   {item}
                 </li>
               ))}

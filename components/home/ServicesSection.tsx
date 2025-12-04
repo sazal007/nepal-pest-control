@@ -65,7 +65,7 @@ export const ServicesSection = () => {
                 onClick={() => setActiveService(idx)}
               >
                 <div className="flex items-center gap-4 sm:gap-6 mb-3 sm:mb-4">
-                  <span className={`text-lg font-medium ${activeService === idx ? 'text-blue-700' : 'text-gray-400 group-hover:text-gray-600'}`}>
+                  <span className={`text-lg font-medium ${activeService === idx ? 'text-primary-700' : 'text-gray-400 group-hover:text-gray-600'}`}>
                     [{service.id}]
                   </span>
                   <h3
@@ -91,7 +91,7 @@ export const ServicesSection = () => {
                     <ul className="space-y-2.5 sm:space-y-3">
                       {service.points.map((point, i) => (
                         <li key={i} className="flex items-center gap-3 text-sm font-medium text-gray-800">
-                          <Check size={16} className="text-blue-600" />
+                          <Check size={16} className="text-primary-600" />
                           {point}
                         </li>
                       ))}

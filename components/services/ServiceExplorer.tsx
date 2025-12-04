@@ -52,8 +52,8 @@ export const ServiceExplorer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((item, idx) => (
-            <div key={idx} className="bg-gray-50 p-10 rounded-3xl hover:bg-white hover:shadow-xl hover:border-blue-100 border border-transparent transition-all duration-300 group">
-              <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <div key={idx} className="bg-gray-50 p-10 rounded-3xl hover:bg-white hover:shadow-xl hover:border-primary-100 border border-transparent transition-all duration-300 group">
+              <div className="w-12 h-12 bg-white text-primary-600 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors">
                 <item.icon size={20} />
               </div>
               
@@ -62,9 +62,9 @@ export const ServiceExplorer = () => {
                 {item.description}
               </p>
 
-              <button className="flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+              <button className="flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
                 Read More 
-                <div className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
+                <div className="w-5 h-5 rounded-full bg-primary-600 text-white flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
                   <ArrowUpRight size={10} />
                 </div>
               </button>

@@ -62,7 +62,7 @@ export const PrinciplesSection = () => {
                   key={p.id}
                   className={`bg-white rounded-xl overflow-hidden transition-all duration-300 ${
                     activeId === p.id
-                      ? "shadow-md border-blue-100"
+                      ? "shadow-md border-primary-100"
                       : "border border-transparent"
                   }`}
                 >
@@ -76,7 +76,7 @@ export const PrinciplesSection = () => {
                       </span>
                       <span
                         className={`text-lg font-semibold ${
-                          activeId === p.id ? "text-blue-700" : "text-gray-900"
+                          activeId === p.id ? "text-primary-700" : "text-gray-900"
                         }`}
                       >
                         {p.title}
@@ -85,7 +85,7 @@ export const PrinciplesSection = () => {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
                         activeId === p.id
-                          ? "bg-blue-600 text-white"
+                          ? "bg-primary-600 text-white"
                           : "bg-gray-100 text-gray-400"
                       }`}
                     >

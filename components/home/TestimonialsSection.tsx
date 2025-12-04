@@ -43,9 +43,9 @@ export const TestimonialsSection = () => {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 sm:p-7 lg:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-100"
+              className="bg-white p-6 sm:p-7 lg:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary-100"
             >
-              <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6">
+              <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Quote size={18} fill="currentColor" />
               </div>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 sm:mb-8 min-h-[80px] sm:min-h-[100px]">

@@ -60,7 +60,7 @@ export const PhilosophySection = () => {
                     key={idx}
                     className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-start h-full hover:shadow-md transition-shadow"
                   >
-                    <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-4">
                       <item.icon size={18} />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2 text-sm">

@@ -20,7 +20,7 @@ export const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight break-words">
             Intelligence That <br />
             Inspires{" "}
-            <span className="font-serif italic font-normal text-blue-400">
+            <span className="font-serif italic font-normal text-primary-400">
               Growth
             </span>
           </h1>

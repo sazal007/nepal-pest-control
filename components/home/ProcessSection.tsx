@@ -33,9 +33,9 @@ export const ProcessSection = () => {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-sm border border-gray-100 group hover:border-blue-200 transition-all duration-300"
+              className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-sm border border-gray-100 group hover:border-primary-200 transition-all duration-300"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-6 sm:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 mb-6 sm:mb-8 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
                 <step.icon size={20} />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">

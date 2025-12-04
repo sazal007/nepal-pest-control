@@ -21,7 +21,7 @@ export const ContactForm = () => {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <Mail size={18} />
                 </div>
                 <div>
@@ -31,7 +31,7 @@ export const ContactForm = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone size={18} />
                 </div>
                 <div>
@@ -41,7 +41,7 @@ export const ContactForm = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin size={18} />
                 </div>
                 <div>
@@ -61,7 +61,7 @@ export const ContactForm = () => {
                   <input 
                     type="text" 
                     placeholder="Enter your name" 
-                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
                   />
                 </div>
 
@@ -70,7 +70,7 @@ export const ContactForm = () => {
                   <input 
                     type="email" 
                     placeholder="Enter email address" 
-                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
                   />
                 </div>
 
@@ -79,13 +79,13 @@ export const ContactForm = () => {
                   <textarea 
                     rows={4}
                     placeholder="I want to collaborate" 
-                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none"
+                    className="w-full px-5 py-3.5 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm resize-none"
                   ></textarea>
                 </div>
 
-                <button type="submit" className="w-full py-3.5 bg-blue-600 text-white rounded-full font-bold flex items-center justify-between px-6 hover:bg-blue-700 transition-colors text-sm">
+                <button type="submit" className="w-full py-3.5 bg-primary-600 text-white rounded-full font-bold flex items-center justify-between px-6 hover:bg-primary-700 transition-colors text-sm">
                   Send Message
-                  <div className="w-7 h-7 rounded-full bg-white text-blue-600 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-full bg-white text-primary-600 flex items-center justify-center">
                     <ArrowUpRight size={14} />
                   </div>
                 </button>

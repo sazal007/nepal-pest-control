@@ -78,9 +78,9 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors group">
+                <button className="flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-primary-600 transition-colors group">
                   Read More
-                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center group-hover:bg-primary-700 transition-colors">
                     <ArrowUpRight size={14} />
                   </div>
                 </button>

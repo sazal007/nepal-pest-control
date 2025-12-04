@@ -96,7 +96,7 @@ export const PricingComparison = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {/* Header Info */}
                 <div className="lg:col-span-5 flex flex-col">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
                     {pkg.category}
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
@@ -110,7 +110,7 @@ export const PricingComparison = () => {
                     <div className="text-[11px] text-slate-400 mb-1 uppercase tracking-[0.16em] font-semibold">
                       Pricing Structure
                     </div>
-                    <div className="text-base md:text-lg font-semibold text-blue-700">
+                    <div className="text-base md:text-lg font-semibold text-primary-700">
                       {pkg.price}
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export const PricingComparison = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3.5">
                     {pkg.inclusions.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <div className="mt-1 min-w-[18px] h-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                        <div className="mt-1 min-w-[18px] h-4 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center shrink-0">
                           <Check size={10} strokeWidth={2.5} />
                         </div>
                         <span className="text-[13px] md:text-sm text-slate-600 leading-snug">

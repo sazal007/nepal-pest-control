@@ -11,8 +11,8 @@ export const Header = () => {
   const pathname = usePathname();
 
   const linkClass = (path: string) =>
-    `text-sm font-medium transition-colors hover:text-blue-700 ${
-      pathname === path ? "text-blue-700 font-semibold" : "text-gray-600"
+    `text-sm font-medium transition-colors hover:text-primary-700 ${
+      pathname === path ? "text-primary-700 font-semibold" : "text-gray-600"
     }`;
 
   return (
@@ -63,10 +63,10 @@ export const Header = () => {
         <div className="hidden lg:block z-20">
           <Link
             href="/contact"
-            className="pl-6 pr-2 py-1.5 rounded-full bg-white border border-gray-200 text-gray-900 hover:border-blue-300 hover:shadow-md transition-all flex items-center gap-3 group"
+            className="pl-6 pr-2 py-1.5 rounded-full bg-white border border-gray-200 text-gray-900 hover:border-primary-300 hover:shadow-md transition-all flex items-center gap-3 group"
           >
             <span className="font-semibold text-sm">Contact Us</span>
-            <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-full bg-primary-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
               <ArrowUpRight size={16} strokeWidth={2.5} />
             </div>
           </Link>
@@ -142,7 +142,7 @@ export const Header = () => {
           <div className="mt-4">
             <Link
               href="/contact"
-              className="w-full text-center py-3 sm:py-4 rounded-full bg-blue-600 text-white font-bold text-base sm:text-lg flex items-center justify-center gap-2"
+              className="w-full text-center py-3 sm:py-4 rounded-full bg-primary-600 text-white font-bold text-base sm:text-lg flex items-center justify-center gap-2"
               onClick={() => setIsOpen(false)}
             >
               Contact Us <ArrowUpRight size={20} />

@@ -18,7 +18,7 @@ export const ServiceHero = () => {
             alt="Services Team Meeting"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-primary-900/10 mix-blend-multiply"></div>
         </div>
       </div>
     </section>

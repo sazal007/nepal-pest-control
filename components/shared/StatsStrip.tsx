@@ -5,7 +5,7 @@ const stats = [
     icon: Folder,
     value: "250+",
     label: "Over 300+ clients complete high-impact projects.",
-    color: "bg-blue-100 text-blue-600",
+    color: "bg-primary-100 text-primary-600",
   },
   {
     icon: Sun,
@@ -33,11 +33,11 @@ export const StatsStrip = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug sm:leading-tight text-gray-900">
-            With a <span className="font-bold text-blue-600">98% client</span>{" "}
+            With a <span className="font-bold text-primary-600">98% client</span>{" "}
             <span className="font-serif italic font-normal">satisfaction</span>,{" "}
             <br className="hidden sm:block" />
             our strategies have led to{" "}
-            <span className="font-bold text-blue-600">$50M+ in revenue</span>
+            <span className="font-bold text-primary-600">$50M+ in revenue</span>
           </h2>
           <p className="mt-3 sm:mt-5 text-gray-500 text-xs sm:text-sm">
             Our strategic approach is designed to align with your business
@@ -49,7 +49,7 @@ export const StatsStrip = () => {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white p-5 sm:p-7 lg:p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-blue-100"
+              className="bg-white p-5 sm:p-7 lg:p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary-100"
             >
               <div
                 className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center mb-4 sm:mb-6 ${stat.color}`}

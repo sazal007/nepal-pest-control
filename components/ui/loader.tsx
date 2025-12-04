@@ -27,7 +27,7 @@ export const Loader: React.FC = () => {
         .loader::after {
           inset: 8px;
           transform: rotate3d(90, 90, 0, 180deg);
-          border-color: #2563eb; /* blue-600 */
+          border-color: var(--primary-600);
         }
 
         @keyframes rotate {
