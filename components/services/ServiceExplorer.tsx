@@ -23,7 +23,7 @@ export const ServiceExplorer = () => {
           className="flex flex-col md:flex-row justify-between items-end mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0, margin: "-100px 0px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
@@ -41,7 +41,7 @@ export const ServiceExplorer = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0, margin: "-150px 0px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {services.map((service) => {
