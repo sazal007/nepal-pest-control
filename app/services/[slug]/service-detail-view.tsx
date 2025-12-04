@@ -1,43 +1,100 @@
 "use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import { ServiceExplorer } from "@/components/services/ServiceExplorer";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { CheckCircle2 } from "lucide-react";
+import { Loader } from "@/components/ui/loader";
+import { useGetServiceBySlug } from "@/hooks/use-services";
+import { sanitizeProductDescription } from "@/lib/html-sanitizer";
 
 export default function ServiceDetailView({ slug }: { slug: string }) {
-  const router = useRouter();
+  const { data: service, isLoading, error } = useGetServiceBySlug(slug);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-600">
+        Failed to load service details.
+      </div>
+    );
+  }
+
+  if (!service) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-600">
+        Service not found.
+      </div>
+    );
+  }
+
+  const sanitizedDescription = sanitizeProductDescription(
+    service.description || ""
+  );
+
   return (
     <div className="pt-40 pb-0 bg-white">
       {/* Header Section */}
       <div className="container mx-auto px-4 md:px-8 mb-12">
-        <button
-          onClick={() => router.push("/services")}
-          className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-blue-600 mb-8 transition-colors"
-        >
-          <ArrowLeft size={16} /> Back to Services
-        </button>
+        <nav className="mb-6">
+          <ol className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-blue-600 transition-colors font-medium"
+              >
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link
+                href="/services"
+                className="hover:text-blue-600 transition-colors font-medium"
+              >
+                Services
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-gray-900 font-medium text-center line-clamp-1">
+              {service.title}
+            </li>
+          </ol>
+        </nav>
 
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-blue-600 font-bold tracking-wide uppercase text-xs mb-4 block">
-            [Our Services]
-          </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-gray-900 leading-[1.1] mb-6">
-            Our Services
+            {service.title}
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            We help you define clear goals and build winning strategies that
-            drive measurable business growth.
+            {service.meta_description ||
+              "We help you define clear goals and build winning strategies that drive measurable business growth."}
           </p>
         </div>
 
         {/* Hero Image */}
-        <div className="rounded-3xl overflow-hidden h-[400px] md:h-[600px] w-full shadow-lg mb-20 relative">
-          <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-            alt="Service Hero"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {service.thumbnail_image && (
+          <div className="rounded-3xl overflow-hidden h-[400px] md:h-[600px] w-full shadow-lg mb-20 relative">
+            <Image
+              src={service.thumbnail_image}
+              alt={
+                service.thumbnail_image_alt_description || service.title || ""
+              }
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              priority
+            />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Main Content Column */}
@@ -46,16 +103,13 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Overview
               </h2>
-              <p className="text-gray-500 leading-relaxed text-lg">
-                At Infin, our Strategy Consulting service is designed to help
-                businesses define their direction, sharpen their focus, and
-                unlock sustainable growth. In today&apos;s fast-changing
-                environment, organizations need more than ambition—they need a
-                clear, data-backed plan that aligns with both short-term goals
-                and long-term vision.
-              </p>
+              <div
+                className="text-gray-500 leading-relaxed text-lg prose prose-gray max-w-none"
+                dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+              />
             </div>
 
+            {/* Keep existing structured sections for consistency */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 What You Can Expect:
@@ -84,7 +138,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                     key={idx}
                     className="flex items-start gap-3 text-gray-600 leading-relaxed"
                   >
-                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></div>
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -102,9 +156,11 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                 actionable—but transformative.&quot;
               </p>
               <div className="flex items-center gap-4">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
                   alt="CEO"
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm"
                 />
                 <div>
@@ -119,16 +175,20 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
             {/* Image Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
               <div className="rounded-2xl overflow-hidden h-64">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Meeting 1"
+                  width={800}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden h-64">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Meeting 2"
+                  width={800}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
