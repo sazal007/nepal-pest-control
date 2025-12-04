@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Mail, Phone, MapPin, ArrowUpRight, Loader2 } from "lucide-react";
 import { useSubmitContactForm } from "@/hooks/use-contact";
+import { xinfinEmail, xinfinPhone } from "@/constants/contact";
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -38,8 +39,8 @@ export const ContactForm = () => {
               className="mb-6"
             />
             <p className="text-gray-500 mb-10 text-sm">
-              We're always happy to hear from you and will get back to you as
-              soon as possible.
+              We&apos;re always happy to hear from you and will get back to you
+              as soon as possible.
             </p>
 
             <div className="space-y-6">
@@ -50,7 +51,7 @@ export const ContactForm = () => {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Email</div>
                   <div className="font-bold text-gray-900 text-base">
-                    contactinfo@gmail.com
+                    {xinfinEmail}
                   </div>
                 </div>
               </div>
@@ -62,7 +63,7 @@ export const ContactForm = () => {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Call</div>
                   <div className="font-bold text-gray-900 text-base">
-                    +99 1234 5478
+                    {xinfinPhone}
                   </div>
                 </div>
               </div>

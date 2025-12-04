@@ -3,6 +3,7 @@ import { ArrowUpRight, Loader2 } from "lucide-react";
 import SocialIcons from "./social-icons";
 import { useState } from "react";
 import { useNewsletter } from "@/hooks/use-newsletter";
+import { xinfinAddress, xinfinEmail, xinfinPhone } from "@/constants/contact";
 
 export const Footer = () => {
   return (
@@ -36,11 +37,11 @@ export const Footer = () => {
                 Visit Us
               </h3>
               <address className="text-gray-600 text-xs sm:text-sm not-italic leading-relaxed">
-                Baluwatar-04, Kathmandu
+                {xinfinAddress}
                 <br />
-                info@infinconsultants.com
+                {xinfinEmail}
                 <br />
-                +977: 9808467274
+                {xinfinPhone}
               </address>
             </div>
           </div>
