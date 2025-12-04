@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowUpRight } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
@@ -32,7 +33,13 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
   return (
     <section className="pt-40 pb-12 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <motion.div
+          className="text-center max-w-4xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <SectionHeading
             tag="[Blog]"
             title="The Infin Growth Insights Blog"
@@ -40,10 +47,14 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
             align="center"
             className="mb-0"
           />
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           onClick={() => {
             if (onBlogClick) onBlogClick(latestBlog);
             router.push(`/blog/${latestBlog.slug}`);
@@ -87,7 +98,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

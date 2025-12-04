@@ -1,28 +1,60 @@
+"use client";
+
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const FooterCTA = () => {
+  const router = useRouter();
   return (
     <section className="py-10 sm:py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <div className="bg-primary-700 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative">
-          <div className="px-6 py-10 sm:p-10 lg:p-16 xl:p-20 lg:w-1/2 text-white relative z-10">
-            {/* <div className="text-xs font-bold uppercase tracking-widest mb-4 opacity-80">
-              [CTA]
-            </div> */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 sm:mb-6 leading-tight">
-              Work with Experts to Grow Faster & Run{" "}
-              <span className="font-serif italic font-normal">Smarter</span>
+        <motion.div
+          className="bg-primary-700 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <motion.div
+            className="px-6 py-10 sm:p-10 lg:p-16 xl:p-20 lg:w-1/2 text-white relative z-10"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+          >
+            <h2 className="text-2xl sm:text-4xl  font-semibold mb-4 sm:mb-6 leading-tight">
+              Contact XInfin <br />
+              Consultants to achieve <br />
+              your financial goals{" "}
+              <span className="font-serif italic font-normal">
+                Fast and Smart.
+              </span>
             </h2>
 
-            <Button
-              variant="white"
-              className="mb-6 sm:mb-8 lg:mb-10 text-primary-900  xs:w-auto"
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             >
-              Get Started
-            </Button>
+              <Button
+                variant="white"
+                className="mb-6 sm:mb-8 lg:mb-10 text-primary-900 xs:w-auto cursor-pointer"
+                onClick={() => router.push("/contact")}
+              >
+                Get Started
+              </Button>
+            </motion.div>
 
-            <div className="space-y-2 sm:space-y-3">
+            <motion.div
+              className="space-y-2 sm:space-y-3"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.7 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            >
               <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
                 <CheckCircle2 size={16} /> Schedule a Free Consultation
               </div>
@@ -33,18 +65,24 @@ export const FooterCTA = () => {
                 <CheckCircle2 size={16} /> Start Building Your Competitive
                 Advantage
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="lg:w-1/2 h-52 sm:h-64 lg:h-auto relative">
+          <motion.div
+            className="lg:w-1/2 h-52 sm:h-64 lg:h-auto relative"
+            initial={{ opacity: 0, scale: 1.02 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img
               src="https://picsum.photos/id/1011/800/800"
               alt="Working together"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-primary-900/20"></div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

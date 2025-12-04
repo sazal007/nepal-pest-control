@@ -1,8 +1,17 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export const Hero = () => {
   return (
-    <section className="relative min-h-[520px] sm:min-h-[600px] lg:h-screen flex items-center pt-20 overflow-hidden bg-gray-900">
+    <section className="relative min-h-[520px] sm:min-h-[600px] lg:h-screen flex items-center pt-20 overflow-hidden bg-gray-900 justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+      >
         <img
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Office Meeting"
@@ -10,21 +19,24 @@ export const Hero = () => {
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/60 to-transparent"></div>
-      </div>
+      </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
-        <div className="max-w-4xl mt-6 sm:mt-10">
-          {/* <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest text-blue-600 uppercase">
-            [About Us]
-          </span> */}
+      <div className="px-4 sm:px-6 md:px-8 text-center z-10 text-white h-full flex flex-col justify-center">
+        <motion.div
+          className="max-w-4xl mt-6 sm:mt-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight break-words">
-            Intelligence That <br />
-            Inspires{" "}
+            Your Partner <br />
+            In{" "}
             <span className="font-serif italic font-normal text-primary-400">
-              Growth
+              Financial Growth
             </span>
           </h1>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

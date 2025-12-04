@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -15,7 +16,13 @@ export const BlogSection = () => {
   return (
     <section id="blog" className="py-16 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-16">
+        <motion.div
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-16"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <SectionHeading
             title="Strategic Insights That Drive Business Success"
             italicWord="Success"
@@ -26,7 +33,7 @@ export const BlogSection = () => {
               View More Blogs
             </Button>
           </Link>
-        </div>
+        </motion.div>
 
         {isLoading ? (
           <div className="flex justify-center items-center py-10">
@@ -41,14 +48,24 @@ export const BlogSection = () => {
             No blogs available yet.
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             {featuredBlogs.map((blog) => (
               <Link
                 key={blog.slug}
                 href={`/blog/${blog.slug}`}
                 className="group cursor-pointer"
               >
-                <div className="rounded-2xl overflow-hidden mb-4 sm:mb-6 h-44 sm:h-48">
+                <motion.div
+                  className="rounded-2xl overflow-hidden mb-4 sm:mb-6 h-44 sm:h-48"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                >
                   <img
                     src={
                       blog.thumbnail_image ??
@@ -57,7 +74,7 @@ export const BlogSection = () => {
                     alt={blog.thumbnail_image_alt_description ?? blog.title}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </motion.div>
                 <h3 className="font-bold text-lg mb-3 leading-snug group-hover:text-primary-700 transition-colors">
                   {blog.title}
                 </h3>
@@ -85,7 +102,7 @@ export const BlogSection = () => {
                 </div>
               </Link>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

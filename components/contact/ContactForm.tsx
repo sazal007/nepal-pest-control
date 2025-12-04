@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Mail, Phone, MapPin, ArrowUpRight, Loader2 } from "lucide-react";
 import { useSubmitContactForm } from "@/hooks/use-contact";
@@ -27,7 +28,13 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <motion.section
+      className="py-16 bg-white"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
           {/* Left Contact Details */}
@@ -84,7 +91,7 @@ export const ContactForm = () => {
 
           {/* Right Form */}
           <div className="lg:col-span-7">
-            <div className="bg-gray-50 rounded-3xl p-8 lg:p-10">
+            <div className="bg-gray-50 rounded-3xl p-8 lg:p-10 shadow-sm shadow-gray-100">
               <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-gray-900 mb-2">
@@ -131,7 +138,7 @@ export const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="w-full py-3.5 bg-primary-600 text-white rounded-full font-bold flex items-center justify-between px-6 hover:bg-primary-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="gap-3 py-3.5 bg-primary-600 text-white rounded-full font-bold flex items-center justify-between px-6 hover:bg-primary-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isPending ? "Sending..." : "Send Message"}
                   <div className="w-7 h-7 rounded-full bg-white text-primary-600 flex items-center justify-center">
@@ -147,6 +154,6 @@ export const ContactForm = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

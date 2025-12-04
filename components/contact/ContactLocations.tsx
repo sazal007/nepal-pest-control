@@ -1,11 +1,19 @@
+"use client";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapPin } from "lucide-react";
 import { xinfinFullAddress } from "@/constants/contact";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export const ContactLocations = () => {
   return (
-    <section className="pt-40 pb-16 bg-gray-50/50">
+    <motion.section
+      className="pt-40 pb-16 bg-gray-50/50"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
           {/* Left Text and Cards */}
@@ -76,6 +84,6 @@ export const ContactLocations = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -1,4 +1,6 @@
 "use client";
+
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { SectionHeading } from "../ui/SectionHeading";
@@ -51,13 +53,26 @@ export const TestimonialsSection = () => {
         "py-12 sm:py-24 md:py-32 px-0"
       )}
     >
-      <SectionHeading
-        title="Proven What Our Clients Say"
-        italicWord="Say"
-        align="center"
-        className="mb-16"
-      />
-      <div className="mx-auto flex max-w-7xl w-full flex-col items-center justify-center overflow-hidden px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <SectionHeading
+          title="Proven What Our Clients Say"
+          italicWord="Say"
+          align="center"
+          className="mb-16"
+        />
+      </motion.div>
+      <motion.div
+        className="mx-auto flex max-w-7xl w-full flex-col items-center justify-center overflow-hidden px-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
           <div className="group flex overflow-hidden p-2 [--gap:1rem] gap-[var(--gap)] flex-row [--duration:45s]">
             <div className="flex shrink-0 justify-around gap-[var(--gap)] animate-[marquee_var(--duration)_linear_infinite] flex-row group-hover:[animation-play-state:paused]">
@@ -74,7 +89,7 @@ export const TestimonialsSection = () => {
           <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block" />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

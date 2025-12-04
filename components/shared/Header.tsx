@@ -18,7 +18,7 @@ export const Header = () => {
   return (
     <header className="absolute md:fixed inset-x-0 top-2 sm:top-4 z-50 flex justify-between items-center px-3 sm:px-4 transition-all duration-300">
       {/* Desktop Header */}
-      <div className="hidden lg:flex max-w-[1240px] mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-16 xl:h-20 items-center justify-between relative">
+      <div className="hidden lg:flex container mx-auto w-full bg-white/95 backdrop-blur-md rounded-full shadow-xs border border-gray-100 px-4 md:px-8 h-16 xl:h-20 items-center justify-between relative">
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
@@ -31,7 +31,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Nav - Absolutely Centered */}
-        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <nav className="hidden lg:flex items-center gap-8">
           {/* Home with Dropdown */}
           <div className="relative group flex items-center gap-1 cursor-pointer h-full py-6">
             <Link

@@ -1,4 +1,6 @@
 "use client";
+
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Pin } from "lucide-react";
@@ -9,15 +11,28 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-16 md:py-24 lg:py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <SectionHeading
-          title="Since 2016, we're a team of all in all experienced consultations, combine for strategic instant."
-          italicWord="experienced"
-          className="max-w-4xl mb-16"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <SectionHeading
+            title="Since 2016, we pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals."
+            italicWord="innovative"
+            className="max-w-4xl mb-16"
+          />
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           {/* Left Text */}
-          <div className="md:col-span-3">
+          <motion.div
+            className="md:col-span-3"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 sm:mb-20 lg:mb-36">
               At Infin, We help businesses navigate complexity unlock to growth
               achieve lasting transformation with a team of experienced
@@ -32,10 +47,16 @@ export const AboutSection = () => {
                 Successful Projects Delivered
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Center Image */}
-          <div className="md:col-span-6">
+          <motion.div
+            className="md:col-span-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="rounded-2xl overflow-hidden h-64 sm:h-80 md:h-[400px] w-full">
               <img
                 src="https://picsum.photos/id/1001/800/800"
@@ -43,21 +64,33 @@ export const AboutSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Floating Card */}
-          <div className="md:col-span-3 flex flex-col mt-10 md:mt-16 lg:mt-24 h-full">
+          <motion.div
+            className="md:col-span-3 flex flex-col mt-10 md:mt-16 lg:mt-24 h-full"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <div className="bg-gray-50 p-5 sm:p-6 rounded-2xl mb-6 sm:mb-8">
               <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-4">
                 <Pin size={16} fill="currentColor" />
               </div>
               <ul className="space-y-3 text-sm font-medium text-gray-800">
-                <li className="flex items-center gap-2">Strategic Planning</li>
                 <li className="flex items-center gap-2">
-                  Operational Excellence
+                  Financial Strategy & Planning
                 </li>
-                <li className="flex items-center gap-2">Market Expansion</li>
-                <li className="flex items-center gap-2">Risk Management</li>
+                <li className="flex items-center gap-2">
+                  Process Automation Solutions
+                </li>
+                <li className="flex items-center gap-2">
+                  Real-Time Data Analytics
+                </li>
+                <li className="flex items-center gap-2">
+                  Virtual CFO Services
+                </li>
               </ul>
             </div>
 
@@ -67,7 +100,7 @@ export const AboutSection = () => {
             >
               Book a Free Call
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

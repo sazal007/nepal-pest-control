@@ -38,7 +38,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <Header />
-          <NextTopLoader color="#1e2fcc" height={3} />
+          <NextTopLoader color="#1e2fcc" height={3} showSpinner={false} />
           <main>{children}</main>
           <Toaster
             position="bottom-right"

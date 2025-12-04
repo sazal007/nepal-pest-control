@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Plus, Minus } from "lucide-react";
@@ -7,33 +8,33 @@ import { Plus, Minus } from "lucide-react";
 const principles = [
   {
     id: "01",
-    title: "Client-Centered Thinking",
+    title: "Innovation Through Technology",
     content:
-      "We put our clients first—understanding their goals, challenges, and customers to deliver tailored solutions that create real value.",
+      "We leverage cutting-edge automation and analytics tools to transform traditional financial processes into streamlined, efficient systems that save time and reduce errors.",
   },
   {
     id: "02",
-    title: "Creative with Purpose",
+    title: "Partnership & Collaboration",
     content:
-      "Creativity isn't just about looks; it's about problem-solving. We design strategies that are innovative yet grounded in results.",
+      "We believe in building lasting relationships with our clients and partners worldwide. Your success is our success, and we work alongside you every step of the way.",
   },
   {
     id: "03",
-    title: "Data-Driven Decisions",
+    title: "Data-Driven Insights",
     content:
-      "We rely on data, not guesswork. Our strategies are backed by deep analysis to ensure accuracy and impact.",
+      "Every decision should be backed by solid data. We transform complex financial information into clear, actionable insights through advanced analytics and visualization.",
   },
   {
     id: "04",
-    title: "Collaboration Over Ego",
+    title: "Quality & Accuracy First",
     content:
-      "We believe the best results come from working together. We foster an environment of open communication and teamwork.",
+      "Financial precision is non-negotiable. We maintain the highest standards in every service we deliver, ensuring your books, reports, and models are always accurate and reliable.",
   },
   {
     id: "05",
-    title: "Always Evolving",
+    title: "Global Reach, Personal Touch",
     content:
-      "The business landscape changes fast, and so do we. We stay ahead of trends to keep your business competitive.",
+      "While we serve clients globally, we never lose sight of individual needs. We customize our solutions to align with your specific business goals and industry requirements.",
   },
 ];
 
@@ -44,27 +45,37 @@ export const PrinciplesSection = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <SectionHeading
               tag="[Our Principles]"
-              title="The Core Principles that Guide Us"
-              italicWord="Guide Us"
+              title="The Core Values that Drive Excellence"
+              italicWord="Excellence"
               className="mb-12"
             />
             <p className="text-gray-500 mb-12">
-              At Infin, our mission is to empower businesses with strategic
-              solutions that drive growth, efficiency, and transformation.
+              At XInfin, our principles reflect our commitment to delivering
+              exceptional financial solutions through innovation, collaboration,
+              and unwavering attention to quality.
             </p>
 
             <div className="space-y-4">
               {principles.map((p) => (
-                <div
+                <motion.div
                   key={p.id}
                   className={`bg-white rounded-xl overflow-hidden transition-all duration-300 ${
                     activeId === p.id
                       ? "shadow-md border-primary-100"
                       : "border border-transparent"
                   }`}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <button
                     onClick={() => setActiveId(activeId === p.id ? "" : p.id)}
@@ -76,7 +87,9 @@ export const PrinciplesSection = () => {
                       </span>
                       <span
                         className={`text-lg font-semibold ${
-                          activeId === p.id ? "text-primary-700" : "text-gray-900"
+                          activeId === p.id
+                            ? "text-primary-700"
+                            : "text-gray-900"
                         }`}
                       >
                         {p.title}
@@ -96,29 +109,38 @@ export const PrinciplesSection = () => {
                       )}
                     </div>
                   </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  <motion.div
+                    initial={false}
+                    animate={
                       activeId === p.id
-                        ? "max-h-40 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+                        ? { height: "auto", opacity: 1 }
+                        : { height: 0, opacity: 0 }
+                    }
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="overflow-hidden"
                   >
                     <div className="px-6 pb-6 pl-16 text-gray-500 text-sm leading-relaxed">
                       {p.content}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="h-full min-h-[600px] rounded-3xl overflow-hidden relative shadow-2xl lg:mt-0">
+          <motion.div
+            className="h-full min-h-[600px] rounded-3xl overflow-hidden relative shadow-2xl lg:mt-0"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <img
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-              alt="Principles"
+              alt="XInfin Core Principles"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

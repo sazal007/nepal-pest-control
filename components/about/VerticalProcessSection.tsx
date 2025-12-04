@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Search, Puzzle, Rocket } from "lucide-react";
+import { MessageSquare, FileSearch, Cog } from "lucide-react";
 
 export const VerticalProcessSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,21 +35,21 @@ export const VerticalProcessSection = () => {
   const steps = [
     {
       id: "01",
-      icon: Search,
-      title: "Discover & Diagnose",
-      desc: "We start by understanding your needs and evaluating your outdoor space through a free consultation — in-person or virtual.",
+      icon: MessageSquare,
+      title: "Understand & Assess",
+      desc: "We begin by understanding your business goals, financial challenges, and current processes through in-depth consultation to identify opportunities for improvement.",
     },
     {
       id: "02",
-      icon: Puzzle,
-      title: "Strategize & Plan",
-      desc: "We develop tailored, data-driven strategies designed to solve challenges, align with your goals and create a roadmap for success.",
+      icon: FileSearch,
+      title: "Design & Customize",
+      desc: "We develop tailored solutions—from automation workflows to financial models—that align perfectly with your business objectives and industry requirements.",
     },
     {
       id: "03",
-      icon: Rocket,
-      title: "Execute & Optimize",
-      desc: "We work alongside your team to implement solutions, monitor progress and refine the strategy for maximum impact.",
+      icon: Cog,
+      title: "Implement & Support",
+      desc: "We seamlessly integrate our solutions into your operations, provide comprehensive training, and offer ongoing support to ensure sustained success and continuous optimization.",
     },
   ];
 
@@ -60,12 +60,12 @@ export const VerticalProcessSection = () => {
           <div className="lg:sticky lg:top-32 h-fit mb-12 lg:mb-0">
             <SectionHeading
               tag="[Our Process]"
-              title="Step-by-Step to Business Growth"
-              italicWord="Business Growth"
+              title="Your Path to Financial Clarity"
+              italicWord="Financial Clarity"
             />
             <p className="text-gray-500 mb-8 max-w-md">
-              How We Turn Strategy Into Measurable Success through our refined
-              three-step methodology.
+              How we transform your financial operations into streamlined,
+              data-driven systems through our proven three-step methodology.
             </p>
           </div>
 

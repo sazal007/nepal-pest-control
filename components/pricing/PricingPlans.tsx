@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
 import type { Pricing } from "@/types/pricing";
@@ -11,7 +12,13 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
   return (
     <section className="pt-40 pb-16 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-8">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <SectionHeading
             // tag="[Pricing]"
             title="Smart Solutions Transparent Pricing"
@@ -19,9 +26,15 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
             align="center"
             className="mb-8"
           />
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -80,7 +93,7 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
               </ul>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

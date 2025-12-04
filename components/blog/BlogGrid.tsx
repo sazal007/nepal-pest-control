@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowUpRight } from "lucide-react";
@@ -11,15 +12,27 @@ export const BlogGrid = ({ blogs }: BlogGridProps) => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        
-        <SectionHeading
-          tag="[Blogs]"
-          title="Popular Blogs"
-          italicWord="Blogs"
-          className="mb-12"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <SectionHeading
+            tag="[Blogs]"
+            title="Popular Blogs"
+            italicWord="Blogs"
+            className="mb-12"
+          />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 row-gap-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 row-gap-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {blogs.map((blog) => (
             <Link 
               key={blog.slug} 
@@ -50,7 +63,7 @@ export const BlogGrid = ({ blogs }: BlogGridProps) => {
               </div>
             </Link>
           ))}
-        </div>
+        </motion.div>
         
       </div>
     </section>

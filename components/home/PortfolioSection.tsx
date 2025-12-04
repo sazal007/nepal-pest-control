@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useRef } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -61,7 +62,13 @@ export const PortfolioSection = () => {
   return (
     <section className="py-16 sm:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-12">
+        <motion.div
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-12"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <SectionHeading
             title="How We Helped Clients Grow Smarter"
             italicWord="Smarter"
@@ -81,17 +88,23 @@ export const PortfolioSection = () => {
               <ArrowRight size={18} />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Scroll Container */}
-        <div
+        <motion.div
           ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto no-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {cases.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="min-w-[300px] md:min-w-[350px] h-[450px] relative rounded-2xl overflow-hidden group cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
               <img
                 src={item.image}
@@ -110,9 +123,9 @@ export const PortfolioSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

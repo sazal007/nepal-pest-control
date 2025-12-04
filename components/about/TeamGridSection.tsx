@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
 
@@ -28,19 +31,34 @@ export const TeamGridSection = () => {
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <SectionHeading
-          tag="[Our Team]"
-          title="Meet the team behind Infin"
-          italicWord="Infin"
-          align="center"
-          className="mb-16"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <SectionHeading
+            tag="[Our Team]"
+            title="Meet the team behind Infin"
+            italicWord="Infin"
+            align="center"
+            className="mb-16"
+          />
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {team.map((member, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
               <Image
                 src={member.image}
@@ -59,9 +77,9 @@ export const TeamGridSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
