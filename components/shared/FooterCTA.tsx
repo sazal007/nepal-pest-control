@@ -17,7 +17,7 @@ export const FooterCTA = () => {
 
             <Button
               variant="white"
-              className="mb-6 sm:mb-8 lg:mb-10 text-primary-900 w-full xs:w-auto"
+              className="mb-6 sm:mb-8 lg:mb-10 text-primary-900  xs:w-auto"
             >
               Get Started
             </Button>
