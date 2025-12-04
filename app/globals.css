@@ -37,6 +37,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--secondary-100);
+  --color-muted-foreground: var(--secondary-600);
 
   /* Primary Colors */
   --color-primary-50: var(--primary-50);
@@ -81,6 +83,19 @@
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+
+  /* Max Width */
+  --max-width-container: 1280px;
+  --size-container: 1280px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--gap, 0.5rem)));
+  }
 }
 
 body {

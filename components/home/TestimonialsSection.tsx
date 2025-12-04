@@ -1,66 +1,78 @@
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Quote } from 'lucide-react';
+"use client";
+import { cn } from "@/lib/utils";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const testimonials = [
   {
-    quote: "From the first meeting, they were invested in our success. Their structured process and sharp strategy helped us turn a struggling department into a high-performing unit.",
-    author: "Arlene McCoy",
-    role: "Janitor",
-    avatar: "https://picsum.photos/id/32/100/100"
+    author: {
+      name: "Arlene McCoy",
+      handle: "CEO, TechCorp",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "From the first meeting, they were invested in our success. Their structured process and sharp strategy helped us turn a struggling department into a high-performing unit.",
   },
   {
-    quote: "They provided clarity where we had confusion, and structure where we had chaos. It's been one of the best investments we've made as a company.",
-    author: "Jane Cooper",
-    role: "Mechanic",
-    avatar: "https://picsum.photos/id/64/100/100"
+    author: {
+      name: "Jane Cooper",
+      handle: "Director, InnovateLabs",
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "They provided clarity where we had confusion, and structure where we had chaos. It's been one of the best investments we've made as a company.",
   },
   {
-    quote: "One of the things that impressed us most was their transparency and communication. We were kept in the loop at every stage of the project.",
-    author: "Annette Black",
-    role: "Construction worker",
-    avatar: "https://picsum.photos/id/65/100/100"
+    author: {
+      name: "Annette Black",
+      handle: "VP Operations, GrowthCo",
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "One of the things that impressed us most was their transparency and communication. We were kept in the loop at every stage of the project.",
   },
   {
-    quote: "Their strategic insight and hands-on approach helped us streamline operations and unlock new growth opportunities. We saw measurable results.",
-    author: "Cameron Williamson",
-    role: "Stocking associate",
-    avatar: "https://picsum.photos/id/91/100/100"
-  }
+    author: {
+      name: "Cameron Williamson",
+      handle: "Founder, ScaleUp",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "Their strategic insight and hands-on approach helped us streamline operations and unlock new growth opportunities. We saw measurable results.",
+  },
 ];
 
 export const TestimonialsSection = () => {
   return (
-    <section id="reviews" className="py-16 sm:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <SectionHeading 
-          title="Proven What Our Clients Say"
-          italicWord="Say"
-          align="center"
-          className="mb-16"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {testimonials.map((t, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6 sm:p-7 lg:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary-100"
-            >
-              <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-6">
-                <Quote size={18} fill="currentColor" />
-              </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 sm:mb-8 min-h-[80px] sm:min-h-[100px]">
-                "{t.quote}"
-              </p>
-              
-              <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-                <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover" />
-                <div>
-                  <h4 className="text-sm font-bold text-gray-900">{t.author}</h4>
-                  <p className="text-xs text-gray-500">{t.role}</p>
-                </div>
-              </div>
+    <section
+      id="reviews"
+      className={cn(
+        "bg-background text-foreground",
+        "py-12 sm:py-24 md:py-32 px-0"
+      )}
+    >
+      <SectionHeading
+        title="Proven What Our Clients Say"
+        italicWord="Say"
+        align="center"
+        className="mb-16"
+      />
+      <div className="mx-auto flex max-w-7xl w-full flex-col items-center justify-center overflow-hidden px-4">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <div className="group flex overflow-hidden p-2 [--gap:1rem] gap-[var(--gap)] flex-row [--duration:45s]">
+            <div className="flex shrink-0 justify-around gap-[var(--gap)] animate-[marquee_var(--duration)_linear_infinite] flex-row group-hover:[animation-play-state:paused]">
+              {/* First set */}
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard key={`set1-${i}`} {...testimonial} />
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {testimonials.map((testimonial, i) => (
+                <TestimonialCard key={`set2-${i}`} {...testimonial} />
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block" />
         </div>
       </div>
     </section>
