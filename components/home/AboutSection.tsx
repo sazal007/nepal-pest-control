@@ -1,8 +1,11 @@
+"use client";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Pin } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const AboutSection = () => {
+  const router = useRouter();
   return (
     <section id="about" className="py-16 md:py-24 lg:py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -58,7 +61,12 @@ export const AboutSection = () => {
               </ul>
             </div>
 
-            <Button className="w-full justify-center">Book a Free Call</Button>
+            <Button
+              className="w-full justify-center cursor-pointer"
+              onClick={() => router.push("/contact")}
+            >
+              Book a Free Call
+            </Button>
           </div>
         </div>
       </div>

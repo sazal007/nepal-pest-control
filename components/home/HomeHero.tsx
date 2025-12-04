@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
+import { useRouter } from "next/navigation";
 
 export const HomeHero = () => {
+  const router = useRouter();
   return (
     <section className="relative min-h-[520px] sm:min-h-[580px] lg:h-screen flex items-center overflow-hidden bg-gray-900">
       {/* Background Image */}
@@ -28,7 +32,8 @@ export const HomeHero = () => {
           </p>
           <Button
             variant="white"
-            className="text-primary-900 font-bold  xs:w-auto justify-center"
+            className="text-primary-900 font-bold  xs:w-auto justify-center cursor-pointer"
+            onClick={() => router.push("/contact")}
           >
             Book a Free Call
           </Button>
