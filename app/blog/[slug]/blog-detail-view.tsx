@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useGetBlogBySlug } from "@/hooks/use-blogs";
 import { Loader } from "@/components/ui/loader";
+import { sanitizeContent } from "@/lib/html-sanitizer";
 
 interface BlogDetailViewProps {
   slug: string;
@@ -75,7 +76,9 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
         )}
 
         <div className="max-w-4xl mx-auto space-y-6 prose prose-lg prose-gray">
-          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: sanitizeContent(blog.content) }}
+          />
         </div>
       </div>
     </div>
