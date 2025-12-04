@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const FeatureList = ({ items }: { items: string[] }) => (
   <ul className="space-y-4 mb-8">
@@ -19,6 +20,7 @@ const FeatureList = ({ items }: { items: string[] }) => (
 );
 
 export const MissionVisionSection = () => {
+  const router = useRouter();
   return (
     <section className="bg-white pb-16 sm:pb-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -47,7 +49,9 @@ export const MissionVisionSection = () => {
                 "Build lasting partnerships founded on trust and measurable results",
               ]}
             />
-            <Button variant="blue">Get Started</Button>
+            <Button variant="blue" onClick={() => router.push("/contact")}>
+              Get Started
+            </Button>
           </motion.div>
           <motion.div
             className="h-[500px] rounded-3xl overflow-hidden shadow-2xl"
@@ -103,7 +107,9 @@ export const MissionVisionSection = () => {
                 "Create a world where every business has access to CFO-level insights",
               ]}
             />
-            <Button variant="blue">Get Started</Button>
+            <Button variant="blue" onClick={() => router.push("/contact")}>
+              Get Started
+            </Button>
           </motion.div>
         </div>
       </div>

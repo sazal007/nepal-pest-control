@@ -81,9 +81,14 @@ export const ContactForm = () => {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Visit Us</div>
-                  <div className="font-bold text-gray-900 text-base">
+                  <a
+                    href="https://maps.app.goo.gl/ZtEoZromnuUbkgFB7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-bold text-gray-900 text-base hover:text-primary-600 transition-colors cursor-pointer"
+                  >
                     See on Google Map
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

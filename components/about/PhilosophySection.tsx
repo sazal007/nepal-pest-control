@@ -3,8 +3,10 @@
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { Target, LineChart, Cog } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const PhilosophySection = () => {
+  const router = useRouter();
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8">
@@ -19,11 +21,17 @@ export const PhilosophySection = () => {
           <div className="max-w-4xl">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1]">
               We Believe In Results With <br /> Smart{" "}
-              <span className="font-serif italic font-normal">Financial Solutions.</span>
+              <span className="font-serif italic font-normal">
+                Financial Solutions.
+              </span>
             </h2>
           </div>
           <div className="flex-shrink-0 mb-1">
-            <Button variant="blue" className="px-8 py-3 text-sm rounded-full">
+            <Button
+              variant="blue"
+              className="px-8 py-3 text-sm rounded-full"
+              onClick={() => router.push("/contact")}
+            >
               Get Started
             </Button>
           </div>
@@ -41,14 +49,16 @@ export const PhilosophySection = () => {
           >
             <div className="max-w-3xl pr-4">
               <p className="text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed font-medium">
-                At XInfin, we believe that financial clarity drives business success. 
-                We combine cutting-edge technology with expert financial guidance to 
-                streamline your operations and fuel growth.
+                At XInfin, we believe that financial clarity drives business
+                success. We combine cutting-edge technology with expert
+                financial guidance to streamline your operations and fuel
+                growth.
               </p>
               <p className="text-sm md:text-base text-gray-500 mb-10 leading-relaxed">
-                Our approach blends automation, data-driven insights, and personalized 
-                financial strategy to transform complex challenges into actionable 
-                solutions that deliver measurable, lasting results for your business.
+                Our approach blends automation, data-driven insights, and
+                personalized financial strategy to transform complex challenges
+                into actionable solutions that deliver measurable, lasting
+                results for your business.
               </p>
 
               {/* Cards Grid */}
