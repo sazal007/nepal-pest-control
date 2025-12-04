@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { ContactFormData } from "../types/contact";
 import { toast } from "sonner";
-import { createContact } from "../services/contaxt.service";
+import { createContact } from "../services/contact.service";
 export const useSubmitContactForm = () => {
   return useMutation({
     mutationFn: (data: ContactFormData) => {

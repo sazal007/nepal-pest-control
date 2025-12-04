@@ -6,7 +6,7 @@ import { Footer } from "@/components/shared/Footer";
 import { QueryProvider } from "@/providers/query-provider";
 import { FooterCTA } from "@/components/shared/FooterCTA";
 import { Toaster } from "sonner";
-
+import NextTopLoader from "nextjs-toploader";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -38,6 +38,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <Header />
+          <NextTopLoader color="#1e2fcc" height={3} />
           <main>{children}</main>
           <Toaster
             position="bottom-right"

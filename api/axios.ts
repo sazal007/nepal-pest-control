@@ -9,23 +9,75 @@ export const apiClient = axios.create({
   },
 });
 
-// Optional: add a response interceptor for centralized error handling
+// Define the API error response structure
+interface ApiErrorResponse {
+  error?: {
+    message?: string;
+    params?: Record<string, string>;
+  };
+  message?: string;
+
+  [key: string]: unknown;
+}
+
+// Define the normalized error structure
+export interface NormalizedError {
+  message: string;
+  status?: number;
+  fieldErrors?: Record<string, string>;
+  isAxiosError: boolean;
+}
+
 apiClient.interceptors.response.use(
   (response) => response,
-  (error: AxiosError<{ message?: string }>) => {
-    // You can customize this as needed (logging, toast, etc.)
-    // Normalize the error before throwing so callers can rely on a consistent shape
-    const normalizedError = {
-      message:
-        error.response?.data?.message ||
-        error.message ||
-        "Something went wrong",
+  (error: AxiosError<ApiErrorResponse>) => {
+    const responseData = error.response?.data;
+    const fieldErrors: Record<string, string> = {};
+    let message = "Something went wrong";
+
+    // Extract field-specific errors
+    if (responseData) {
+      // Handle nested error.params structure
+      if (responseData.error?.params) {
+        Object.assign(fieldErrors, responseData.error.params);
+      }
+
+      // Handle direct field errors (like { email: "Error message" })
+      Object.keys(responseData).forEach((key) => {
+        if (key !== "error" && key !== "message") {
+          const value = responseData[key];
+          if (typeof value === "string") {
+            fieldErrors[key] = value;
+          } else if (Array.isArray(value) && value.length > 0) {
+            fieldErrors[key] = value[0];
+          }
+        }
+      });
+
+      // Determine the main message
+      if (responseData.error?.message) {
+        message = responseData.error.message;
+      } else if (responseData.message) {
+        message = responseData.message;
+      } else if (Object.keys(fieldErrors).length > 0) {
+        // Use the first field error as the main message
+        message = Object.values(fieldErrors)[0];
+      }
+    }
+
+    // Fallback to error message if no response data
+    if (message === "Something went wrong" && error.message) {
+      message = error.message;
+    }
+
+    const normalizedError: NormalizedError = {
+      message,
       status: error.response?.status,
-      data: error.response?.data,
+      fieldErrors:
+        Object.keys(fieldErrors).length > 0 ? fieldErrors : undefined,
       isAxiosError: true,
     };
 
-    // Re-throw so calling code (e.g., React Query) can handle it
     return Promise.reject(normalizedError);
   }
 );
