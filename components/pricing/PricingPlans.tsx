@@ -73,7 +73,7 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
                     className="flex items-start gap-3 text-sm"
                   >
                     <div
-                      className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${
                         plan.is_popular
                           ? "bg-white text-primary-700"
                           : "bg-primary-50 text-primary-600"

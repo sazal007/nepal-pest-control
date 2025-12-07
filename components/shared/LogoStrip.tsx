@@ -51,7 +51,7 @@ export const LogoStrip = () => {
             Trusted by
           </p>
           <div className="marquee-container overflow-hidden w-full relative max-w-7xl mx-auto select-none">
-            <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+            <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-white to-transparent" />
             <div
               className="marquee-wrapper will-change-transform"
               style={{ animationDuration: "45s" }}
@@ -97,7 +97,7 @@ export const LogoStrip = () => {
                 ))}
               </div>
             </div>
-            <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+            <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-linear-to-l from-white to-transparent" />
           </div>
         </div>
       </section>

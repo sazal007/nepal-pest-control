@@ -166,7 +166,7 @@ export const ServicesSection = () => {
               className="w-full h-full object-cover transition-opacity duration-500"
             />
             {/* Gradient Overlay for subtle text contrast if needed */}
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-gray-900/20 to-transparent"></div>
           </motion.div>
         </div>
       </div>

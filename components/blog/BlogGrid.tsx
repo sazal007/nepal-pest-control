@@ -34,29 +34,32 @@ export const BlogGrid = ({ blogs }: BlogGridProps) => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           {blogs.map((blog) => (
-            <Link 
-              key={blog.slug} 
+            <Link
+              key={blog.slug}
               href={`/blog/${blog.slug}`}
               className="group cursor-pointer flex flex-col h-full"
             >
               <div className="rounded-2xl overflow-hidden mb-6 h-64 shadow-sm">
                 <img
-                  src={blog.thumbnail_image ?? "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"}
-                  alt={blog.title} 
+                  src={
+                    blog.thumbnail_image ??
+                    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                  }
+                  alt={blog.title}
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              
+
               <div className="text-sm text-gray-500 mb-3">
                 {new Date(blog.created_at).toLocaleDateString()}
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 mb-6 leading-snug group-hover:text-primary-700 transition-colors flex-grow">
+
+              <h3 className="text-xl font-bold text-gray-900 mb-6 leading-snug group-hover:text-primary-700 transition-colors grow">
                 {blog.title}
               </h3>
-              
+
               <div className="flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:gap-3 transition-all mt-auto">
-                Read More 
+                Read More
                 <div className="w-6 h-6 rounded-full bg-primary-600 text-white flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
                   <ArrowUpRight size={12} />
                 </div>
@@ -64,7 +67,6 @@ export const BlogGrid = ({ blogs }: BlogGridProps) => {
             </Link>
           ))}
         </motion.div>
-        
       </div>
     </section>
   );

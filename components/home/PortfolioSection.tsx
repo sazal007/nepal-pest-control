@@ -111,7 +111,7 @@ export const PortfolioSection = () => {
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 via-transparent to-transparent opacity-60"></div>
 
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white p-4 rounded-xl shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">

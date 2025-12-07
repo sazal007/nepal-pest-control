@@ -21,7 +21,7 @@ export const HomeHero = () => {
           className="w-full h-full object-cover opacity-50"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-gray-900/80 via-gray-900/50 to-transparent"></div>
       </motion.div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">

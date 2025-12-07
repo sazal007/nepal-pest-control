@@ -78,7 +78,7 @@ export const TeamGridSection = () => {
           {members.map((member, idx) => (
             <motion.div
               key={member.id ?? idx}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
+              className="group relative rounded-2xl overflow-hidden aspect-4/5 cursor-pointer"
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
@@ -89,7 +89,7 @@ export const TeamGridSection = () => {
                 height={500}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl flex items-center justify-between text-white">

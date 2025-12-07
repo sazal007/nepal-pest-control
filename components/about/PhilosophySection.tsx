@@ -26,7 +26,7 @@ export const PhilosophySection = () => {
               </span>
             </h2>
           </div>
-          <div className="flex-shrink-0 mb-1">
+          <div className="shrink-0 mb-1">
             <Button
               variant="blue"
               className="px-8 py-3 text-sm rounded-full"
@@ -111,14 +111,14 @@ export const PhilosophySection = () => {
           >
             {/* Image - Constrained width */}
             <div className="relative w-full max-w-[380px] mt-2 lg:mt-0">
-              <div className="aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl relative">
+              <div className="aspect-4/5 w-full rounded-3xl overflow-hidden shadow-2xl relative">
                 <img
                   src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Financial Expert"
                   className="w-full h-full object-cover"
                 />
                 {/* Subtle Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900/10 to-transparent"></div>
               </div>
             </div>
           </motion.div>
