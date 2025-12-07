@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
+import { useGetTeam } from "@/hooks/use-team";
+import type { TEAM } from "@/types/team-member";
 
 const team = [
   {
@@ -27,7 +29,27 @@ const team = [
   },
 ];
 
+type TeamMember = {
+  id?: number;
+  name: string;
+  role: string;
+  image: string;
+};
+
 export const TeamGridSection = () => {
+  const { data: teamData } = useGetTeam();
+
+  // Use API data if available and has items, otherwise fallback to static data
+  const members: TeamMember[] =
+    teamData && teamData.length > 0
+      ? teamData.map((member: TEAM) => ({
+          id: member.id,
+          name: member.name,
+          role: member.role,
+          image: member.photo,
+        }))
+      : team;
+
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -53,9 +75,9 @@ export const TeamGridSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          {team.map((member, idx) => (
+          {members.map((member, idx) => (
             <motion.div
-              key={idx}
+              key={member.id ?? idx}
               className="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer"
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
