@@ -8,6 +8,7 @@ import { FooterCTA } from "@/components/shared/FooterCTA";
 import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
 import { WhatsApp } from "@/components/whatsapp/whatsapp";
+import PopupManager from "@/components/popup/popup-manager";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,6 +52,7 @@ export default function RootLayout({
           <FooterCTA />
           <Footer />
           <WhatsApp />
+          <PopupManager />
         </QueryProvider>
       </body>
     </html>
