@@ -7,6 +7,8 @@ import { QueryProvider } from "@/providers/query-provider";
 import { FooterCTA } from "@/components/shared/FooterCTA";
 import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
+import { WhatsApp } from "@/components/whatsapp/whatsapp";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -48,6 +50,7 @@ export default function RootLayout({
           />
           <FooterCTA />
           <Footer />
+          <WhatsApp />
         </QueryProvider>
       </body>
     </html>
