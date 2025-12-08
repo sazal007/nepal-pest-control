@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import { useGetTeam } from "@/hooks/use-team";
 import type { TEAM } from "@/types/team-member";
+import { useRouter } from "next/navigation";
 
 const team = [
   {
@@ -30,7 +31,7 @@ const team = [
 ];
 
 type TeamMember = {
-  id?: number;
+  id?: string;
   name: string;
   role: string;
   image: string;
@@ -38,12 +39,12 @@ type TeamMember = {
 
 export const TeamGridSection = () => {
   const { data: teamData } = useGetTeam();
-
+  const router = useRouter();
   // Use API data if available and has items, otherwise fallback to static data
   const members: TeamMember[] =
     teamData && teamData.length > 0
       ? teamData.map((member: TEAM) => ({
-          id: member.id,
+          id: member.id?.toString(),
           name: member.name,
           role: member.role,
           image: member.photo,
@@ -81,6 +82,9 @@ export const TeamGridSection = () => {
               className="group relative rounded-2xl overflow-hidden aspect-4/5 cursor-pointer"
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              onClick={() =>
+                member.id && router.push(`/team-member/${member.id}`)
+              }
             >
               <Image
                 src={member.image}

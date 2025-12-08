@@ -1,132 +1,130 @@
 "use client";
 import { motion } from "motion/react";
-import { ArrowUpRight, Loader2 } from "lucide-react";
-import SocialIcons from "./social-icons";
+import { Loader2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+
+import SocialIcons from "./social-icons";
 import { useNewsletter } from "@/hooks/use-newsletter";
 import { xinfinAddress, xinfinEmail, xinfinPhone } from "@/constants/contact";
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-gray-50 text-gray-900 pt-12 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden font-sans border-t border-gray-200">
-      <div className="max-w-7xl mx-auto">
-        {/* Big Title Section - Made more compact (reduced margins) */}
-        <motion.div
-          className="w-full flex justify-center mb-10 sm:mb-12 relative"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          {/* Subtle glow effect behind the text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-primary-500/5 blur-[80px] rounded-full pointer-events-none"></div>
-
-          <h1 className="text-[15vw] xs:text-[15vw] sm:text-[13.5vw] leading-[0.85] sm:leading-[0.8] font-serif font-medium tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-gray-900 via-gray-400 to-gray-50 select-none text-center">
-            INFIN CONSULTANTS
-          </h1>
-        </motion.div>
-
-        {/* Main Content Grid - Reduced gap and bottom margin */}
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 mb-12 sm:mb-16"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          {/* Column 1: Info & Address */}
+    <footer className="w-full bg-primary-950 text-slate-200 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <motion.div
-            className="lg:col-span-4 flex flex-col space-y-5 sm:space-y-6 pr-0 lg:pr-12"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="space-y-6"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm">
-              We&apos;re committed to delivering exceptional care with
-              compassion, trust, and integrity. From your first visit to
-              long-term support, your health and comfort are always our
-              priority.
+            <div className="flex items-center space-x-3">
+              <div className="relative bg-white/70 backdrop:backdrop-blur-lg p-4 rounded-lg">
+                <Image
+                  src="/infinconsultants_logo.svg"
+                  alt="Infin Consultants"
+                  width={170}
+                  height={50}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
+            <p className="text-slate-300/80 text-sm leading-relaxed">
+              With many years of experience and expertise, we have been
+              recognized through the awards achieved, and we customize solutions
+              to meet the specific needs of small businesses.
             </p>
 
-            <hr className="border-gray-200 w-full" />
-
-            <div className="flex flex-col space-y-1.5 sm:space-y-2">
-              <h3 className="text-gray-900 font-semibold text-base">
-                Visit Us
-              </h3>
-              <address className="text-gray-600 text-xs sm:text-sm not-italic leading-relaxed">
-                {xinfinAddress}
-                <br />
-                {xinfinEmail}
-                <br />
-                {xinfinPhone}
-              </address>
-            </div>
+            <SocialIcons />
           </motion.div>
 
-          {/* Column 2: Main Pages Links */}
-          <motion.div
-            className="lg:col-span-4"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
-          >
-            <h3 className="text-gray-900 font-semibold text-lg sm:text-xl mb-4 sm:mb-6">
-              Main Pages
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              Our Services
             </h3>
-            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2.5 sm:gap-y-3">
-              <div className="flex flex-col space-y-3">
-                <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="/services">Service</FooterLink>
-                <FooterLink href="/about">About Us</FooterLink>
-                <FooterLink href="/blog">Blog</FooterLink>
-                <FooterLink href="/pricing">Pricing</FooterLink>
+            <ul className="space-y-3 text-sm text-slate-300/80">
+              <FooterLink href="#">Process Automation</FooterLink>
+              <FooterLink href="#">Reporting Requirements</FooterLink>
+              <FooterLink href="#">Virtual CFO Services</FooterLink>
+              <FooterLink href="#">Financial Modeling</FooterLink>
+              <FooterLink href="#">Accounting & Bookkeeping</FooterLink>
+              <FooterLink href="#">Dashboard Preparation</FooterLink>
+              <FooterLink href="#">Data Analysis and Reporting</FooterLink>
+              <FooterLink href="#">Exel and Google Sheets Automation</FooterLink>
+              <FooterLink href="#">Budgeting and Financial</FooterLink>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
+              Contact Info
+            </h3>
+            <div className="space-y-6 text-sm">
+              <div className="space-y-1">
+                <p className="text-white font-semibold uppercase text-xs tracking-wider">
+                  Address:
+                </p>
+                <p className="text-slate-300/80 leading-relaxed max-w-[220px]">
+                  {xinfinAddress}
+                </p>
               </div>
-              <div className="flex flex-col space-y-3">
-                <FooterLink href="/contact">Contact Us</FooterLink>
-                <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
-                <FooterLink href="/terms-and-conditions">
-                  Terms and Conditions
-                </FooterLink>
+              <div className="space-y-1">
+                <p className="text-white font-semibold uppercase text-xs tracking-wider">
+                  Email:
+                </p>
+                <a
+                  href={`mailto:${xinfinEmail}`}
+                  className="text-slate-300/80 hover:text-white transition-colors"
+                >
+                  {xinfinEmail}
+                </a>
+              </div>
+              <div className="space-y-1">
+                <p className="text-white font-semibold uppercase text-xs tracking-wider">
+                  Phone:
+                </p>
+                <a
+                  href={`tel:${xinfinPhone}`}
+                  className="text-slate-300/80 hover:text-white transition-colors"
+                >
+                  {xinfinPhone}
+                </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Column 3: Newsletter */}
-          <motion.div
-            className="lg:col-span-4 pl-0 lg:pl-8"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-          >
-            <h3 className="text-gray-900 font-semibold text-lg sm:text-xl mb-3 sm:mb-4">
+          <div>
+            <h3 className="text-white text-xl font-semibold mb-6">
               Newsletter
             </h3>
-            <p className="text-gray-600 text-xs sm:text-sm mb-5 sm:mb-6 max-w-xs">
-              Let&apos;s transform your vision into results and discuss your
-              vision with us.
+            <p className="text-slate-300/80 text-sm mb-6 leading-relaxed">
+              Join our subscribers list to get latest news and special offers.
             </p>
-
             <NewsletterForm />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* Bottom Bar */}
-        <motion.div
-          className="border-t border-gray-200 pt-5 sm:pt-6 flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-0"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <p className="text-gray-500 text-xs">
-            © Copywrite {new Date().getFullYear()} All rights reserved.
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-400">
+          <p className="text-center md:text-left">
+            Copyright {new Date().getFullYear()}. All rights reserved by{" "}
+            <span className="text-white font-medium">XInfin</span>
           </p>
-          <SocialIcons />
-        </motion.div>
+          <div className="flex space-x-6">
+            <a href="#" className="hover:text-white transition-colors">
+              Terms
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Support
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -136,12 +134,14 @@ const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   href,
   children,
 }) => (
-  <a
-    href={href}
-    className="text-gray-500 hover:text-black transition-colors text-sm w-fit"
-  >
-    {children}
-  </a>
+  <li>
+    <a
+      href={href}
+      className="block hover:text-white transition-colors duration-200"
+    >
+      {children}
+    </a>
+  </li>
 );
 
 const NewsletterForm = () => {
@@ -160,14 +160,11 @@ const NewsletterForm = () => {
   };
 
   return (
-    <form
-      className="flex flex-col space-y-2.5 sm:space-y-3"
-      onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit} className="flex w-full">
       <input
         type="email"
-        placeholder="Enter your email address"
-        className="w-full bg-white text-gray-900 rounded-full py-2.5 sm:py-3 px-4 sm:px-6 text-xs sm:text-sm outline-none border border-gray-200 focus:ring-2 focus:ring-primary-500 transition-all placeholder:text-gray-500"
+        placeholder="Enter your email"
+        className="w-full bg-white text-slate-900 px-4 py-3 text-sm outline-none placeholder:text-slate-500 rounded-l-sm focus:bg-white transition-colors"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -175,18 +172,9 @@ const NewsletterForm = () => {
       <button
         type="submit"
         disabled={isPending}
-        className="group w-fit bg-accent hover:bg-primary-600 text-white rounded-full py-2 pr-2 pl-5 sm:pl-6 flex items-center justify-center xs:justify-start space-x-2.5 sm:space-x-3 transition-all duration-300 shadow-md shadow-primary-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="bg-primary-600 hover:bg-primary-900 text-white px-6 py-3 text-sm font-medium transition-colors duration-200 rounded-r-sm disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap min-w-[110px] flex justify-center items-center"
       >
-        <span className="font-medium text-xs sm:text-sm">
-          {isPending ? "Subscribing..." : "Subscribe"}
-        </span>
-        <div className="bg-white rounded-full p-1.5 sm:p-2 group-hover:rotate-45 transition-transform duration-300">
-          {isPending ? (
-            <Loader2 size={16} className="text-accent animate-spin" />
-          ) : (
-            <ArrowUpRight size={16} className="text-accent" />
-          )}
-        </div>
+        {isPending ? <Loader2 className="h-5 w-5 animate-spin" /> : "Subscribe"}
       </button>
     </form>
   );

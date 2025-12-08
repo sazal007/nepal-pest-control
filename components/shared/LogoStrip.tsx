@@ -32,8 +32,8 @@ export const LogoStrip = () => {
         }
 
         .logo-item:hover {
-          filter: grayscale(0) !important;
           opacity: 1 !important;
+          transform: scale(1.05);
         }
 
         @keyframes marqueeScroll {
@@ -63,7 +63,7 @@ export const LogoStrip = () => {
                     href={client.url || "#"}
                     target={client.url ? "_blank" : undefined}
                     rel={client.url ? "noopener noreferrer" : undefined}
-                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-80 transition-all duration-300 shrink-0 flex items-center"
                   >
                     <Image
                       src={client.logo}
@@ -83,7 +83,7 @@ export const LogoStrip = () => {
                     href={client.url || "#"}
                     target={client.url ? "_blank" : undefined}
                     rel={client.url ? "noopener noreferrer" : undefined}
-                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-60 grayscale transition-all duration-300 shrink-0 flex items-center"
+                    className="logo-item mx-4 md:mx-6 lg:mx-8 opacity-80 transition-all duration-300 shrink-0 flex items-center"
                   >
                     <Image
                       src={client.logo}

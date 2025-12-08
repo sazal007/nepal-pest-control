@@ -7,3 +7,11 @@ export const useGetTeam = () => {
     queryFn: () => teamService.getTeamMembers(),
   });
 };
+
+export const useGetTeamMember = (id?: string) => {
+  return useQuery({
+    queryKey: ["team-member", id],
+    enabled: Boolean(id),
+    queryFn: () => teamService.getTeamMember(id as string),
+  });
+};

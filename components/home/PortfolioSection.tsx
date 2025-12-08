@@ -7,27 +7,27 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const cases = [
   {
-    title: "Revive & Rise",
+    title: "Quality Services",
     description:
-      "We step in to assess what's holding you back, reshape your strategy, and breathe new life into your business operations.",
+      "Choose us for unparalleled quality services. We pride ourselves on delivering solutions that not only meet but exceed your expectations. Our commitment to excellence ensures that your projects are executed with the highest standards, providing you with the quality results you deserve.",
     image: "https://picsum.photos/id/1033/400/600",
   },
   {
-    title: "Scaling Made Simple",
+    title: "Dynamic Team",
     description:
-      "Streamline your growth journey with proven frameworks and strategic guidance that make scaling effortless and sustainable.",
+      "Opt for our services and gain access to a dynamic team of experts. Our professionals bring a diverse range of skills and experiences to the table. With a forward-thinking approach, our team is dedicated to staying at the forefront of industry trends, guaranteeing you innovative solutions that make a difference.",
     image: "https://picsum.photos/id/101/400/600",
   },
   {
-    title: "Fast-Track Growth",
+    title: "Competitive Price",
     description:
-      "Accelerate your business expansion with data-driven insights and actionable strategies designed for rapid results.",
+      "Select us for competitive and economical pricing. We understand the importance of value for money. Our pricing strategy is designed to offer you cost-effective solutions without compromising on the quality of our services. Enjoy affordability without sacrificing excellence.",
     image: "https://picsum.photos/id/1031/400/600",
   },
   {
-    title: "Future-Proofing",
+    title: "Innovation and Technology",
     description:
-      "Prepare your organization for tomorrow's challenges with forward-thinking solutions and adaptive business models.",
+      "Optimize your business with our commitment to innovation and technology. We embrace the latest advancements to deliver services that are at the forefront of industry standards. Our dedication to leveraging cutting-edge technologies ensures your business benefits from the most innovative solutions available.",
     image: "https://picsum.photos/id/1029/400/600",
   },
 ];

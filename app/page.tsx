@@ -7,7 +7,6 @@ import { PartnershipSection } from "@/components/home/PartnershipSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ScheduleConsultation } from "@/components/home/ScheduleConsultation";
-import { FAQSection } from "@/components/shared/FAQSection";
 import { BlogSection } from "@/components/home/BlogSection";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       <PortfolioSection />
       <TestimonialsSection />
       <ScheduleConsultation />
-      <FAQSection />
       <BlogSection />
     </>
   );

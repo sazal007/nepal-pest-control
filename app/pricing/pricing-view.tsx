@@ -1,7 +1,6 @@
 "use client";
 import { PricingComparison } from "@/components/pricing/PricingComparison";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
-import { FAQSection } from "@/components/shared/FAQSection";
 import { Loader } from "@/components/ui/loader";
 import { usePricing } from "@/hooks/use-pricing";
 
@@ -32,7 +31,6 @@ export default function PricingView() {
     <>
       <PricingPlans plans={sortedPricing} />
       <PricingComparison />
-      <FAQSection />
     </>
   );
 }

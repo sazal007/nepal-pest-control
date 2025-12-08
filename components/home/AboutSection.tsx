@@ -18,7 +18,7 @@ export const AboutSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="Since 2016, we pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals."
+            title="Since 2019, we pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals."
             italicWord="innovative"
             className="max-w-4xl mb-16"
           />

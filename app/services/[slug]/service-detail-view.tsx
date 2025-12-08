@@ -71,7 +71,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
         </nav>
 
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-gray-900 leading-[1.1] mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6">
             {service.title}
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
@@ -82,15 +82,15 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
 
         {/* Hero Image */}
         {service.thumbnail_image && (
-          <div className="rounded-3xl overflow-hidden h-[400px] md:h-[600px] w-full shadow-lg mb-20 relative">
+          <div className="relative h-24 w-24 md:h-28 md:w-28 mx-auto mb-16 overflow-hidden">
             <Image
               src={service.thumbnail_image}
               alt={
                 service.thumbnail_image_alt_description || service.title || ""
               }
               fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-contain"
+              sizes="112px"
               priority
             />
           </div>
