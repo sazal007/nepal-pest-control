@@ -153,7 +153,7 @@ export const ServicesSection = () => {
 
           {/* Right Image */}
           <motion.div
-            className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative h-72 sm:h-80 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
             key={services[activeService].image}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}

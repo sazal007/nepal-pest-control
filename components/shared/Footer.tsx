@@ -21,7 +21,7 @@ export const Footer = () => {
           {/* Subtle glow effect behind the text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-primary-500/5 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-[17vw] xs:text-[15vw] sm:text-[13.5vw] leading-[0.85] sm:leading-[0.8] font-serif font-medium tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-gray-900 via-gray-400 to-gray-50 select-none text-center">
+          <h1 className="text-[15vw] xs:text-[15vw] sm:text-[13.5vw] leading-[0.85] sm:leading-[0.8] font-serif font-medium tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-gray-900 via-gray-400 to-gray-50 select-none text-center">
             INFIN CONSULTANTS
           </h1>
         </motion.div>
