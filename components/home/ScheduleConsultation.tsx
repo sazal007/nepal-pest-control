@@ -3,8 +3,10 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Calendar } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-export const ComplexChallenges = () => {
+export const ScheduleConsultation = () => {
+  const router = useRouter();
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
@@ -79,7 +81,11 @@ export const ComplexChallenges = () => {
                   </div>
                 </div>
 
-                <Button variant="white" className="w-full justify-center">
+                <Button
+                  variant="white"
+                  className="w-full justify-center"
+                  onClick={() => router.push("/appointment")}
+                >
                   Get Appointment
                 </Button>
               </div>

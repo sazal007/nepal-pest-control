@@ -6,7 +6,7 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { PartnershipSection } from "@/components/home/PartnershipSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
-import { ComplexChallenges } from "@/components/home/ComplexChallenges";
+import { ScheduleConsultation } from "@/components/home/ScheduleConsultation";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { BlogSection } from "@/components/home/BlogSection";
 
@@ -21,7 +21,7 @@ export default function Home() {
       <PartnershipSection />
       <PortfolioSection />
       <TestimonialsSection />
-      <ComplexChallenges />
+      <ScheduleConsultation />
       <FAQSection />
       <BlogSection />
     </>
