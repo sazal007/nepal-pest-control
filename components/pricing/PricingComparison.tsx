@@ -1,77 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
 import { PricingPackages } from "./pricing-pakage";
 
 export const PricingComparison = () => {
-  // We use state to store calculated styles for each card index
-  const [cardStyles, setCardStyles] = useState<
-    Record<number, React.CSSProperties>
-  >({});
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const newStyles: Record<number, React.CSSProperties> = {};
-      const cardElements = cardsRef.current;
-      const topOffset = 112; // 28 * 4 (top-28)
-
-      cardElements.forEach((card, index) => {
-        if (!card) return;
-
-        const rect = card.getBoundingClientRect();
-
-        // If a card is active (sticky at top) and the next card is scrolling up over it
-        if (index < cardElements.length - 1) {
-          const nextCard = cardElements[index + 1];
-          if (nextCard) {
-            const nextRect = nextCard.getBoundingClientRect();
-            const nextDistanceFromTop = nextRect.top - topOffset;
-
-            // When the next card gets close to overlapping (e.g. within 500px), start fading the current one
-            // We want the fade to happen as the next card slides UP over this one.
-            // This card is stuck at 0 (distanceFromTop is ~0). The next card is moving from positive to 0.
-
-            // If this card is sticky (rect.top <= topOffset + small buffer)
-            if (rect.top <= topOffset + 5) {
-              // Calculate how much the next card covers this one
-              // Range: 0 (next card is far down) to 1 (next card is on top)
-              // Let's say we start fading when next card is 300px away
-              const distanceThreshold = 400;
-              const progress = Math.max(
-                0,
-                Math.min(1, 1 - nextDistanceFromTop / distanceThreshold)
-              );
-
-              if (progress > 0) {
-                newStyles[index] = {
-                  transform: `scale(${1 - progress * 0.05})`, // Slight shrink
-                  opacity: 1 - progress * 0.6, // Fade out to 0.4
-                  filter: `blur(${progress * 4}px)`, // Blur up to 4px
-                };
-              }
-            }
-          }
-        }
-      });
-
-      setCardStyles(newStyles);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section className="py-16 bg-slate-50">
-      <div
-        className="container mx-auto px-4 md:px-6 lg:px-8"
-        ref={containerRef}
-      >
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeading
           // tag="[Services]"
           title="Specialized Engagement Models"
@@ -80,22 +15,15 @@ export const PricingComparison = () => {
           className="mb-12"
         />
 
-        <div className="space-y-8 md:space-y-10 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
           {PricingPackages.map((pkg, idx) => (
             <div
               key={idx}
-              ref={(el) => {
-                if (cardsRef.current) cardsRef.current[idx] = el;
-              }}
-              className="lg:sticky lg:top-28 bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-7 md:px-8 md:py-9 border border-slate-200/80 shadow-md transition-all duration-150 ease-linear origin-top"
-              style={{
-                zIndex: idx + 10,
-                ...cardStyles[idx],
-              }}
+              className="bg-white rounded-2xl px-6 py-7 md:px-8 md:py-9 border border-slate-200/80 shadow-md h-full"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                {/* Header Info */}
-                <div className="lg:col-span-5 flex flex-col">
+              <div className="grid grid-cols-1 gap-8 items-start">
+                {/* Header Info (top) */}
+                <div className="flex flex-col">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
                     {pkg.category}
                   </div>
@@ -116,8 +44,8 @@ export const PricingComparison = () => {
                   </div>
                 </div>
 
-                {/* Inclusions List */}
-                <div className="lg:col-span-7 pt-3 lg:pt-1">
+                {/* Inclusions List (below) */}
+                <div className="pt-1">
                   <h4 className="font-semibold text-slate-400 mb-3 text-xs uppercase tracking-[0.18em]">
                     Inclusions
                   </h4>
@@ -137,8 +65,6 @@ export const PricingComparison = () => {
               </div>
             </div>
           ))}
-          {/* Spacer to ensure the last card has scroll space if needed */}
-          <div className="h-20"></div>
         </div>
       </div>
     </section>
