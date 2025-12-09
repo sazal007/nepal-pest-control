@@ -15,15 +15,17 @@ import { useRouter } from "next/navigation";
 const services = [
   {
     icon: Scale,
-    title: "Business Formation & Regulatory",
+    slug: "budgeting-and-financial-services",
+    title: "Budgeting and Financial Services",
     description:
-      "Company incorporation, entity-setup, licensing & regulatory compliance handled professionally.",
+      "Elevate your financial management with our Budgeting and Financial Services. We understand the crucial role that effective budgeting plays in organizational success.",
     image:
       "https://images.unsplash.com/photo-1709715357520-5e1047a2b691?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     icon: Calculator,
-    title: "Accounting & Bookkeeping",
+    slug: "financial-modelling",
+    title: "Financial Modelling",
     description:
       "Complete bookkeeping, transaction tracking, payroll, and accurate financial records management.",
     image:
@@ -31,33 +33,37 @@ const services = [
   },
   {
     icon: TrendingUp,
-    title: "Virtual CFO & Advisory",
+    slug: "virtual-cfo-services",
+    title: "Virtual CFO Services",
     description:
-      "Budgeting, forecasting, cash-flow management and strategic financial planning for growth.",
+      "Our Virtual CFO services provide small and mid-sized businesses with the financial expertise they need to make informed decisions and grow their business without the cost of a full-time CFO.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: BarChart,
-    title: "Financial Modelling & Data Analytics",
+    slug: "data-analysis-reporting",
+    title: "Data Analysis & Reporting",
     description:
-      "Custom financial models, data-driven reports, and dashboard insights for informed decisions.",
+      "Our data analysis service helps you identify trends and opportunities in your financial data, enabling you to make strategic business decisions.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: FileCheck,
-    title: "Compliance & Statutory Reporting",
+    slug: "dashboard-preparation-services",
+    title: "Dashboard Preparation Services",
     description:
-      "Tax compliance, regulatory filings, and statutory reports handled with precision and care.",
+      "Our dashboard preparation services provide customized dashboards that offer real-time visibility into your company's financial performance.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Cpu,
-    title: "Process Automation",
+    slug: "process-automation-services",
+    title: "Process Automation Services",
     description:
-      "Automate repetitive financial and administrative tasks to save time, reduce errors and improve efficiency.",
+      "Our process automation services help businesses automate their repetitive tasks, reducing manual errors and improving efficiency.",
     image:
       "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -93,7 +99,7 @@ export const ProcessSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.08 }}
-              onClick={() => router.push("/services")}
+              onClick={() => router.push(`/services/${service.slug}`)}
             >
               <img
                 src={service.image}

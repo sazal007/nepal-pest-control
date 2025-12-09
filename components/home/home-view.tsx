@@ -4,7 +4,6 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { AboutSection } from "@/components/home/AboutSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
-import { ScheduleConsultation } from "@/components/home/ScheduleConsultation";
 import { BlogSection } from "@/components/home/BlogSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { WhoAreWe } from "@/components/home/WhoAreWe";
