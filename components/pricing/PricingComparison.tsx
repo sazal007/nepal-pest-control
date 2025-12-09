@@ -24,7 +24,7 @@ export const PricingComparison = () => {
               <div className="grid grid-cols-1 gap-8 items-start">
                 {/* Header Info (top) */}
                 <div className="flex flex-col">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
                     {pkg.category}
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
@@ -38,8 +38,9 @@ export const PricingComparison = () => {
                     <div className="text-[11px] text-slate-400 mb-1 uppercase tracking-[0.16em] font-semibold">
                       Pricing Structure
                     </div>
-                    <div className="text-base md:text-xl font-semibold text-primary-700">
-                      {pkg.price}
+                    <div className="text-base md:text-2xl font-semibold text-primary-600 flex gap-2 flex-col">
+                      {pkg.price1}
+                      <span className="">{pkg.price2}</span>
                     </div>
                   </div>
                 </div>

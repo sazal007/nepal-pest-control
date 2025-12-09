@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ArrowUpRight } from "lucide-react";
 import { useGetServices } from "@/hooks/use-services";
 
 const stripHtml = (html: string) => html.replace(/<[^>]*>/g, "");
@@ -37,14 +35,8 @@ export const ServiceExplorer = () => {
           </Link>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0, margin: "-150px 0px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          {services.map((service) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => {
             const plainDescription = truncateText(
               stripHtml(service.description || ""),
               140
@@ -56,40 +48,37 @@ export const ServiceExplorer = () => {
                 href={`/services/${service.slug}`}
                 className="block"
               >
-                <div className="bg-gray-50 p-10 rounded-3xl hover:bg-white hover:shadow-xl hover:border-primary-100 border border-transparent transition-all duration-300 group cursor-pointer">
-                  <div className="w-12 h-12 bg-white text-primary-600 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:bg-primary-600 group-hover:text-white transition-colors overflow-hidden">
-                    {service.thumbnail_image && (
-                      <Image
-                        src={service.thumbnail_image}
-                        alt={
-                          service.thumbnail_image_alt_description ||
-                          service.title
-                        }
-                        width={24}
-                        height={24}
-                        className="w-6 h-6 object-contain transition-all duration-300 group-hover:invert group-hover:brightness-0"
-                      />
-                    )}
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <motion.div
+                  className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: idx * 0.08,
+                  }}
+                >
+                  {service.thumbnail_image && (
+                    <img
+                      src={service.thumbnail_image}
+                      alt={
+                        service.thumbnail_image_alt_description || service.title
+                      }
+                      className="w-22 h-22 mx-auto mb-6"
+                    />
+                  )}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-8 leading-relaxed">
+                  <p className="text-gray-500 mb-2 leading-relaxed text-sm">
                     {plainDescription}
                   </p>
-
-                  <div className="flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                    Read More
-                    <div className="w-5 h-5 rounded-full bg-primary-600 text-white flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
-                      <ArrowUpRight size={10} />
-                    </div>
-                  </div>
-                </div>
+                </motion.div>
               </Link>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

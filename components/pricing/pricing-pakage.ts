@@ -4,8 +4,8 @@ export const PricingPackages = [
     model: "Project Basis / Ongoing Support",
     tagline:
       "See Beyond the Numbers: Transforming Data into Insightful Visuals.",
-    price:
-      "$1000 for the first time set up | $ 300 per month for ongoing support",
+    price1: "$1000 for the first time set up",
+    price2: "$300/month for ongoing support",
     inclusions: [
       "Create interactive and customized dashboards for real-time data monitoring",
       "Design dashboards tailored to specific business needs and KPIs",
@@ -23,7 +23,8 @@ export const PricingPackages = [
     model: "Monthly Engagement / Project Basis",
     tagline:
       "Where Numbers Meet Strategy: Unlocking Financial Potential with Precision",
-    price: "$1500 per project | $200 per month for ongoing support",
+    price1: "$1500/project",
+    price2: "$200/month for ongoing support",
     inclusions: [
       "Create financial models to project future revenues, expenses, and cash flows",
       "Develop budgeting models to assist in planning and resource allocation",
@@ -41,7 +42,7 @@ export const PricingPackages = [
     model: "Monthly Engagement / Project Basis",
     tagline:
       "Strategic Finance, Virtual Expertise: Redefine your Success with Our CFO Services.",
-    price: "$1500 per month",
+    price1: "$1500/month",
     inclusions: [
       "Prepare annual budgets and financial forecasts",
       "Optimize cash flow through effective management",
@@ -59,7 +60,8 @@ export const PricingPackages = [
     model: "Monthly Engagement / Project Basis",
     tagline:
       "From Complexity to Clarity: Elevate Your Reporting Standards for Informed Excellence.",
-    price: "$1000 per project | $200 per month for ongoing support",
+    price1: "$1000 per project",
+    price2: "$200/month for ongoing support",
     inclusions: [
       "Generate and analyze financial statements",
       "Guarantee the accuracy of financial data for informed decision-making",
