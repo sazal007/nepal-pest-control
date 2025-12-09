@@ -1,8 +1,14 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Xinfin Consulting",
+  description: "Privacy Policy for Xinfin Consulting",
+};
 
 export default function PrivacyPolicy() {
   return (
-    <div className="pt-40 pb-20 bg-white">
+    <div className="pt-40 pb-20 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <SectionHeading
           tag="[Legal]"
@@ -19,7 +25,7 @@ export default function PrivacyPolicy() {
             1. Introduction
           </h3>
           <p className="mb-8">
-            Welcome to Infin Consulting. We respect your privacy and are
+            Welcome to Xinfin Consulting. We respect your privacy and are
             committed to protecting your personal data. This privacy policy will
             inform you as to how we look after your personal data when you visit
             our website (regardless of where you visit it from) and tell you

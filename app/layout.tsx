@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Infin - Strategic Consulting",
+  title: "Xinfin - Strategic Consulting",
   description:
     "Expert strategic consulting to drive sustainable growth, operational innovation, and lasting business transformation",
 };

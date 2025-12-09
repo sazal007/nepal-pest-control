@@ -1,5 +1,11 @@
 import { AppointmentForm } from "@/components/appointment/appointment-form";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Appointment - Xinfin Consulting",
+  description: "Appointment for Xinfin Consulting",
+};
 
 export default function AppointmentPage() {
   return (

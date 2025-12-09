@@ -30,15 +30,15 @@ export const PricingComparison = () => {
                   <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
                     {pkg.model}
                   </h3>
-                  <p className="text-slate-500 mb-6 text-sm leading-relaxed">
+                  {/* <p className="text-slate-500 mb-6 text-sm leading-relaxed">
                     &quot;{pkg.tagline}&quot;
-                  </p>
+                  </p> */}
 
                   <div className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-100">
                     <div className="text-[11px] text-slate-400 mb-1 uppercase tracking-[0.16em] font-semibold">
                       Pricing Structure
                     </div>
-                    <div className="text-base md:text-lg font-semibold text-primary-700">
+                    <div className="text-base md:text-xl font-semibold text-primary-700">
                       {pkg.price}
                     </div>
                   </div>

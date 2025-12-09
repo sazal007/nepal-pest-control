@@ -103,7 +103,7 @@ export const ServicesSection = () => {
                   <span
                     className={`text-lg font-medium ${
                       activeService === idx
-                        ? "text-primary-700"
+                        ? "text-primary-600"
                         : "text-gray-400 group-hover:text-gray-600"
                     }`}
                   >
@@ -140,7 +140,7 @@ export const ServicesSection = () => {
                           key={i}
                           className="flex items-center gap-3 text-sm font-medium text-gray-800"
                         >
-                          <Check size={16} className="text-primary-600" />
+                          <Check size={16} className="text-primary-700" />
                           {point}
                         </li>
                       ))}

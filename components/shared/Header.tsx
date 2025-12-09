@@ -17,8 +17,8 @@ export const Header = () => {
   const services = servicesData?.results ?? [];
 
   const linkClass = (path: string) =>
-    `text-sm font-medium transition-colors hover:text-primary-700 ${
-      pathname === path ? "text-primary-700 font-semibold" : "text-gray-600"
+    `text-sm font-medium transition-colors hover:text-primary-800 ${
+      pathname === path ? "text-primary-600 font-semibold" : "text-gray-600"
     }`;
 
   // Close dropdown when clicking outside

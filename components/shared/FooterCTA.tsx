@@ -11,7 +11,7 @@ export const FooterCTA = () => {
     <section className="py-10 sm:py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
-          className="bg-primary-700 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative"
+          className="bg-primary-600 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col lg:flex-row relative"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -41,7 +41,7 @@ export const FooterCTA = () => {
             >
               <Button
                 variant="white"
-                className="mb-6 sm:mb-8 lg:mb-10 text-primary-900 xs:w-auto cursor-pointer"
+                className="mb-6 sm:mb-8 lg:mb-10 text-primary-600 xs:w-auto cursor-pointer"
                 onClick={() => router.push("/contact")}
               >
                 Get Started

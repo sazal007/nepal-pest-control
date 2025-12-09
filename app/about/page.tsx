@@ -6,7 +6,12 @@ import { MissionVisionSection } from "@/components/about/MissionVisionSection";
 import { PrinciplesSection } from "@/components/about/PrinciplesSection";
 import { VerticalProcessSection } from "@/components/about/VerticalProcessSection";
 import { TeamGridSection } from "@/components/about/TeamGridSection";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About - Xinfin Consulting",
+  description: "About Xinfin Consulting",
+};
 export default function AboutPage() {
   return (
     <>

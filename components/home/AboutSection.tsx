@@ -34,7 +34,7 @@ export const AboutSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 sm:mb-20 lg:mb-36">
-              At Infin, We help businesses navigate complexity unlock to growth
+              At Xinfin, We help businesses navigate complexity unlock to growth
               achieve lasting transformation with a team of experienced
               consultations, We can combine for strategic instant.
             </p>

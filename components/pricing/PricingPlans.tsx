@@ -3,12 +3,14 @@ import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
 import type { Pricing } from "@/types/pricing";
+import { useRouter } from "next/navigation";
 
 interface PricingPlansProps {
   plans: Pricing[];
 }
 
 export const PricingPlans = ({ plans }: PricingPlansProps) => {
+  const router = useRouter();
   return (
     <section className="pt-40 pb-16 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8">
@@ -49,7 +51,7 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
                   <div
                     className={`relative backdrop-blur-lg h-full flex flex-col rounded-3xl ${
                       isMiddle
-                        ? "bg-primary-700 text-white"
+                        ? "bg-primary-600 text-white"
                         : "border border-gray-100 bg-white/50 text-[#231D4F]"
                     }`}
                   >
@@ -109,6 +111,14 @@ export const PricingPlans = ({ plans }: PricingPlansProps) => {
                           </li>
                         ))}
                       </ul>
+                      <button
+                        className={`w-full bg-primary-600 px-4 py-2 rounded-full ${
+                          isMiddle ? "text-black bg-white " : "text-white"
+                        }`}
+                        onClick={() => router.push("/contact")}
+                      >
+                        Get Started
+                      </button>
                     </div>
                   </div>
                 </motion.div>

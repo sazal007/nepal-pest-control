@@ -97,7 +97,7 @@ export default function TeamMemberPage() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={16} className="text-blue-600" />
-                <span>Infin Consultants</span>
+                <span>Xinfin Consultants</span>
               </div>
             </div>
 

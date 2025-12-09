@@ -62,8 +62,8 @@ export const TeamGridSection = () => {
         >
           <SectionHeading
             tag="[Our Team]"
-            title="Meet the team behind Infin"
-            italicWord="Infin"
+            title="Meet the team behind Xinfin"
+            italicWord="Xinfin"
             align="center"
             className="mb-16"
           />

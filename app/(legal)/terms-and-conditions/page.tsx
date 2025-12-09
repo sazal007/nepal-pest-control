@@ -1,8 +1,14 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions - Xinfin Consulting",
+  description: "Terms & Conditions for Xinfin Consulting",
+};
 
 export default function TermsAndConditions() {
   return (
-    <div className="pt-40 pb-20 bg-white">
+    <div className="pt-40 pb-20 bg-gray-50/50">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <SectionHeading
           tag="[Legal]"
@@ -21,7 +27,7 @@ export default function TermsAndConditions() {
           <p className="mb-8">
             These Terms and Conditions constitute a legally binding agreement
             made between you, whether personally or on behalf of an entity
-            (&quot;you&quot;) and Infin Consulting (&quot;we,&quot;
+            (&quot;you&quot;) and Xinfin Consulting (&quot;we,&quot;
             &quot;us&quot; or &quot;our&quot;), concerning your access to and
             use of our website as well as any other media form, media channel,
             mobile website or mobile application related, linked, or otherwise
@@ -80,7 +86,7 @@ export default function TermsAndConditions() {
           </h3>
           <p className="mb-8">
             These Terms shall be governed by and defined following the laws of
-            United States. Infin Consulting and yourself irrevocably consent
+            United States. Xinfin Consulting and yourself irrevocably consent
             that the courts of United States shall have exclusive jurisdiction
             to resolve any dispute which may arise in connection with these
             terms.
