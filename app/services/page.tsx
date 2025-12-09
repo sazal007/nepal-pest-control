@@ -6,8 +6,8 @@ export default function ServicesPage() {
   return (
     <>
       <ServiceHero />
-      <StatsStrip />
       <ServiceExplorer />
+      <StatsStrip />
     </>
   );
 }

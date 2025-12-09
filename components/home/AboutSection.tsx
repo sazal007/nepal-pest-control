@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export const AboutSection = () => {
   const router = useRouter();
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-28 bg-white">
+    <section id="about" className="py-16 md:py-24 lg:py-28 bg-gray-50/50">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,8 +18,8 @@ export const AboutSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="Since 2019, we pride ourselves on delivering innovative solutions that help our clients streamline their operations and achieve their financial goals."
-            italicWord="innovative"
+            title="Since 2019, we’ve delivered finance and automation solutions that streamline operations and boost financial performance."
+            italicWord="finance and automation"
             className="max-w-4xl mb-16"
           />
         </motion.div>

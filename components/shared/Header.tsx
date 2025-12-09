@@ -1,19 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useGetServices } from "@/hooks/use-services";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const { data: servicesData } = useGetServices();
+  const services = servicesData?.results ?? [];
 
   const linkClass = (path: string) =>
     `text-sm font-medium transition-colors hover:text-primary-700 ${
       pathname === path ? "text-primary-700 font-semibold" : "text-gray-600"
     }`;
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        servicesRef.current &&
+        !servicesRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    if (isServicesOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isServicesOpen]);
 
   return (
     <header className="absolute md:fixed inset-x-0 top-2 sm:top-4 z-50 flex justify-between items-center px-3 sm:px-4 transition-all duration-300">
@@ -46,9 +72,65 @@ export const Header = () => {
             About Us
           </Link>
 
-          <Link href="/services" className={linkClass("/services")}>
-            Services
-          </Link>
+          {/* Services with Dropdown */}
+          <div
+            ref={servicesRef}
+            className="relative group flex items-center gap-1 cursor-pointer h-full py-6"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            <Link
+              href="/services"
+              className={`flex items-center gap-1 ${linkClass("/services")} ${
+                pathname.startsWith("/services")
+                  ? "text-primary-700 font-semibold"
+                  : ""
+              }`}
+            >
+              Services
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${
+                  isServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </Link>
+
+            <AnimatePresence>
+              {isServicesOpen && services.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50"
+                >
+                  <div className="py-2">
+                    {services.map((service, index) => (
+                      <motion.div
+                        key={service.id}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: index * 0.03,
+                          ease: "easeOut",
+                        }}
+                      >
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="block px-6 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors duration-200"
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <Link href="/blog" className={linkClass("/blog")}>
             Blog
@@ -118,13 +200,58 @@ export const Header = () => {
           >
             About Us
           </Link>
-          <Link
-            href="/services"
-            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
-            onClick={() => setIsOpen(false)}
-          >
-            Services
-          </Link>
+          {/* Mobile Services with Dropdown */}
+          <div className="border-b border-gray-50">
+            <button
+              className="w-full text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 flex items-center justify-between"
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+            >
+              Services
+              <ChevronDown
+                size={20}
+                className={`transition-transform duration-300 ${
+                  isServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            <AnimatePresence>
+              {isServicesOpen && services.length > 0 && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="pl-4 pb-2 space-y-1">
+                    {services.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={`/services/${service.slug}`}
+                        className="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors duration-200"
+                        onClick={() => {
+                          setIsServicesOpen(false);
+                          setIsOpen(false);
+                        }}
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                    <Link
+                      href="/services"
+                      className="block py-2 text-sm font-semibold text-primary-700 hover:text-primary-800 transition-colors duration-200"
+                      onClick={() => {
+                        setIsServicesOpen(false);
+                        setIsOpen(false);
+                      }}
+                    >
+                      View All Services
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <Link
             href="/blog"
             className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"

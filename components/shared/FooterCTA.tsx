@@ -69,17 +69,13 @@ export const FooterCTA = () => {
           </motion.div>
 
           <motion.div
-            className="lg:w-1/2 h-52 sm:h-64 lg:h-auto relative"
+            className="lg:w-1/2 h-52 sm:h-64 relative"
             initial={{ opacity: 0, scale: 1.02 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img
-              src="https://picsum.photos/id/1011/800/800"
-              alt="Working together"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <img src="/accounts.png" />
             <div className="absolute inset-0 bg-primary-900/20"></div>
           </motion.div>
         </motion.div>

@@ -14,7 +14,7 @@ export const BlogSection = () => {
   const featuredBlogs = blogs.slice(0, 4);
 
   return (
-    <section id="blog" className="py-16 sm:py-20 bg-white">
+    <section id="blog" className="py-16 sm:py-20 bg-gray-50/50">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-16"

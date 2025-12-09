@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export const HomeHero = () => {
   const router = useRouter();
   return (
-    <section className="relative min-h-[520px] sm:min-h-[580px] lg:h-screen flex items-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-[600px] lg:h-screen flex items-center pt-20 overflow-hidden bg-gray-900">
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -16,48 +16,64 @@ export const HomeHero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Business Meeting"
-          className="w-full h-full object-cover opacity-50"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          alt="Corporate Finance"
+          className="w-full h-full object-cover opacity-30"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-gray-900/80 via-gray-900/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-transparent"></div>
       </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
         <motion.div
-          className="max-w-3xl mt-16 sm:mt-10"
+          className="max-w-4xl mt-10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* Credibility Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-blue-100 uppercase bg-white/10 backdrop-blur-md border border-white/20 rounded-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+          >
+            <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+            6+ Years Experience • 250+ Clients Worldwide
+          </motion.div>
+
           <motion.h1
-            className="text-3xl md:text-6xl font-semibold leading-tight md:leading-[1.05] mb-4 sm:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
-            Providing Financial <br />
-            Expertise & Intelligence for{" "}
-            <span className="font-serif italic font-normal">
-              Growing companies.
+            Professional Accounting, <br />
+            Compliance & <span className="text-blue-400">
+              Business Setup
+            </span>{" "}
+            <br />
+            <span className="text-2xl md:text-3xl lg:text-4xl font-serif italic font-normal text-white">
+              — All in One Place.
             </span>
           </motion.h1>
+
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-gray-200 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+            className="text-md md:text-lg text-gray-300 mb-10 max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.05 }}
           >
-            XInfin is a leading provider of Process Automation, Financial
-            Advisory, Accounting and Bookkeeping, Virtual CFO, Data Analysis,
-            Data Visualization, Financial Modelling, and Reporting Requirements
-            services on a global scale.
+            We help businesses stay compliant, manage finances, and grow — so
+            you can focus on running your business.
           </motion.p>
+
           <motion.div
+            className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -65,10 +81,17 @@ export const HomeHero = () => {
           >
             <Button
               variant="white"
-              className="text-primary-900 font-bold  xs:w-auto justify-center cursor-pointer"
+              className="font-bold text-base px-8 py-4 text-gray-900"
+              onClick={() => router.push("/services")}
+            >
+              Explore Services
+            </Button>
+            <Button
+              variant="primary"
+              className="font-bold text-base px-8 py-4 bg-blue-600 hover:bg-blue-700"
               onClick={() => router.push("/contact")}
             >
-              Book a Free Call
+              Get a Quote
             </Button>
           </motion.div>
         </motion.div>

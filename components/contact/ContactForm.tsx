@@ -29,7 +29,7 @@ export const ContactForm = () => {
 
   return (
     <motion.section
-      className="py-16 bg-white"
+      className="py-40 bg-gray-50/50"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -157,6 +157,15 @@ export const ContactForm = () => {
               </form>
             </div>
           </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d220.7463999086714!2d85.3389301!3d27.7190647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19bff3d17f55%3A0xdc3bee16a62f9746!2sX%20INFIN%20CONSULTANTS%20PVT%20LTD!5e0!3m2!1sen!2snp!4v1765271353133!5m2!1sen!2snp"
+            width="1200"
+            height="450"
+            style={{ border: 0, borderRadius: "20px" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </motion.section>

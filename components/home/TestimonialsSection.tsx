@@ -49,7 +49,7 @@ export const TestimonialsSection = () => {
     <section
       id="reviews"
       className={cn(
-        "bg-background text-foreground",
+        "bg-gray-50/50 text-foreground",
         "py-12 sm:py-24 md:py-32 px-0"
       )}
     >
