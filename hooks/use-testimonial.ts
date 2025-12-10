@@ -6,5 +6,10 @@ export const useGetTestimonials = () => {
   return useQuery<Testimonial[]>({
     queryKey: ["testimonials"],
     queryFn: testimonialService.getTestimonials,
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };

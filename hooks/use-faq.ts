@@ -6,5 +6,10 @@ export const useGetFAQs = () => {
   return useQuery<FAQ[]>({
     queryKey: ["FAQs"],
     queryFn: faqService.getFAQs,
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };

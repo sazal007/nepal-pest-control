@@ -11,6 +11,11 @@ export const useGetReasons = () => {
   return useQuery<AppointmentReason[]>({
     queryKey: ["reasons"],
     queryFn: () => appointmentService.getReasons(),
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };
 

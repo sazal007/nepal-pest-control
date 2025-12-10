@@ -6,5 +6,10 @@ export const useGetWhatsapp = () => {
   return useQuery<WhatsApp[]>({
     queryKey: ["whatsapp"],
     queryFn: () => whatsappService.getWhatsapp(),
+    staleTime: Infinity,
+    gcTime: Infinity,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 };
