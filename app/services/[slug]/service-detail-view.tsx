@@ -2,15 +2,37 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 import { ServiceExplorer } from "@/components/services/ServiceExplorer";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronRight } from "lucide-react";
 import { Loader } from "@/components/ui/loader";
-import { useGetServiceBySlug } from "@/hooks/use-services";
-import { sanitizeProductDescription } from "@/lib/html-sanitizer";
+import { useGetServiceBySlug, useGetServices } from "@/hooks/use-services";
+import { sanitizeContent } from "@/lib/html-sanitizer";
 
 export default function ServiceDetailView({ slug }: { slug: string }) {
   const { data: service, isLoading, error } = useGetServiceBySlug(slug);
+  const { data: servicesData } = useGetServices();
+
+  // Get 4 random services excluding the current one
+  const randomServices = useMemo(() => {
+    if (!servicesData?.results || !service) return [];
+
+    const otherServices = servicesData.results.filter(
+      (s) => s.slug !== service.slug
+    );
+
+    // Create a deterministic shuffle based on service IDs and current slug
+    // This ensures stable results across re-renders
+    const seed = service.id;
+    const shuffled = [...otherServices].sort((a, b) => {
+      const hashA = (a.id * seed) % 1000;
+      const hashB = (b.id * seed) % 1000;
+      return hashA - hashB;
+    });
+
+    return shuffled.slice(0, 4);
+  }, [servicesData, service]);
 
   if (isLoading) {
     return (
@@ -36,15 +58,15 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
     );
   }
 
-  const sanitizedDescription = sanitizeProductDescription(
-    service.description || ""
-  );
+  // Use service thumbnail or a default accounting-related background image
+  const heroImage =
+    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
   return (
-    <div className="pt-40 pb-0 bg-white">
-      {/* Header Section */}
-      <div className="container mx-auto px-4 md:px-8 mb-12">
-        <nav className="mb-6">
+    <div className=" pb-0 bg-white">
+      {/* Breadcrumb Navigation */}
+      {/* <div className="container mx-auto px-4 md:px-8 mb-6">
+        <nav>
           <ol className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500">
             <li>
               <Link
@@ -69,47 +91,60 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
             </li>
           </ol>
         </nav>
+      </div> */}
 
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1] mb-6">
-            {service.title}
-          </h1>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            {service.meta_description ||
-              "We help you define clear goals and build winning strategies that drive measurable business growth."}
-          </p>
+      {/* Hero Banner with Overlay */}
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] mb-12 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={service.thumbnail_image_alt_description || service.title || ""}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
         </div>
 
-        {/* Hero Image */}
-        {service.thumbnail_image && (
-          <div className="relative h-24 w-24 md:h-28 md:w-28 mx-auto mb-16 overflow-hidden">
-            <Image
-              src={service.thumbnail_image}
-              alt={
-                service.thumbnail_image_alt_description || service.title || ""
-              }
-              fill
-              className="object-contain"
-              sizes="112px"
-              priority
-            />
-          </div>
-        )}
+        {/* Dark Overlay at Bottom */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/60 to-transparent" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        {/* Content Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-end">
+          <div className="container mx-auto px-4 md:px-8 pb-8 md:pb-12">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.1] mb-4">
+                {service.title}
+              </h1>
+              {/* {service.meta_description && (
+                <p className="text-white/90 text-lg md:text-xl max-w-2xl">
+                  {service.meta_description}
+                </p>
+              )} */}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content Section */}
+      <div className="container mx-auto px-4 md:px-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mt-8">
           {/* Main Content Column */}
           <div className="lg:col-span-8">
             <div className="mb-12">
               <div
                 className=" leading-relaxed text-lg prose prose-gray max-w-none"
-                dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+                dangerouslySetInnerHTML={{
+                  __html: sanitizeContent(service.description),
+                }}
               />
             </div>
           </div>
 
           {/* Right Sidebar */}
-          <div className="lg:col-span-4 sticky top-32">
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xs">
+          <div className="lg:col-span-4 sticky top-32 space-y-4">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Get Started Today
               </h3>
@@ -133,6 +168,28 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
               </div>
 
               <Button className="w-full justify-center">Book a Call</Button>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Services</h3>
+              <p className="text-gray-500 text-sm mb-6">
+                Check out our other services.
+              </p>
+              {randomServices.length > 0 ? (
+                <div className="space-y-2">
+                  {randomServices.map((randomService) => (
+                    <Link
+                      key={randomService.id}
+                      href={`/services/${randomService.slug}`}
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    >
+                      <ChevronRight size={10} className="text-gray-600" />{" "}
+                      {randomService.title}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-gray-500">Loading services...</p>
+              )}
             </div>
           </div>
         </div>

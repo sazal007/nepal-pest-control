@@ -25,10 +25,10 @@ export const PricingComparison = () => {
                 {/* Header Info (top) */}
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-[11px] font-semibold uppercase tracking-[0.16em] mb-3 w-fit">
-                    {pkg.category}
+                    {pkg.model}
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
-                    {pkg.model}
+                    {pkg.category}
                   </h3>
                   {/* <p className="text-slate-500 mb-6 text-sm leading-relaxed">
                     &quot;{pkg.tagline}&quot;
