@@ -161,7 +161,13 @@ export const Header = () => {
         className="flex items-center gap-2 cursor-pointer lg:hidden"
       >
         <Image
-          src="/test.png"
+          src={
+            pathname.startsWith("/services") ||
+            pathname.startsWith("/blog") ||
+            pathname.startsWith("/pricing")
+              ? "/infinconsultants_logo.svg"
+              : "/test.png"
+          }
           alt="INFIN Consultants Logo"
           width={200}
           height={120}

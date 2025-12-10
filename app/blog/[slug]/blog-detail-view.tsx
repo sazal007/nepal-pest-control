@@ -5,6 +5,20 @@ import Image from "next/image";
 import { useGetBlogBySlug } from "@/hooks/use-blogs";
 import { Loader } from "@/components/ui/loader";
 import { sanitizeContent } from "@/lib/html-sanitizer";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  RedditShareButton,
+  RedditIcon,
+  TelegramShareButton,
+  TelegramIcon,
+} from "next-share";
 
 interface BlogDetailViewProps {
   slug: string;
@@ -59,6 +73,48 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
           </h1>
           <div className="text-sm text-gray-500">
             {new Date(blog.created_at).toLocaleDateString()}
+          </div>
+          <div className="flex items-center justify-center gap-1 mt-4">
+            <span className="text-gray-500 text-sm">Share this blog:</span>
+            <FacebookShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              quote={blog.title}
+              hashtag={"#xinfinconsulting"}
+            >
+              <FacebookIcon size={27} round />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              title={blog.title}
+              hashtags={["xinfinconsulting"]}
+            >
+              <TwitterIcon size={27} round />
+            </TwitterShareButton>
+            <LinkedinShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              title={blog.title}
+              summary={blog.title}
+            >
+              <LinkedinIcon size={27} round />
+            </LinkedinShareButton>
+            <WhatsappShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              title={blog.title}
+            >
+              <WhatsappIcon size={27} round />
+            </WhatsappShareButton>
+            <RedditShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              title={blog.title}
+            >
+              <RedditIcon size={27} round />
+            </RedditShareButton>
+            <TelegramShareButton
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
+              title={blog.title}
+            >
+              <TelegramIcon size={27} round />
+            </TelegramShareButton>
           </div>
         </div>
 
