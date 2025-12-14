@@ -48,7 +48,7 @@ export const Header = () => {
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
-            src="/infinconsultants_logo.svg"
+            src="/logo/infin-logo.svg"
             alt="INFIN Consultants Logo"
             width={120}
             height={96}
@@ -83,7 +83,7 @@ export const Header = () => {
               href="/services"
               className={`flex items-center gap-1 ${linkClass("/services")} ${
                 pathname.startsWith("/services")
-                  ? "text-primary-700 font-semibold"
+                  ? "text-primary-600 font-semibold"
                   : ""
               }`}
             >
@@ -119,7 +119,7 @@ export const Header = () => {
                       >
                         <Link
                           href={`/services/${service.slug}`}
-                          className="block px-6 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors duration-200"
+                          className="block px-6 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
                           onClick={() => setIsServicesOpen(false)}
                         >
                           {service.title}
@@ -165,7 +165,7 @@ export const Header = () => {
             pathname.startsWith("/services") ||
             pathname.startsWith("/blog") ||
             pathname.startsWith("/pricing")
-              ? "/infinconsultants_logo.svg"
+              ? "/logo/infin-logo.svg"
               : "/test.png"
           }
           alt="INFIN Consultants Logo"

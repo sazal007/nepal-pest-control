@@ -105,7 +105,7 @@ export const VerticalProcessSection = () => {
                     <div
                       className={`p-8 rounded-2xl border transition-all duration-500 relative group overflow-hidden ${
                         isActive
-                          ? "bg-white border-primary-200 shadow-lg"
+                          ? "bg-white border-primary-100 shadow-md"
                           : "bg-gray-50 border-gray-50"
                       }`}
                     >

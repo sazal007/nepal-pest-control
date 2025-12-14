@@ -88,7 +88,7 @@ export const PrinciplesSection = () => {
                       <span
                         className={`text-lg font-semibold ${
                           activeId === p.id
-                            ? "text-primary-700"
+                            ? "text-primary-600"
                             : "text-gray-900"
                         }`}
                       >

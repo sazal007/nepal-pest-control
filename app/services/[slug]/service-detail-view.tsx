@@ -60,6 +60,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
 
   // Use service thumbnail or a default accounting-related background image
   const heroImage =
+    service.thumbnail_image ||
     "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
 
   return (

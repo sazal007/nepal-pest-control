@@ -7,9 +7,6 @@ import { useGetServices } from "@/hooks/use-services";
 
 const stripHtml = (html: string) => html.replace(/<[^>]*>/g, "");
 
-const truncateText = (text: string, max: number) =>
-  text.length > max ? `${text.slice(0, max).trimEnd()}...` : text;
-
 export const ServiceExplorer = () => {
   const { data: servicesData } = useGetServices();
   const services = servicesData?.results ?? [];
@@ -37,10 +34,7 @@ export const ServiceExplorer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => {
-            const plainDescription = truncateText(
-              stripHtml(service.description || ""),
-              140
-            );
+            const plainDescription = stripHtml(service.description || "");
 
             return (
               <Link
@@ -65,13 +59,13 @@ export const ServiceExplorer = () => {
                       alt={
                         service.thumbnail_image_alt_description || service.title
                       }
-                      className="w-22 h-22 mx-auto mb-6"
+                      className="w-full h-48 object-cover rounded-t-xl mb-6"
                     />
                   )}
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500 mb-2 leading-relaxed text-sm">
+                  <p className="text-gray-500 mb-2 leading-relaxed text-sm line-clamp-3">
                     {plainDescription}
                   </p>
                 </motion.div>

@@ -75,7 +75,7 @@ export const BlogSection = () => {
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
                 </motion.div>
-                <h3 className="font-bold text-lg mb-3 leading-snug group-hover:text-primary-700 transition-colors">
+                <h3 className="font-bold text-lg mb-3 leading-snug transition-colors">
                   {blog.title}
                 </h3>
                 <p className="text-sm text-gray-500 mb-4 line-clamp-3">
@@ -84,7 +84,7 @@ export const BlogSection = () => {
                 </p>
                 <div className="flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:gap-4 transition-all">
                   Read More{" "}
-                  <div className="p-1 bg-primary-700 rounded-full text-white">
+                  <div className="p-1 bg-primary-600 rounded-full text-white">
                     <svg
                       width="10"
                       height="10"

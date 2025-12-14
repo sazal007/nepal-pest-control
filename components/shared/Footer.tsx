@@ -21,11 +21,11 @@ export const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-3">
-              <div className="relative bg-white/70 backdrop:backdrop-blur-lg p-4 rounded-lg">
+              <div className="relative">
                 <Image
-                  src="/infinconsultants_logo.svg"
+                  src="/logo/infin_logo.svg"
                   alt="Infin Consultants"
-                  width={170}
+                  width={180}
                   height={50}
                   className="object-contain"
                   priority
@@ -54,7 +54,9 @@ export const Footer = () => {
               <FooterLink href="#">Accounting & Bookkeeping</FooterLink>
               <FooterLink href="#">Dashboard Preparation</FooterLink>
               <FooterLink href="#">Data Analysis and Reporting</FooterLink>
-              <FooterLink href="#">Exel and Google Sheets Automation</FooterLink>
+              <FooterLink href="#">
+                Exel and Google Sheets Automation
+              </FooterLink>
               <FooterLink href="#">Budgeting and Financial</FooterLink>
             </ul>
           </div>
