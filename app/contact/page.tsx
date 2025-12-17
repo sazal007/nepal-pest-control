@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Contact for Xinfin Consulting",
 };
 
+// ISR: Revalidate every hour (3600 seconds)
+export const revalidate = 3600;
+
 export default function ContactPage() {
   return (
     <>

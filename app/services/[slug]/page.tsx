@@ -4,7 +4,7 @@ import {
   dehydrate,
   HydrationBoundary,
 } from "@tanstack/react-query";
-import { Services } from "@/services/services.service";
+import { ServicesServer } from "@/services/services.service.server";
 import ServiceDetailView from "./service-detail-view";
 
 interface ServiceDetailPageProps {
@@ -13,13 +13,16 @@ interface ServiceDetailPageProps {
   }>;
 }
 
+// ISR: Revalidate every hour (3600 seconds)
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: ServiceDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
 
   try {
-    const service = await Services.getService(slug);
+    const service = await ServicesServer.getService(slug);
 
     const title = service.meta_title || service.title;
     const description =
@@ -71,11 +74,11 @@ export default async function ServiceDetailPage({
   const { slug } = await params;
   const queryClient = new QueryClient();
 
-  // Prefetch the service data
+  // Prefetch the service data with ISR
   await queryClient.prefetchQuery({
     queryKey: ["service", slug],
-    queryFn: () => Services.getService(slug),
-    staleTime: Infinity,
+    queryFn: () => ServicesServer.getService(slug),
+    staleTime: 3600 * 1000, // 1 hour in milliseconds (matches ISR revalidate)
   });
 
   return (

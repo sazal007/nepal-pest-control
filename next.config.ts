@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // ISR is configured per-page using the `revalidate` export
+  // See individual page files for revalidation times (default: 3600 seconds / 1 hour)
 };
 
 export default nextConfig;

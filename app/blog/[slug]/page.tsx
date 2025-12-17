@@ -4,7 +4,7 @@ import {
   dehydrate,
   HydrationBoundary,
 } from "@tanstack/react-query";
-import { blogsService } from "@/services/blogs.service";
+import { blogsServiceServer } from "@/services/blogs.service.server";
 import BlogDetailView from "./blog-detail-view";
 
 interface BlogDetailPageProps {
@@ -13,13 +13,16 @@ interface BlogDetailPageProps {
   }>;
 }
 
+// ISR: Revalidate every hour (3600 seconds)
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params,
 }: BlogDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
 
   try {
-    const blog = await blogsService.getBlogBySlug(slug);
+    const blog = await blogsServiceServer.getBlogBySlug(slug);
 
     const title = blog.title;
     const description = `Read ${blog.title} on XInfin Consulting's blog. Expert insights on financial planning, tax strategies, and business advice from Chartered Accountants.`;
@@ -74,11 +77,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
   const queryClient = new QueryClient();
 
-  // Prefetch the blog data
+  // Prefetch the blog data with ISR
   await queryClient.prefetchQuery({
     queryKey: ["blog", slug],
-    queryFn: () => blogsService.getBlogBySlug(slug),
-    staleTime: Infinity,
+    queryFn: () => blogsServiceServer.getBlogBySlug(slug),
+    staleTime: 3600 * 1000, // 1 hour in milliseconds (matches ISR revalidate)
   });
 
   return (
