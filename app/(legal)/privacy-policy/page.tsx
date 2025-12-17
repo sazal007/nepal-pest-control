@@ -2,8 +2,30 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Xinfin Consulting",
-  description: "Privacy Policy for Xinfin Consulting",
+  title: "Privacy Policy",
+  description:
+    "Read XInfin Consulting's Privacy Policy to understand how we collect, use, and protect your personal information. Learn about your privacy rights and our commitment to data security.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Privacy Policy - XInfin Consulting",
+    description:
+      "Read XInfin Consulting's Privacy Policy to understand how we collect, use, and protect your personal information.",
+    url: "https://www.infinconsultants.com/privacy-policy",
+    siteName: "XInfin Consulting",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy - XInfin Consulting",
+    description: "XInfin Consulting's Privacy Policy",
+  },
+  alternates: {
+    canonical: "https://www.infinconsultants.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

@@ -9,8 +9,9 @@ import { TeamGridSection } from "@/components/about/TeamGridSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About - Xinfin Consulting",
-  description: "About Xinfin Consulting",
+  title: "About Us",
+  description:
+    "Learn about XInfin Consulting - a trusted team of Chartered Accountants dedicated to providing exceptional financial services. Discover our mission, vision, values, and the experienced professionals who make us a leading financial consulting firm.",
 };
 export default function AboutPage() {
   return (

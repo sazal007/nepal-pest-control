@@ -2,8 +2,30 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions - Xinfin Consulting",
-  description: "Terms & Conditions for Xinfin Consulting",
+  title: "Terms & Conditions",
+  description:
+    "Read XInfin Consulting's Terms and Conditions. Understand the terms of use for our website and services, including user rights, intellectual property, and legal agreements.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Terms & Conditions - XInfin Consulting",
+    description:
+      "Read XInfin Consulting's Terms and Conditions. Understand the terms of use for our website and services.",
+    url: "https://www.infinconsultants.com/terms-and-conditions",
+    siteName: "XInfin Consulting",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions - XInfin Consulting",
+    description: "XInfin Consulting's Terms and Conditions",
+  },
+  alternates: {
+    canonical: "https://www.infinconsultants.com/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditions() {

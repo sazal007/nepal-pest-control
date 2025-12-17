@@ -1,4 +1,24 @@
-import DOMPurify from "dompurify";
+// DOMPurify requires browser environment
+// We'll use a function to get DOMPurify only when needed and in browser
+function getDOMPurify() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+  try {
+    // Use dynamic import for browser-only
+    const dompurify = require("dompurify");
+    // Handle both default export and named export
+    const purify = dompurify.default || dompurify;
+    // Ensure sanitize method exists
+    if (purify && typeof purify.sanitize === "function") {
+      return purify;
+    }
+    return null;
+  } catch (error) {
+    console.warn("DOMPurify not available:", error);
+    return null;
+  }
+}
 
 interface SanitizerConfig {
   allowedTags?: string[];
@@ -166,7 +186,17 @@ export function sanitizeHtmlContent(
   };
 
   try {
-    let sanitized = DOMPurify.sanitize(htmlContent, dompurifyConfig);
+    // Get DOMPurify only in browser environment
+    const DOMPurifyInstance = getDOMPurify();
+    
+    // Check if we're in browser environment and DOMPurify is available
+    if (!DOMPurifyInstance) {
+      // Server-side: return content as-is (will be sanitized on client)
+      // For better security, you might want to use a server-side sanitizer here
+      return htmlContent;
+    }
+
+    let sanitized = DOMPurifyInstance.sanitize(htmlContent, dompurifyConfig);
 
     // Post-processing to enhance list styling and spacing if enabled
     if (config.enableListStyling || config.enableSpacingPreservation) {

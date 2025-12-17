@@ -168,7 +168,9 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                 </div>
               </div>
 
-              <Button className="w-full justify-center">Book a Call</Button>
+              <Link href="/contact">
+                <Button className="w-full justify-center">Book a Call</Button>
+              </Link>
             </div>
             <div className="bg-white p-8 rounded-3xl border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Services</h3>

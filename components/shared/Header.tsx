@@ -166,7 +166,7 @@ export const Header = () => {
             pathname.startsWith("/blog") ||
             pathname.startsWith("/pricing")
               ? "/logo/infin-logo.svg"
-              : "/test.png"
+              : "/infinlogowhite.png"
           }
           alt="INFIN Consultants Logo"
           width={200}

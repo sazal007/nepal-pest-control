@@ -29,15 +29,11 @@ export default function HomeView() {
       <HomeHero />
       <AboutSection />
       <ProcessSection />
-      {/* <StatsStrip /> */}
       <WhoAreWe />
       {sortedPricing.length > 0 && <PricingPlans plans={sortedPricing} />}
-      {/* <PartnershipSection /> */}
       <ServicesSection />
-      {/* <PortfolioSection /> */}
       <TestimonialsSection />
       <TeamGridSection />
-      {/* <ScheduleConsultation /> */}
       <BlogSection />
     </>
   );

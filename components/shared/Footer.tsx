@@ -2,10 +2,12 @@
 import { motion } from "motion/react";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import SocialIcons from "./social-icons";
 import { useNewsletter } from "@/hooks/use-newsletter";
+import { useGetServices } from "@/hooks/use-services";
 import { xinfinAddress, xinfinEmail, xinfinPhone } from "@/constants/contact";
 
 export const Footer = () => {
@@ -42,24 +44,7 @@ export const Footer = () => {
             <SocialIcons />
           </motion.div>
 
-          <div>
-            <h3 className="text-white text-xl font-semibold mb-6">
-              Our Services
-            </h3>
-            <ul className="space-y-3 text-sm text-slate-300/80">
-              <FooterLink href="#">Process Automation</FooterLink>
-              <FooterLink href="#">Reporting Requirements</FooterLink>
-              <FooterLink href="#">Virtual CFO Services</FooterLink>
-              <FooterLink href="#">Financial Modeling</FooterLink>
-              <FooterLink href="#">Accounting & Bookkeeping</FooterLink>
-              <FooterLink href="#">Dashboard Preparation</FooterLink>
-              <FooterLink href="#">Data Analysis and Reporting</FooterLink>
-              <FooterLink href="#">
-                Exel and Google Sheets Automation
-              </FooterLink>
-              <FooterLink href="#">Budgeting and Financial</FooterLink>
-            </ul>
-          </div>
+          <ServicesSection />
 
           <div>
             <h3 className="text-white text-xl font-semibold mb-6">
@@ -137,14 +122,40 @@ const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   children,
 }) => (
   <li>
-    <a
+    <Link
       href={href}
       className="block hover:text-white transition-colors duration-200"
     >
       {children}
-    </a>
+    </Link>
   </li>
 );
+
+const ServicesSection = () => {
+  const { data: servicesData, isLoading } = useGetServices();
+  const services = servicesData?.results ?? [];
+
+  return (
+    <div>
+      <h3 className="text-white text-xl font-semibold mb-6">Our Services</h3>
+      {isLoading ? (
+        <div className="flex items-center justify-start">
+          <Loader2 className="h-5 w-5 animate-spin text-slate-300/80" />
+        </div>
+      ) : services.length > 0 ? (
+        <ul className="space-y-3 text-sm text-slate-300/80">
+          {services.map((service) => (
+            <FooterLink key={service.id} href={`/services/${service.slug}`}>
+              {service.title}
+            </FooterLink>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-slate-300/80 text-sm">No services available</p>
+      )}
+    </div>
+  );
+};
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState("");

@@ -7,28 +7,28 @@ import { useGetTeam } from "@/hooks/use-team";
 import type { TEAM } from "@/types/team-member";
 import { useRouter } from "next/navigation";
 
-const team = [
-  {
-    name: "Yagya Raj Bogati",
-    role: "FOUNDER & CEO",
-    image: "/team-members/Yagya-Raj-Bogati.png",
-  },
-  {
-    name: "Aastha Sapkota",
-    role: "CO-FOUNDER & CFO",
-    image: "/team-members/Aastha-Sapkota.png",
-  },
-  {
-    name: "Nischal Adhikari",
-    role: "CHIEF OPERATING OFFICER",
-    image: "/team-members/Nischal-Adhikari.png",
-  },
-  {
-    name: "Umesh Kattel",
-    role: "ANALYTICS & REPORTING MANAGER",
-    image: "/team-members/Umesh-Kattel.png",
-  },
-];
+// const team = [
+//   {
+//     name: "Yagya Raj Bogati",
+//     role: "FOUNDER & CEO",
+//     image: "/team-members/Yagya-Raj-Bogati.png",
+//   },
+//   {
+//     name: "Aastha Sapkota",
+//     role: "CO-FOUNDER & CFO",
+//     image: "/team-members/Aastha-Sapkota.png",
+//   },
+//   {
+//     name: "Nischal Adhikari",
+//     role: "CHIEF OPERATING OFFICER",
+//     image: "/team-members/Nischal-Adhikari.png",
+//   },
+//   {
+//     name: "Umesh Kattel",
+//     role: "ANALYTICS & REPORTING MANAGER",
+//     image: "/team-members/Umesh-Kattel.png",
+//   },
+// ];
 
 type TeamMember = {
   id?: string;
@@ -49,7 +49,7 @@ export const TeamGridSection = () => {
           role: member.role,
           image: member.photo,
         }))
-      : team;
+      : [];
 
   return (
     <section className="py-16 sm:py-20 bg-white">

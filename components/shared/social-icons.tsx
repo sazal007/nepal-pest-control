@@ -3,16 +3,19 @@ import React from "react";
 const SocialIcons: React.FC = () => {
   return (
     <div className="flex items-center space-x-3">
-      <SocialIconWrapper href="#">
+      <SocialIconWrapper href="https://www.facebook.com/" target="_blank">
         <FacebookIcon />
       </SocialIconWrapper>
-      <SocialIconWrapper href="#">
+      <SocialIconWrapper href="https://www.tiktok.com/" target="_blank">
         <TikTokIcon />
       </SocialIconWrapper>
-      <SocialIconWrapper href="#">
-        <XIcon />
+      <SocialIconWrapper
+        href="https://www.linkedin.com/company/x-infin-consultants/"
+        target="_blank"
+      >
+        <LinkedInIcon />
       </SocialIconWrapper>
-      <SocialIconWrapper href="#">
+      <SocialIconWrapper href="https://www.instagram.com/" target="_blank">
         <InstagramIcon />
       </SocialIconWrapper>
     </div>
@@ -22,10 +25,12 @@ const SocialIcons: React.FC = () => {
 const SocialIconWrapper: React.FC<{
   href: string;
   children: React.ReactNode;
-}> = ({ href, children }) => (
+  target?: string;
+}> = ({ href, children, target }) => (
   <a
     href={href}
     className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-white hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+    target={target}
   >
     {children}
   </a>
@@ -65,7 +70,7 @@ const TikTokIcon = () => (
   </svg>
 );
 
-const XIcon = () => (
+const LinkedInIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -77,8 +82,9 @@ const XIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
   </svg>
 );
 
