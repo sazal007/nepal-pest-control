@@ -8,8 +8,9 @@ import {
 import { pricingServiceServer } from "@/services/pricing.service.server";
 
 export const metadata: Metadata = {
-  title: "Pricing - Xinfin Consulting",
-  description: "Pricing for Xinfin Consulting",
+  title: "Pricing",
+  description:
+    "Pricing for Xinfin - Professional Accounting, Compliance & Business Setup",
 };
 
 // ISR: Revalidate every hour (3600 seconds)

@@ -29,7 +29,7 @@ export async function generateMetadata({
     };
   } catch {
     return {
-      title: "Team Member - XInfin Consulting",
+      title: "Team Member",
     };
   }
 }

@@ -11,7 +11,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about XInfin Consulting - a trusted team of Chartered Accountants dedicated to providing exceptional financial services. Discover our mission, vision, values, and the experienced professionals who make us a leading financial consulting firm.",
+    "Xinfin is a professional accounting, compliance and business setup company that provides exceptional financial services. We are a leading financial consulting firm that offers a wide range of services to businesses of all sizes.",
 };
 
 // ISR: Revalidate every hour (3600 seconds)

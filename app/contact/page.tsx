@@ -3,7 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us - Xinfin Consulting",
-  description: "Contact for Xinfin Consulting",
+  description:
+    "Contact for Xinfin - Professional Accounting, Compliance & Business Setup",
 };
 
 // ISR: Revalidate every hour (3600 seconds)

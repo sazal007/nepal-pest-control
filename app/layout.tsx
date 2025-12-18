@@ -26,13 +26,15 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.infinconsultants.com"),
   title: {
-    default: "XInfin - Chartered Accountants | Financial Consulting",
-    template: "%s | XInfin Consulting",
+    default: "XInfin - Professional Accounting, Compliance & Business Setup",
+    template: "%s - XInfin Consulting",
   },
   description:
-    "Unlock financial excellence with our seasoned team of Chartered Accountants. Xinfin provide strategic financial guidance, expert tax planning, and meticulous auditing to optimize your business performance. Trust us to navigate complex financial landscapes, ensuring compliance, and driving growth. Elevate your financial strategy with our Chartered Accountants – where expertise meets precision.",
+    "Xinfin is a professional accounting, compliance and business setup company that provides exceptional financial services. We are a leading financial consulting firm that offers a wide range of services to businesses of all sizes.",
   keywords: [
-    "Chartered Accountants",
+    "Professional Accounting",
+    "Compliance",
+    "Business Setup",
     "Financial Consulting",
     "Tax Planning",
     "Auditing Services",
