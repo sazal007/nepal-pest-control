@@ -3,8 +3,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Appointment - Xinfin Consulting",
-  description: "Appointment for Xinfin Consulting",
+  title: "Appointment",
+  description: "Appointment for our pest control services",
 };
 
 export default function AppointmentPage() {

@@ -4,27 +4,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Read XInfin Consulting's Terms and Conditions. Understand the terms of use for our website and services, including user rights, intellectual property, and legal agreements.",
+    "Read Nepal Pest Control's Terms and Conditions. Understand the terms of use for our website and services, including user rights, intellectual property, and legal agreements.",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Terms & Conditions - XInfin Consulting",
+    title: "Terms & Conditions - Nepal Pest Control",
     description:
-      "Read XInfin Consulting's Terms and Conditions. Understand the terms of use for our website and services.",
-    url: "https://www.infinconsultants.com/terms-and-conditions",
-    siteName: "XInfin Consulting",
+      "Read Nepal Pest Control's Terms and Conditions. Understand the terms of use for our website and services.",
+    url: "https://www.nepalpestcontrol.com/terms-and-conditions",
+    siteName: "Nepal Pest Control",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Terms & Conditions - XInfin Consulting",
-    description: "XInfin Consulting's Terms and Conditions",
+    title: "Terms & Conditions - Nepal Pest Control",
+    description: "Nepal Pest Control's Terms and Conditions",
   },
   alternates: {
-    canonical: "https://www.infinconsultants.com/terms-and-conditions",
+    canonical: "https://www.nepalpestcontrol.com/terms-and-conditions",
   },
 };
 
@@ -49,7 +49,7 @@ export default function TermsAndConditions() {
           <p className="mb-8">
             These Terms and Conditions constitute a legally binding agreement
             made between you, whether personally or on behalf of an entity
-            (&quot;you&quot;) and Xinfin Consulting (&quot;we,&quot;
+            (&quot;you&quot;) and Nepal Pest Control (&quot;we,&quot;
             &quot;us&quot; or &quot;our&quot;), concerning your access to and
             use of our website as well as any other media form, media channel,
             mobile website or mobile application related, linked, or otherwise
@@ -108,7 +108,7 @@ export default function TermsAndConditions() {
           </h3>
           <p className="mb-8">
             These Terms shall be governed by and defined following the laws of
-            United States. Xinfin Consulting and yourself irrevocably consent
+            United States. Nepal Pest Control and yourself irrevocably consent
             that the courts of United States shall have exclusive jurisdiction
             to resolve any dispute which may arise in connection with these
             terms.
@@ -121,10 +121,10 @@ export default function TermsAndConditions() {
             In order to resolve a complaint regarding the Site or to receive
             further information regarding use of the Site, please contact us at:{" "}
             <a
-              href="mailto:contactinfo@gmail.com"
+              href="mailto:info@nepalpestcontrol.com"
               className="text-blue-600 hover:underline"
             >
-              contactinfo@gmail.com
+              info@nepalpestcontrol.com
             </a>
             .
           </p>

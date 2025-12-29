@@ -49,16 +49,16 @@ export const PhilosophySection = () => {
           >
             <div className="max-w-3xl pr-4">
               <p className="text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed font-medium">
-                At XInfin, we believe that financial clarity drives business
-                success. We combine cutting-edge technology with expert
-                financial guidance to streamline your operations and fuel
-                growth.
+                At Nepal Pest Control, we believe that pest control clarity
+                drives business success. We combine cutting-edge technology with
+                expert pest control guidance to streamline your operations and
+                fuel growth.
               </p>
               <p className="text-sm md:text-base text-gray-500 mb-10 leading-relaxed">
                 Our approach blends automation, data-driven insights, and
-                personalized financial strategy to transform complex challenges
-                into actionable solutions that deliver measurable, lasting
-                results for your business.
+                personalized pest control strategy to transform complex
+                challenges into actionable solutions that deliver measurable,
+                lasting results for your business.
               </p>
 
               {/* Cards Grid */}
@@ -66,17 +66,17 @@ export const PhilosophySection = () => {
                 {[
                   {
                     icon: Target,
-                    title: "Strategic Financial Planning",
-                    desc: "Aligning financial goals with your business vision for sustainable growth.",
+                    title: "Strategic Pest Control Planning",
+                    desc: "Aligning pest control goals with your business vision for sustainable growth.",
                   },
                   {
                     icon: LineChart,
                     title: "Data-Driven Insights",
-                    desc: "Transforming financial data into actionable intelligence for better decisions.",
+                    desc: "Transforming pest control data into actionable intelligence for better decisions.",
                   },
                   {
                     icon: Cog,
-                    title: "Process Automation",
+                    title: "Process Pest Control Automation",
                     desc: "Streamlining operations through smart technology and efficient systems.",
                   },
                 ].map((item, idx) => (
@@ -114,7 +114,7 @@ export const PhilosophySection = () => {
               <div className="aspect-4/5 w-full rounded-3xl overflow-hidden shadow-2xl relative">
                 <img
                   src="/team-members/Yagya-Raj-Bogati.png"
-                  alt="Yagya Raj Bogati"
+                  alt="Nepal Pest Control Team"
                   className="w-full h-full object-cover"
                 />
                 {/* Subtle Gradient Overlay */}

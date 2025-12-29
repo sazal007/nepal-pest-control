@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useGetServices } from "@/hooks/use-services";
+import { headerConfig } from "@/config/header.config";
+import type { NavigationItem } from "@/config/header.config";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,106 +50,103 @@ export const Header = () => {
         {/* Logo - Left aligned */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer z-20">
           <Image
-            src="/logo/infin-logo.svg"
-            alt="INFIN Consultants Logo"
-            width={120}
-            height={96}
-            className="h-12 w-auto"
+            src={headerConfig.logo.src}
+            alt={headerConfig.logo.alt}
+            width={headerConfig.logo.desktop.width}
+            height={headerConfig.logo.desktop.height}
+            className={headerConfig.logo.desktop.className}
           />
         </Link>
 
         {/* Desktop Nav - Absolutely Centered */}
         <nav className="hidden lg:flex items-center gap-8">
-          {/* Home with Dropdown */}
-          <div className="relative group flex items-center gap-1 cursor-pointer h-full py-6">
-            <Link
-              href="/"
-              className={`flex items-center gap-1 ${linkClass("/")}`}
-            >
-              Home
-            </Link>
-          </div>
-
-          <Link href="/about" className={linkClass("/about")}>
-            About Us
-          </Link>
-
-          {/* Services with Dropdown */}
-          <div
-            ref={servicesRef}
-            className="relative group flex items-center gap-1 cursor-pointer h-full py-6"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
-            <Link
-              href="/services"
-              className={`flex items-center gap-1 ${linkClass("/services")} ${
-                pathname.startsWith("/services")
-                  ? "text-primary-600 font-semibold"
-                  : ""
-              }`}
-            >
-              Services
-              <ChevronDown
-                size={16}
-                className={`transition-transform duration-300 ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Link>
-
-            <AnimatePresence>
-              {isServicesOpen && services.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50"
+          {headerConfig.navigation.items.map((item: NavigationItem) => {
+            if (item.hasDropdown) {
+              return (
+                <div
+                  key={item.href}
+                  ref={servicesRef}
+                  className="relative group flex items-center gap-1 cursor-pointer h-full py-6"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  <div className="py-2">
-                    {services.map((service, index) => (
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1 ${linkClass(
+                      item.href
+                    )} ${
+                      pathname.startsWith(item.href)
+                        ? "text-primary-600 font-semibold"
+                        : ""
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-300 ${
+                        isServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Link>
+
+                  <AnimatePresence>
+                    {isServicesOpen && services.length > 0 && (
                       <motion.div
-                        key={service.id}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.2,
-                          delay: index * 0.03,
-                          ease: "easeOut",
-                        }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50"
                       >
-                        <Link
-                          href={`/services/${service.slug}`}
-                          className="block px-6 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
+                        <div className="py-2">
+                          {services.map((service, index) => (
+                            <motion.div
+                              key={service.id}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{
+                                duration: 0.2,
+                                delay: index * 0.03,
+                                ease: "easeOut",
+                              }}
+                            >
+                              <Link
+                                href={`/services/${service.slug}`}
+                                className="block px-6 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                {service.title}
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
                       </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <Link href="/blog" className={linkClass("/blog")}>
-            Blog
-          </Link>
-
-          <Link href="/pricing" className={linkClass("/pricing")}>
-            Pricing
-          </Link>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={linkClass(item.href)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Contact Button - Right aligned */}
         <div className="hidden lg:block z-20">
           <Link
-            href="/contact"
+            href={headerConfig.navigation.contactButton.href}
             className="pl-6 pr-2 py-1.5 rounded-full bg-white border border-gray-200 text-gray-900 hover:border-primary-300 hover:shadow-md transition-all flex items-center gap-3 group"
           >
-            <span className="font-semibold text-sm">Contact Us</span>
+            <span className="font-semibold text-sm">
+              {headerConfig.navigation.contactButton.label}
+            </span>
             <div className="w-9 h-9 rounded-full bg-primary-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform">
               <ArrowUpRight size={16} strokeWidth={2.5} />
             </div>
@@ -161,17 +160,11 @@ export const Header = () => {
         className="flex items-center gap-2 cursor-pointer lg:hidden"
       >
         <Image
-          src={
-            pathname.startsWith("/services") ||
-            pathname.startsWith("/blog") ||
-            pathname.startsWith("/pricing")
-              ? "/logo/infin-logo.svg"
-              : "/infinlogowhite.png"
-          }
-          alt="INFIN Consultants Logo"
-          width={200}
-          height={120}
-          className="h-14 w-auto"
+          src={headerConfig.logo.src}
+          alt={headerConfig.logo.alt}
+          width={headerConfig.logo.mobile.width}
+          height={headerConfig.logo.mobile.height}
+          className={headerConfig.logo.mobile.className}
         />
       </Link>
 
@@ -192,93 +185,87 @@ export const Header = () => {
           >
             <X />
           </button>
-          <Link
-            href="/"
-            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50 flex justify-between items-center"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
-            onClick={() => setIsOpen(false)}
-          >
-            About Us
-          </Link>
-          {/* Mobile Services with Dropdown */}
-          <div className="border-b border-gray-50">
-            <button
-              className="w-full text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 flex items-center justify-between"
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-            >
-              Services
-              <ChevronDown
-                size={20}
-                className={`transition-transform duration-300 ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            <AnimatePresence>
-              {isServicesOpen && services.length > 0 && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="pl-4 pb-2 space-y-1">
-                    {services.map((service) => (
-                      <Link
-                        key={service.id}
-                        href={`/services/${service.slug}`}
-                        className="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors duration-200"
-                        onClick={() => {
-                          setIsServicesOpen(false);
-                          setIsOpen(false);
-                        }}
+          {headerConfig.navigation.items.map((item: NavigationItem) => {
+            if (item.hasDropdown) {
+              return (
+                <div key={item.href} className="border-b border-gray-50">
+                  <button
+                    className="w-full text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 flex items-center justify-between"
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-300 ${
+                        isServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {isServicesOpen && services.length > 0 && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
                       >
-                        {service.title}
-                      </Link>
-                    ))}
-                    <Link
-                      href="/services"
-                      className="block py-2 text-sm font-semibold text-primary-700 hover:text-primary-800 transition-colors duration-200"
-                      onClick={() => {
-                        setIsServicesOpen(false);
-                        setIsOpen(false);
-                      }}
-                    >
-                      View All Services
-                    </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          <Link
-            href="/blog"
-            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
-            onClick={() => setIsOpen(false)}
-          >
-            Blog
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
-            onClick={() => setIsOpen(false)}
-          >
-            Pricing
-          </Link>
+                        <div className="pl-4 pb-2 space-y-1">
+                          {services.map((service) => (
+                            <Link
+                              key={service.id}
+                              href={`/services/${service.slug}`}
+                              className="block py-2 text-sm text-gray-600 hover:text-primary-700 transition-colors duration-200"
+                              onClick={() => {
+                                setIsServicesOpen(false);
+                                setIsOpen(false);
+                              }}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                          <Link
+                            href={
+                              headerConfig.navigation.servicesDropdown
+                                .viewAllHref
+                            }
+                            className="block py-2 text-sm font-semibold text-primary-700 hover:text-primary-800 transition-colors duration-200"
+                            onClick={() => {
+                              setIsServicesOpen(false);
+                              setIsOpen(false);
+                            }}
+                          >
+                            {
+                              headerConfig.navigation.servicesDropdown
+                                .viewAllLabel
+                            }
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-base sm:text-lg font-medium text-gray-800 py-2.5 sm:py-3 border-b border-gray-50"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <div className="mt-4">
             <Link
-              href="/contact"
+              href={headerConfig.navigation.contactButton.href}
               className="w-full text-center py-3 sm:py-4 rounded-full bg-primary-600 text-white font-bold text-base sm:text-lg flex items-center justify-center gap-2"
               onClick={() => setIsOpen(false)}
             >
-              Contact Us <ArrowUpRight size={20} />
+              {headerConfig.navigation.contactButton.label}{" "}
+              <ArrowUpRight size={20} />
             </Link>
           </div>
         </div>

@@ -17,7 +17,7 @@ export const HomeHero = () => {
       >
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Corporate Finance"
+          alt="Pest Control"
           className="w-full h-full object-cover opacity-30"
         />
         {/* Gradient Overlay */}
@@ -56,11 +56,9 @@ export const HomeHero = () => {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
-            Professional Accounting, <br />
-            Compliance & <span className="text-blue-400">
-              Business Setup
-            </span>{" "}
-            <br />
+            Professional Pest Control, <br />
+            Compliance &{" "}
+            <span className="text-blue-400">Pest Control Services</span> <br />
             <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif italic font-normal text-white">
               — All in One Place.
             </span>
@@ -73,8 +71,8 @@ export const HomeHero = () => {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.05 }}
           >
-            We help businesses stay compliant, manage finances, and grow — so
-            you can focus on running your business.
+            We help businesses stay compliant, manage pest control, and grow —
+            so you can focus on running your business.
           </motion.p>
 
           <motion.div

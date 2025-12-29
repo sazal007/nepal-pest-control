@@ -183,7 +183,7 @@ export default function TeamView() {
               </div>
               {/* <div className="flex items-center gap-2">
                 <MapPin size={16} className="text-blue-600" />
-                <span>Xinfin Consultants</span>
+                <span>Nepal Pest Control</span>
               </div> */}
             </div>
 

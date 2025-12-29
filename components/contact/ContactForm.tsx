@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Mail, Phone, MapPin, ArrowUpRight, Loader2 } from "lucide-react";
 import { useSubmitContactForm } from "@/hooks/use-contact";
-import { xinfinEmail, xinfinPhone } from "@/constants/contact";
+import {
+  nepalpestcontrolEmail,
+  nepalpestcontrolPhone,
+} from "@/constants/contact";
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -58,7 +61,7 @@ export const ContactForm = () => {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Email</div>
                   <div className="font-bold text-gray-900 text-base">
-                    {xinfinEmail}
+                    {nepalpestcontrolEmail}
                   </div>
                 </div>
               </div>
@@ -70,7 +73,7 @@ export const ContactForm = () => {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Call</div>
                   <div className="font-bold text-gray-900 text-base">
-                    {xinfinPhone}
+                    {nepalpestcontrolPhone}
                   </div>
                 </div>
               </div>

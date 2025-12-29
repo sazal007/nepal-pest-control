@@ -34,9 +34,9 @@ export const AboutSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 sm:mb-20 lg:mb-36">
-              At Xinfin, We help businesses navigate complexity unlock to growth
-              achieve lasting transformation with a team of experienced
-              consultations, We can combine for strategic instant.
+              At Nepal Pest Control, We help businesses navigate complexity
+              unlock to growth achieve lasting transformation with a team of
+              experienced consultations, We can combine for strategic instant.
             </p>
 
             <div className="border-l-2 border-primary-700 pl-4 sm:pl-6">
@@ -80,16 +80,16 @@ export const AboutSection = () => {
               </div>
               <ul className="space-y-3 text-sm font-medium text-gray-800">
                 <li className="flex items-center gap-2">
-                  Financial Strategy & Planning
+                  Pest Control Strategy & Planning
                 </li>
                 <li className="flex items-center gap-2">
-                  Process Automation Solutions
+                  Process Pest Control Automation Solutions
                 </li>
                 <li className="flex items-center gap-2">
-                  Real-Time Data Analytics
+                  Real-Time Pest Control Data Analytics
                 </li>
                 <li className="flex items-center gap-2">
-                  Virtual CFO Services
+                  Virtual Pest Control Services
                 </li>
               </ul>
             </div>

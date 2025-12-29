@@ -4,7 +4,7 @@ import { blogsService } from "@/services/blogs.service";
 import { teamService } from "@/services/team.service";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://infinconsultants.com";
+  const baseUrl = "https://nepalpestcontrol.com";
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [

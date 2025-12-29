@@ -58,9 +58,9 @@ export const PrinciplesSection = () => {
               className="mb-12"
             />
             <p className="text-gray-500 mb-12">
-              At XInfin, our principles reflect our commitment to delivering
-              exceptional financial solutions through innovation, collaboration,
-              and unwavering attention to quality.
+              At Nepal Pest Control, our principles reflect our commitment to
+              delivering exceptional pest control solutions through innovation,
+              collaboration, and unwavering attention to quality.
             </p>
 
             <div className="space-y-4">
@@ -137,7 +137,7 @@ export const PrinciplesSection = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-              alt="XInfin Core Principles"
+              alt="Nepal Pest Control Core Principles"
               className="w-full h-full object-cover"
             />
           </motion.div>

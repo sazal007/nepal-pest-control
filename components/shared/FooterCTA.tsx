@@ -25,9 +25,9 @@ export const FooterCTA = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
           >
             <h2 className="text-2xl sm:text-4xl  font-semibold mb-4 sm:mb-6 leading-tight">
-              Contact XInfin <br />
-              Consultants to achieve <br />
-              your financial goals{" "}
+              Contact Nepal Pest Control <br />
+              to achieve <br />
+              your pest control goals{" "}
               <span className="font-serif italic font-normal">
                 Fast and Smart.
               </span>

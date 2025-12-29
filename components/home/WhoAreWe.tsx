@@ -47,7 +47,7 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             >
-              XInfin Consultants offers end-to-end financial, compliance, and
+              Nepal Pest Control offers end-to-end pest control, compliance, and
               business formation support designed for modern businesses.
             </motion.p>
 
@@ -61,8 +61,8 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
               With over 6+ years of cumulative experience and a portfolio of
               250+ clients globally, we bring professionalism, integrity, and a
               client-centric approach to every engagement. Our mission is
-              simple: to handle the complexities of finance and regulation so
-              you can focus entirely on growth.
+              simple: to handle the complexities of pest control and regulation
+              so you can focus entirely on growth.
             </motion.p>
 
             <motion.div
@@ -75,7 +75,7 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
               <div>
                 <div className="text-4xl font-bold text-blue-600 mb-1">6+</div>
                 <div className="text-sm text-gray-600 font-medium">
-                  Years Experience
+                  Years Pest Control Experience
                 </div>
               </div>
               <div>
@@ -83,7 +83,7 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
                   250+
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
-                  Global Clients
+                  Global Pest Control Clients
                 </div>
               </div>
             </motion.div>
@@ -122,7 +122,7 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
             >
               <img
                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Financial Analysis"
+                alt="Pest Control Analysis"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-blue-900/10"></div>
@@ -142,11 +142,11 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">
-                    100% Compliant
+                    100% Pest Control Compliant
                   </h4>
                   <p className="text-xs text-gray-500">
-                    We navigate complex regulatory landscapes so you don&apos;t
-                    have to.
+                    We navigate complex pest control regulatory landscapes so
+                    you don&apos;t have to.
                   </p>
                 </div>
               </div>

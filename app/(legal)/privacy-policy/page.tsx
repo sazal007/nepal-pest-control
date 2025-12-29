@@ -4,27 +4,27 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Read XInfin Consulting's Privacy Policy to understand how we collect, use, and protect your personal information. Learn about your privacy rights and our commitment to data security.",
+    "Read Nepal Pest Control's Privacy Policy to understand how we collect, use, and protect your personal information. Learn about your privacy rights and our commitment to data security.",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Privacy Policy - XInfin Consulting",
+    title: "Privacy Policy - Nepal Pest Control",
     description:
-      "Read XInfin Consulting's Privacy Policy to understand how we collect, use, and protect your personal information.",
-    url: "https://www.infinconsultants.com/privacy-policy",
-    siteName: "XInfin Consulting",
+      "Read Nepal Pest Control's Privacy Policy to understand how we collect, use, and protect your personal information.",
+    url: "https://www.nepalpestcontrol.com/privacy-policy",
+    siteName: "Nepal Pest Control",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Privacy Policy - XInfin Consulting",
-    description: "XInfin Consulting's Privacy Policy",
+    title: "Privacy Policy - Nepal Pest Control",
+    description: "Nepal Pest Control's Privacy Policy",
   },
   alternates: {
-    canonical: "https://www.infinconsultants.com/privacy-policy",
+    canonical: "https://www.nepalpestcontrol.com/privacy-policy",
   },
 };
 
@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
             1. Introduction
           </h3>
           <p className="mb-8">
-            Welcome to Xinfin Consulting. We respect your privacy and are
+            Welcome to Nepal Pest Control. We respect your privacy and are
             committed to protecting your personal data. This privacy policy will
             inform you as to how we look after your personal data when you visit
             our website (regardless of where you visit it from) and tell you
@@ -139,10 +139,10 @@ export default function PrivacyPolicy() {
             If you have any questions about this privacy policy or our privacy
             practices, please contact us at:{" "}
             <a
-              href="mailto:contactinfo@gmail.com"
+              href="mailto:info@nepalpestcontrol.com"
               className="text-blue-600 hover:underline"
             >
-              contactinfo@gmail.com
+              info@nepalpestcontrol.com
             </a>
             .
           </p>

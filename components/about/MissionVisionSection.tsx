@@ -38,13 +38,13 @@ export const MissionVisionSection = () => {
               italicWord="Excellence"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
-              At XInfin, our mission is to empower businesses worldwide with
-              innovative financial solutions that streamline operations, enhance
+              At Nepal Pest Control, our mission is to empower businesses worldwide with
+              innovative pest control solutions that streamline operations, enhance
               decision-making, and drive sustainable growth.
             </p>
             <FeatureList
               items={[
-                "Deliver accurate, real-time financial insights for better decisions",
+                "Deliver accurate, real-time pest control insights for better decisions",
                 "Automate processes to reduce costs and improve efficiency",
                 "Build lasting partnerships founded on trust and measurable results",
               ]}
@@ -62,7 +62,7 @@ export const MissionVisionSection = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-              alt="XInfin Mission - Team Collaboration"
+              alt="Nepal Pest Control Mission - Team Collaboration"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -79,7 +79,7 @@ export const MissionVisionSection = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80"
-              alt="XInfin Vision - Global Innovation"
+              alt="Nepal Pest Control Vision - Global Innovation"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -92,19 +92,19 @@ export const MissionVisionSection = () => {
           >
             <SectionHeading
               tag="[Our Vision]"
-              title="Leading The Future of Global Financial Services"
+              title="Leading The Future of Global Pest Control Services"
               italicWord="Future"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
               We envision becoming the global partner of choice for businesses
-              seeking intelligent financial solutions, where technology and
+              seeking intelligent pest control solutions, where technology and
               expertise converge to create lasting competitive advantages.
             </p>
             <FeatureList
               items={[
-                "Pioneer innovative technologies that transform financial management",
+                "Pioneer innovative technologies that transform pest control management",
                 "Expand our global reach while maintaining personalized service",
-                "Create a world where every business has access to CFO-level insights",
+                "Create a world where every business has access to pest control insights",
               ]}
             />
             <Button variant="blue" onClick={() => router.push("/contact")}>

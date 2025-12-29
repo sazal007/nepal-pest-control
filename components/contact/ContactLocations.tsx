@@ -1,7 +1,7 @@
 "use client";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapPin } from "lucide-react";
-import { xinfinFullAddress } from "@/constants/contact";
+import { nepalpestcontrolFullAddress } from "@/constants/contact";
 import Image from "next/image";
 import { motion } from "motion/react";
 
@@ -38,7 +38,7 @@ export const ContactLocations = () => {
                   Head Office
                 </h4>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  {xinfinFullAddress}
+                  {nepalpestcontrolFullAddress}
                 </p>
               </div>
             </div>

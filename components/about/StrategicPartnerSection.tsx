@@ -16,7 +16,7 @@ export const StrategicPartnerSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="XInfin Your Strategic Financial Partner"
+            title="Nepal Pest Control Your Strategic Pest Control Partner"
             italicWord="Partner"
             align="center"
             className="mb-0"
@@ -32,7 +32,7 @@ export const StrategicPartnerSection = () => {
         >
           <img
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1742&q=80"
-            alt="XInfin Team Collaboration"
+            alt="Nepal Pest Control Team Collaboration"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
 
@@ -49,10 +49,10 @@ export const StrategicPartnerSection = () => {
             </div>
             <ul className="space-y-3">
               {[
-                "Financial Strategy & Planning",
-                "Process Automation Solutions",
-                "Real-Time Data Analytics",
-                "Virtual CFO Services",
+                "Pest Control Strategy & Planning",
+                "Process Pest Control Automation Solutions",
+                "Real-Time Pest Control Data Analytics",
+                "Virtual Pest Control Services",
               ].map((item, i) => (
                 <li
                   key={i}

@@ -25,9 +25,9 @@ export async function generateMetadata({
     const blog = await blogsServiceServer.getBlogBySlug(slug);
 
     const title = blog.title;
-    const description = `Read ${blog.title} on XInfin Consulting's blog. Expert insights on financial planning, tax strategies, and business advice from Chartered Accountants.`;
-    const image = blog.thumbnail_image || "/infinconsultants_logo.svg";
-    const url = `https://www.infinconsultants.com/blog/${slug}`;
+    const description = `Read ${blog.title} on Nepal Pest Control's blog. Expert insights on pest control services, pest control best practices, and industry trends.`;
+    const image = blog.thumbnail_image || "/nepalpestcontrol_logo.png";
+    const url = `https://www.nepalpestcontrol.com/blog/${slug}`;
 
     return {
       title,
@@ -36,10 +36,10 @@ export async function generateMetadata({
         ? [{ name: `${blog.author.first_name} ${blog.author.last_name}` }]
         : undefined,
       openGraph: {
-        title: `${title} - XInfin Consulting`,
+        title: `${title} - Nepal Pest Control`,
         description,
         url,
-        siteName: "XInfin Consulting",
+        siteName: "Nepal Pest Control",
         images: [
           {
             url: image,
@@ -56,10 +56,10 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
-        title: `${title} - XInfin Consulting`,
+        title: `${title} - Nepal Pest Control`,
         description,
         images: [image],
-        creator: "@xinfinconsulting",
+        creator: "@nepalpestcontrol",
       },
       alternates: {
         canonical: url,
@@ -67,8 +67,8 @@ export async function generateMetadata({
     };
   } catch {
     return {
-      title: "Blog Post - XInfin Consulting",
-      description: "Read expert insights from XInfin Consulting",
+      title: "Blog Post - Nepal Pest Control",
+      description: "Read expert insights from Nepal Pest Control",
     };
   }
 }

@@ -8,7 +8,12 @@ import { useState } from "react";
 import SocialIcons from "./social-icons";
 import { useNewsletter } from "@/hooks/use-newsletter";
 import { useGetServices } from "@/hooks/use-services";
-import { xinfinAddress, xinfinEmail, xinfinPhone } from "@/constants/contact";
+import {
+  nepalpestcontrolAddress,
+  nepalpestcontrolEmail,
+  nepalpestcontrolPhone,
+} from "@/constants/contact";
+import { footerConfig } from "@/config/footer.config";
 
 export const Footer = () => {
   return (
@@ -25,20 +30,18 @@ export const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <Image
-                  src="/logo/infin_logo.svg"
-                  alt="Infin Consultants"
-                  width={180}
-                  height={50}
-                  className="object-contain"
+                  src={footerConfig.logo.src}
+                  alt={footerConfig.logo.alt}
+                  width={footerConfig.logo.width}
+                  height={footerConfig.logo.height}
+                  className={footerConfig.logo.className}
                   priority
                 />
               </div>
             </div>
 
             <p className="text-slate-300/80 text-sm leading-relaxed">
-              With many years of experience and expertise, we have been
-              recognized through the awards achieved, and we customize solutions
-              to meet the specific needs of small businesses.
+              {footerConfig.company.description}
             </p>
 
             <SocialIcons />
@@ -48,37 +51,37 @@ export const Footer = () => {
 
           <div>
             <h3 className="text-white text-xl font-semibold mb-6">
-              Contact Info
+              {footerConfig.sections.contact.title}
             </h3>
             <div className="space-y-6 text-sm">
               <div className="space-y-1">
                 <p className="text-white font-semibold uppercase text-xs tracking-wider">
-                  Address:
+                  {footerConfig.sections.contact.labels.address}
                 </p>
                 <p className="text-slate-300/80 leading-relaxed max-w-[220px]">
-                  {xinfinAddress}
+                  {nepalpestcontrolAddress}
                 </p>
               </div>
               <div className="space-y-1">
                 <p className="text-white font-semibold uppercase text-xs tracking-wider">
-                  Email:
+                  {footerConfig.sections.contact.labels.email}
                 </p>
                 <a
-                  href={`mailto:${xinfinEmail}`}
+                  href={`mailto:${nepalpestcontrolEmail}`}
                   className="text-slate-300/80 hover:text-white transition-colors"
                 >
-                  {xinfinEmail}
+                  {nepalpestcontrolEmail}
                 </a>
               </div>
               <div className="space-y-1">
                 <p className="text-white font-semibold uppercase text-xs tracking-wider">
-                  Phone:
+                  {footerConfig.sections.contact.labels.phone}
                 </p>
                 <a
-                  href={`tel:${xinfinPhone}`}
+                  href={`tel:${nepalpestcontrolPhone}`}
                   className="text-slate-300/80 hover:text-white transition-colors"
                 >
-                  {xinfinPhone}
+                  {nepalpestcontrolPhone}
                 </a>
               </div>
             </div>
@@ -86,10 +89,10 @@ export const Footer = () => {
 
           <div>
             <h3 className="text-white text-xl font-semibold mb-6">
-              Newsletter
+              {footerConfig.sections.newsletter.title}
             </h3>
             <p className="text-slate-300/80 text-sm mb-6 leading-relaxed">
-              Join our subscribers list to get latest news and special offers.
+              {footerConfig.sections.newsletter.description}
             </p>
             <NewsletterForm />
           </div>
@@ -97,19 +100,22 @@ export const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-slate-400">
           <p className="text-center md:text-left">
-            Copyright {new Date().getFullYear()}. All rights reserved by{" "}
-            <span className="text-white font-medium">XInfin</span>
+            Copyright {footerConfig.copyright.year}.{" "}
+            {footerConfig.copyright.text}{" "}
+            <span className="text-white font-medium">
+              {footerConfig.company.name}
+            </span>
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Terms
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Support
-            </a>
+            {footerConfig.footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -137,7 +143,9 @@ const ServicesSection = () => {
 
   return (
     <div>
-      <h3 className="text-white text-xl font-semibold mb-6">Our Services</h3>
+      <h3 className="text-white text-xl font-semibold mb-6">
+        {footerConfig.sections.services.title}
+      </h3>
       {isLoading ? (
         <div className="flex items-center justify-start">
           <Loader2 className="h-5 w-5 animate-spin text-slate-300/80" />
@@ -151,7 +159,9 @@ const ServicesSection = () => {
           ))}
         </ul>
       ) : (
-        <p className="text-slate-300/80 text-sm">No services available</p>
+        <p className="text-slate-300/80 text-sm">
+          {footerConfig.sections.services.emptyMessage}
+        </p>
       )}
     </div>
   );
@@ -176,7 +186,7 @@ const NewsletterForm = () => {
     <form onSubmit={handleSubmit} className="flex w-full">
       <input
         type="email"
-        placeholder="Enter your email"
+        placeholder={footerConfig.sections.newsletter.placeholder}
         className="w-full bg-white text-slate-900 px-4 py-3 text-sm outline-none placeholder:text-slate-500 rounded-l-sm focus:bg-white transition-colors"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -187,7 +197,11 @@ const NewsletterForm = () => {
         disabled={isPending}
         className="bg-primary-600 hover:bg-primary-900 text-white px-6 py-3 text-sm font-medium transition-colors duration-200 rounded-r-sm disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap min-w-[110px] flex justify-center items-center"
       >
-        {isPending ? <Loader2 className="h-5 w-5 animate-spin" /> : "Subscribe"}
+        {isPending ? (
+          <Loader2 className="h-5 w-5 animate-spin" />
+        ) : (
+          footerConfig.sections.newsletter.buttonText
+        )}
       </button>
     </form>
   );

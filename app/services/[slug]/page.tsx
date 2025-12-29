@@ -27,18 +27,18 @@ export async function generateMetadata({
     const title = service.meta_title || service.title;
     const description =
       service.meta_description ||
-      `Learn more about ${service.title} at XInfin Consulting. Expert Chartered Accountants providing professional financial services.`;
-    const image = service.thumbnail_image || "/infinconsultants_logo.svg";
-    const url = `https://www.infinconsultants.com/services/${slug}`;
+      `Learn more about ${service.title} at Nepal Pest Control. Expert pest control professionals providing professional pest control services.`;
+    const image = service.thumbnail_image || "/nepalpestcontrol_logo.png";
+    const url = `https://www.nepalpestcontrol.com/services/${slug}`;
 
     return {
       title,
       description,
       openGraph: {
-        title: `${title} - XInfin Consulting`,
+        title: `${title} - Nepal Pest Control`,
         description,
         url,
-        siteName: "XInfin Consulting",
+        siteName: "Nepal Pest Control",
         images: [
           {
             url: image,
@@ -52,7 +52,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
-        title: `${title} - XInfin Consulting`,
+        title: `${title} - Nepal Pest Control`,
         description,
         images: [image],
       },
@@ -62,8 +62,8 @@ export async function generateMetadata({
     };
   } catch {
     return {
-      title: "Service - XInfin Consulting",
-      description: "Expert financial services from XInfin Consulting",
+      title: "Service - Nepal Pest Control",
+      description: "Expert pest control services from Nepal Pest Control",
     };
   }
 }

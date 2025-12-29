@@ -10,7 +10,7 @@ import { blogsServiceServer } from "@/services/blogs.service.server";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Stay informed with the latest insights from XInfin Consulting. Read our expert articles on tax planning, financial strategy, business compliance, accounting best practices, and industry trends.",
+    "Stay informed with the latest insights from Nepal Pest Control. Read our expert articles on pest control services, pest control best practices, and industry trends.",
 };
 
 // ISR: Revalidate every hour (3600 seconds)

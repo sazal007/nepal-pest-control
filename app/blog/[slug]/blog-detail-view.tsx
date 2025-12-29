@@ -79,14 +79,14 @@ export default function BlogDetailView({ slug }: BlogDetailViewProps) {
             <FacebookShareButton
               url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
               quote={blog.title}
-              hashtag={"#xinfinconsulting"}
+              hashtag={"#nepalpestcontrol"}
             >
               <FacebookIcon size={27} round />
             </FacebookShareButton>
             <TwitterShareButton
               url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${blog.slug}`}
               title={blog.title}
-              hashtags={["xinfinconsulting"]}
+              hashtags={["nepalpestcontrol"]}
             >
               <TwitterIcon size={27} round />
             </TwitterShareButton>

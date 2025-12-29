@@ -1,4 +1,4 @@
-# robots.txt for infinconsultants.com
+# robots.txt for nepalpestcontrol.com
 
 User-agent: *
 Allow: /
@@ -8,7 +8,7 @@ Allow: /
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://www.infinconsultants.com/sitemap.xml
+Sitemap: https://www.nepalpestcontrol.com/sitemap.xml
 
 # Crawl-delay (optional, adjust as needed)
 Crawl-delay: 1
