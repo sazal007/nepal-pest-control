@@ -10,6 +10,7 @@ import { WhoAreWe } from "@/components/home/WhoAreWe";
 import { usePricing } from "@/hooks/use-pricing";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
 import { TeamGridSection } from "../about/TeamGridSection";
+import { ScheduleConsultation } from "./ScheduleConsultation";
 
 export default function HomeView() {
   const { data: pricing } = usePricing();
@@ -32,6 +33,7 @@ export default function HomeView() {
       <WhoAreWe />
       {sortedPricing.length > 0 && <PricingPlans plans={sortedPricing} />}
       <ServicesSection />
+      <ScheduleConsultation />
       <TestimonialsSection />
       <TeamGridSection />
       <BlogSection />
