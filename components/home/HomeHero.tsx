@@ -16,12 +16,12 @@ export const HomeHero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="https://images.squarespace-cdn.com/content/v1/647e19832ff041718f9f0756/1690211428966-YRW7VDYW0PFLU0XZZVC3/image-asset.jpeg"
           alt="Pest Control"
           className="w-full h-full object-cover opacity-30"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-linear-to-r from-gray-900/95 via-gray-900/80 to-transparent" /> */}
       </motion.div>
 
       <div className="container mx-auto px-3 sm:px-4 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
