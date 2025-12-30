@@ -36,20 +36,20 @@ export const VerticalProcessSection = () => {
     {
       id: "01",
       icon: MessageSquare,
-      title: "Understand & Assess",
-      desc: "We begin by understanding your business goals, financial challenges, and current processes through in-depth consultation to identify opportunities for improvement.",
+      title: "Assessment & Inspection",
+      desc: "We perform a thorough inspection of your home, office, or commercial space to identify pest infestations and understand your specific needs.",
     },
     {
       id: "02",
       icon: FileSearch,
-      title: "Design & Customize",
-      desc: "We develop tailored solutions—from automation workflows to financial models—that align perfectly with your business objectives and industry requirements.",
+      title: "Customized Pest Control Plan",
+      desc: "Based on the inspection, we design a tailored pest management strategy using safe, effective, and environmentally responsible methods.",
     },
     {
       id: "03",
       icon: Cog,
-      title: "Implement & Support",
-      desc: "We seamlessly integrate our solutions into your operations, provide comprehensive training, and offer ongoing support to ensure sustained success and continuous optimization.",
+      title: "Implementation & Ongoing Monitoring",
+      desc: "Our team executes the plan, provides regular follow-ups, and monitors pest activity to ensure lasting protection and a safe environment.",
     },
   ];
 
@@ -60,12 +60,13 @@ export const VerticalProcessSection = () => {
           <div className="lg:sticky lg:top-32 h-fit mb-12 lg:mb-0">
             <SectionHeading
               tag="[Our Process]"
-              title="Your Path to Financial Clarity"
-              italicWord="Financial Clarity"
+              title="How We Protect Your Home & Business"
+              italicWord="Protect"
             />
             <p className="text-gray-500 mb-8 max-w-md">
-              How we transform your financial operations into streamlined,
-              data-driven systems through our proven three-step methodology.
+              Follow our simple three-step approach to safeguard your spaces
+              from pests with professional, reliable, and long-lasting
+              solutions.
             </p>
           </div>
 

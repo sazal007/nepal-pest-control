@@ -20,9 +20,9 @@ export const PhilosophySection = () => {
         >
           <div className="max-w-4xl">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.1]">
-              We Believe In Results With <br /> Smart{" "}
+              Effective <br />
               <span className="font-serif italic font-normal">
-                Financial Solutions.
+                Pest Control Solutions
               </span>
             </h2>
           </div>
@@ -32,7 +32,7 @@ export const PhilosophySection = () => {
               className="px-8 py-3 text-sm rounded-full"
               onClick={() => router.push("/contact")}
             >
-              Get Started
+              Book an Inspection
             </Button>
           </div>
         </motion.div>
@@ -48,17 +48,17 @@ export const PhilosophySection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="max-w-3xl pr-4">
-              <p className="text-xl md:text-2xl text-gray-900 mb-6 leading-relaxed font-medium">
-                At Nepal Pest Control, we believe that pest control clarity
-                drives business success. We combine cutting-edge technology with
-                expert pest control guidance to streamline your operations and
-                fuel growth.
+              <p className="text-lg md:text-xl text-gray-900 mb-6 leading-relaxed font-medium">
+                At Nepal Pest Control, we believe that a safe, pest-free
+                environment is key to peace of mind and operational success. We
+                combine modern technology with expert guidance to protect your
+                home and business.
               </p>
               <p className="text-sm md:text-base text-gray-500 mb-10 leading-relaxed">
-                Our approach blends automation, data-driven insights, and
-                personalized pest control strategy to transform complex
-                challenges into actionable solutions that deliver measurable,
-                lasting results for your business.
+                Our approach uses data-driven insights, tailored strategies, and
+                proven treatment methods to eliminate pests efficiently,
+                ensuring lasting results and reliable protection for your
+                property.
               </p>
 
               {/* Cards Grid */}
@@ -66,18 +66,18 @@ export const PhilosophySection = () => {
                 {[
                   {
                     icon: Target,
-                    title: "Strategic Pest Control Planning",
-                    desc: "Aligning pest control goals with your business vision for sustainable growth.",
+                    title: "Comprehensive Pest Control Plans",
+                    desc: "Tailored solutions for homes, offices, and commercial spaces to eliminate pests effectively.",
                   },
                   {
                     icon: LineChart,
-                    title: "Data-Driven Insights",
-                    desc: "Transforming pest control data into actionable intelligence for better decisions.",
+                    title: "Inspection & Monitoring",
+                    desc: "Regular inspections and data-driven monitoring to detect and prevent infestations early.",
                   },
                   {
                     icon: Cog,
-                    title: "Process Pest Control Automation",
-                    desc: "Streamlining operations through smart technology and efficient systems.",
+                    title: "Safe & Efficient Treatments",
+                    desc: "Using modern, eco-friendly techniques and technology to ensure fast, long-lasting pest control.",
                   },
                 ].map((item, idx) => (
                   <motion.div

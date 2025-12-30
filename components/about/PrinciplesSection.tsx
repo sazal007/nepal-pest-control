@@ -10,31 +10,31 @@ const principles = [
     id: "01",
     title: "Innovation Through Technology",
     content:
-      "We leverage cutting-edge automation and analytics tools to transform traditional financial processes into streamlined, efficient systems that save time and reduce errors.",
+      "We leverage modern pest control tools, smart devices, and data analytics to deliver efficient, precise, and proactive solutions for homes and businesses.",
   },
   {
     id: "02",
     title: "Partnership & Collaboration",
     content:
-      "We believe in building lasting relationships with our clients and partners worldwide. Your success is our success, and we work alongside you every step of the way.",
+      "We build lasting relationships with our clients, understanding their unique needs and providing tailored pest control strategies that ensure peace of mind.",
   },
   {
     id: "03",
-    title: "Data-Driven Insights",
+    title: "Data-Driven Decisions",
     content:
-      "Every decision should be backed by solid data. We transform complex financial information into clear, actionable insights through advanced analytics and visualization.",
+      "Every intervention is informed by real-time monitoring and analytics, ensuring that treatments are targeted, effective, and minimize disruption.",
   },
   {
     id: "04",
-    title: "Quality & Accuracy First",
+    title: "Quality & Safety First",
     content:
-      "Financial precision is non-negotiable. We maintain the highest standards in every service we deliver, ensuring your books, reports, and models are always accurate and reliable.",
+      "Our pest control services prioritize safety, compliance, and reliability. We use proven methods to protect people, property, and the environment.",
   },
   {
     id: "05",
     title: "Global Reach, Personal Touch",
     content:
-      "While we serve clients globally, we never lose sight of individual needs. We customize our solutions to align with your specific business goals and industry requirements.",
+      "While serving clients locally and internationally, we tailor every solution to the specific needs of each business or home, ensuring measurable results and satisfaction.",
   },
 ];
 
@@ -53,14 +53,14 @@ export const PrinciplesSection = () => {
           >
             <SectionHeading
               tag="[Our Principles]"
-              title="The Core Values that Drive Excellence"
-              italicWord="Excellence"
+              title="Core Values Driving Effective Pest Control"
+              italicWord="Effective"
               className="mb-12"
             />
             <p className="text-gray-500 mb-12">
-              At Nepal Pest Control, our principles reflect our commitment to
-              delivering exceptional pest control solutions through innovation,
-              collaboration, and unwavering attention to quality.
+              At Nepal Pest Control, our principles guide every action we take —
+              combining innovation, expertise, and a client-centric approach to
+              deliver pest control solutions you can trust.
             </p>
 
             <div className="space-y-4">

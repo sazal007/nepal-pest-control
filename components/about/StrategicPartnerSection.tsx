@@ -16,7 +16,7 @@ export const StrategicPartnerSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="Nepal Pest Control Your Strategic Pest Control Partner"
+            title="Nepal Pest Control – Your Trusted Pest Control Partner"
             italicWord="Partner"
             align="center"
             className="mb-0"
@@ -49,10 +49,10 @@ export const StrategicPartnerSection = () => {
             </div>
             <ul className="space-y-3">
               {[
-                "Pest Control Strategy & Planning",
-                "Process Pest Control Automation Solutions",
-                "Real-Time Pest Control Data Analytics",
-                "Virtual Pest Control Services",
+                "Customized Pest Control Plans",
+                "Regular Inspection & Monitoring",
+                "Eco-Friendly Treatment Solutions",
+                "Commercial & Residential Services",
               ].map((item, i) => (
                 <li
                   key={i}

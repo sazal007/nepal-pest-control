@@ -14,7 +14,7 @@ export const Hero = () => {
       >
         <img
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Office Meeting"
+          alt="Pest Control Service"
           className="w-full h-full object-cover opacity-60"
         />
         {/* Gradient Overlay */}
@@ -29,13 +29,16 @@ export const Hero = () => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight break-words">
-            Your Partner <br />
-            In{" "}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight break-words">
+            Safe & Reliable <br />
             <span className="font-serif italic font-normal text-primary-400">
-              Financial Growth
+              Pest Control Services
             </span>
           </h1>
+          <p className="mt-4 text-md sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+            Protecting your home and business with certified treatments and
+            expert technicians.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -6,8 +6,9 @@ import { useRouter } from "next/navigation";
 
 export const HomeHero = () => {
   const router = useRouter();
+
   return (
-    <section className="relative min-h-[500px] sm:min-h-[600px] lg:h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gray-900">
+    <section className="relative min-h-[520px] sm:min-h-[620px] lg:h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gray-900">
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -16,85 +17,91 @@ export const HomeHero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <img
-          src="https://images.squarespace-cdn.com/content/v1/647e19832ff041718f9f0756/1690211428966-YRW7VDYW0PFLU0XZZVC3/image-asset.jpeg"
-          alt="Pest Control"
+          src="/pest-control.png"
+          alt="Professional Pest Control Services in Nepal"
           className="w-full h-full object-cover opacity-30"
         />
-        {/* Gradient Overlay */}
-        {/* <div className="absolute inset-0 bg-linear-to-r from-gray-900/95 via-gray-900/80 to-transparent" /> */}
       </motion.div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-white h-full flex flex-col justify-center">
         <motion.div
-          className="max-w-4xl mt-6 sm:mt-10"
+          className="max-w-4xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Credibility Badge */}
+          {/* Trust Badge */}
           <motion.div
-            className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-8 text-[10px] sm:text-xs font-bold tracking-wide sm:tracking-widest text-blue-100 uppercase bg-white/10 backdrop-blur-md border border-white/20 rounded-full max-w-full"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest uppercase bg-white/10 backdrop-blur-md border border-white/20 rounded-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400 shrink-0"></span>
-            <span className="whitespace-nowrap">6+ Years</span>
-            <span className="hidden min-[360px]:inline">Experience</span>
-            <span className="hidden min-[360px]:inline"> • </span>
-            <span className="hidden min-[360px]:inline">250+ Clients</span>
-            <span className="hidden min-[420px]:inline">Worldwide</span>
-            <span className="min-[360px]:hidden"> • 250+</span>
+            <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+            6+ Years Experience • 250+ Clients Served
           </motion.div>
 
+          {/* Hero Title */}
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4 sm:mb-6 tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Professional Pest Control, <br />
-            Compliance &{" "}
-            <span className="text-blue-400">Pest Control Services</span> <br />
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif italic font-normal text-white">
-              — All in One Place.
-            </span>
+            Certified Pest Control &{" "}
+            <span className="text-blue-400">Hygiene Solutions</span> You Can
+            Trust
           </motion.h1>
 
+          {/* SEO Subheading */}
           <motion.p
-            className="text-sm sm:text-md md:text-lg text-gray-300 mb-6 sm:mb-10 max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg md:text-lg text-gray-300 mb-4 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.05 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.05 }}
           >
-            We help businesses stay compliant, manage pest control, and grow —
-            so you can focus on running your business.
+            Professional pest control, sanitation, and compliance services for
+            homes, businesses, and regulated environments across Nepal.
           </motion.p>
 
+          {/* Supporting Value Text
+          <motion.p
+            className="text-sm sm:text-base text-gray-400 mb-10 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          >
+            Government-certified technicians delivering safe, effective, and
+            regulation-compliant pest management — without long-term contracts.
+          </motion.p> */}
+
+          {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
           >
             <Button
               variant="white"
-              className="font-bold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 text-gray-900 w-full sm:w-auto"
+              className="font-bold px-8 py-4 text-gray-900"
               onClick={() => router.push("/services")}
             >
-              Explore Services
+              View Services
             </Button>
+
             <Button
               variant="primary"
-              className="font-bold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 w-full sm:w-auto"
+              className="font-bold px-8 py-4 bg-blue-600 hover:bg-blue-700"
               onClick={() => router.push("/contact")}
             >
-              Get a Quote
+              Get a Free Inspection
             </Button>
           </motion.div>
         </motion.div>

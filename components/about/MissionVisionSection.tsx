@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -34,19 +34,19 @@ export const MissionVisionSection = () => {
           >
             <SectionHeading
               tag="[Our Mission]"
-              title="Empowering Your Financial Excellence"
-              italicWord="Excellence"
+              title="Empowering Businesses With Effective Pest Control"
+              italicWord="Effective"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
-              At Nepal Pest Control, our mission is to empower businesses worldwide with
-              innovative pest control solutions that streamline operations, enhance
-              decision-making, and drive sustainable growth.
+              Our mission is to deliver reliable, innovative pest control
+              solutions that safeguard homes and businesses, optimize
+              operations, and ensure long-term growth.
             </p>
             <FeatureList
               items={[
-                "Deliver accurate, real-time pest control insights for better decisions",
-                "Automate processes to reduce costs and improve efficiency",
-                "Build lasting partnerships founded on trust and measurable results",
+                "Provide precise, real-time pest control monitoring and insights",
+                "Automate key processes to improve efficiency and reduce costs",
+                "Build lasting partnerships based on trust and proven results",
               ]}
             />
             <Button variant="blue" onClick={() => router.push("/contact")}>
@@ -92,19 +92,19 @@ export const MissionVisionSection = () => {
           >
             <SectionHeading
               tag="[Our Vision]"
-              title="Leading The Future of Global Pest Control Services"
-              italicWord="Future"
+              title="Becoming The Leading Partner In Pest Control Excellence"
+              italicWord="Excellence"
             />
             <p className="text-gray-500 mb-8 leading-relaxed">
-              We envision becoming the global partner of choice for businesses
-              seeking intelligent pest control solutions, where technology and
-              expertise converge to create lasting competitive advantages.
+              We aim to be the go-to partner for businesses worldwide seeking
+              advanced, efficient, and sustainable pest control solutions that
+              protect assets and create long-term value.
             </p>
             <FeatureList
               items={[
-                "Pioneer innovative technologies that transform pest control management",
-                "Expand our global reach while maintaining personalized service",
-                "Create a world where every business has access to pest control insights",
+                "Lead the adoption of innovative pest control technologies",
+                "Expand global reach while providing tailored, client-focused solutions",
+                "Ensure every business benefits from smart, effective pest management",
               ]}
             />
             <Button variant="blue" onClick={() => router.push("/contact")}>

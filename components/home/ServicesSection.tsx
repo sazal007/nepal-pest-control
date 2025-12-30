@@ -5,101 +5,103 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
     id: "01",
-    title: "Process Automation Services",
+    title: "Residential Pest Control",
     description:
-      "Streamline your operations by automating repetitive financial tasks, reducing manual errors, and freeing up your team to focus on strategic growth.",
+      "Safe and effective pest control solutions designed to protect your home, family, and living environment from common pests.",
     points: [
-      "Workflow Automation & Integration",
-      "Error Reduction & Efficiency Gains",
-      "Custom Solutions for Your Business",
+      "Cockroach, Ant & Bed Bug Control",
+      "Safe Treatments for Homes & Apartments",
+      "Preventive & Follow-Up Services",
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a",
   },
   {
     id: "02",
-    title: "Virtual CFO Services",
+    title: "Commercial & Industrial Pest Management",
     description:
-      "Get CFO-level financial expertise without the full-time cost. We provide strategic financial guidance, budgeting, forecasting, and cash flow management.",
+      "Comprehensive pest management programs for offices, hotels, warehouses, factories, and commercial facilities.",
     points: [
-      "Strategic Financial Planning",
-      "Budgeting & Cash Flow Management",
-      "Financial Reporting & Analysis",
+      "Customized Pest Control Plans",
+      "Compliance with Health & Safety Standards",
+      "Minimal Disruption to Operations",
     ],
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
   },
   {
     id: "03",
-    title: "Data Analytics & Dashboards",
+    title: "Termite & Rodent Control",
     description:
-      "Transform complex financial data into clear, actionable insights with customized dashboards and real-time analytics that drive informed decision-making.",
+      "Advanced termite and rodent control solutions to protect your property structure and prevent long-term damage.",
     points: [
-      "Interactive Financial Dashboards",
-      "Real-Time Performance Tracking",
-      "Advanced Data Visualization",
+      "Termite Inspection & Treatment",
+      "Rodent Control & Proofing",
+      "Long-Term Protection Solutions",
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f",
   },
   {
     id: "04",
-    title: "Financial Modelling & Reporting",
+    title: "Hygiene, Sanitization & Disinfection",
     description:
-      "Build comprehensive financial models for strategic planning, scenario analysis, and forecasting. We deliver customized reports that meet your specific business needs.",
+      "Professional hygiene and disinfection services to maintain clean, safe, and compliant environments.",
     points: [
-      "Dynamic Financial Models",
-      "Scenario & Sensitivity Analysis",
-      "Custom Management Reports",
+      "Office & Facility Sanitization",
+      "Healthcare & Hospitality Hygiene",
+      "Government-Approved Chemicals",
     ],
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1583947581924-860bda6a26df",
   },
 ];
 
 export const ServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
+  const router = useRouter();
 
   return (
     <section id="services" className="py-16 sm:py-20 bg-gray-50/50">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        {/* Header */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 mb-10 md:mb-16"
+          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="Driving Growth Through Strategic Excellence"
-            italicWord="Excellence"
+            title="Professional Pest Control Services You Can Rely On"
+            italicWord="Pest Control Services"
             className="mb-0 max-w-xl"
           />
-          <Button className="w-full md:w-auto md:inline-flex justify-center">
-            Contact Us
+          <Button
+            className="w-full md:w-auto"
+            onClick={() => router.push("/contact")}
+          >
+            Get a Free Inspection
           </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Accordion List */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          {/* Accordion */}
           <motion.div
-            className="space-y-6 mt-6"
+            className="space-y-6"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             {services.map((service, idx) => (
               <div
                 key={service.id}
-                className={`border-b border-gray-100 pb-6 cursor-pointer transition-all duration-300 group`}
+                className="border-b border-gray-200 pb-6 cursor-pointer group"
                 onClick={() => setActiveService(idx)}
               >
-                <div className="flex items-center gap-4 sm:gap-6 mb-3 sm:mb-4">
+                <div className="flex items-center gap-5 mb-4">
                   <span
                     className={`text-lg font-medium ${
                       activeService === idx
@@ -127,14 +129,14 @@ export const ServicesSection = () => {
                       ? { height: "auto", opacity: 1 }
                       : { height: 0, opacity: 0 }
                   }
-                  transition={{ duration: 0.45, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="pl-2 sm:pl-10 md:pl-14 pt-1 pb-2">
-                    <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed max-w-md">
+                  <div className="pl-10 pt-1">
+                    <p className="text-gray-500 text-sm mb-5 max-w-md">
                       {service.description}
                     </p>
-                    <ul className="space-y-2.5 sm:space-y-3">
+                    <ul className="space-y-3">
                       {service.points.map((point, i) => (
                         <li
                           key={i}
@@ -151,22 +153,21 @@ export const ServicesSection = () => {
             ))}
           </motion.div>
 
-          {/* Right Image */}
+          {/* Image */}
           <motion.div
-            className="relative h-72 sm:h-80 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative h-80 sm:h-[420px] lg:h-[550px] rounded-2xl overflow-hidden shadow-xl"
             key={services[activeService].image}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <img
               src={services[activeService].image}
               alt={services[activeService].title}
-              className="w-full h-full object-cover transition-opacity duration-500"
+              className="w-full h-full object-cover"
             />
-            {/* Gradient Overlay for subtle text contrast if needed */}
-            <div className="absolute inset-0 bg-linear-to-t from-gray-900/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
           </motion.div>
         </div>
       </div>

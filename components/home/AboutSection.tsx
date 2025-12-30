@@ -8,9 +8,11 @@ import { useRouter } from "next/navigation";
 
 export const AboutSection = () => {
   const router = useRouter();
+
   return (
     <section id="about" className="py-16 md:py-24 lg:py-28 bg-gray-50/50">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,14 +20,14 @@ export const AboutSection = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <SectionHeading
-            title="Since 2019, we’ve delivered finance and automation solutions that streamline operations and boost financial performance."
-            italicWord="finance and automation"
+            title="Trusted Pest Control Experts Serving Homes & Businesses Since 2016"
+            italicWord="Trusted Pest Control Experts"
             className="max-w-4xl mb-16"
           />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          {/* Left Text */}
+          {/* Left Content */}
           <motion.div
             className="md:col-span-3"
             initial={{ opacity: 0, x: -30 }}
@@ -33,18 +35,21 @@ export const AboutSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-8 sm:mb-20 lg:mb-36">
-              At Nepal Pest Control, We help businesses navigate complexity
-              unlock to growth achieve lasting transformation with a team of
-              experienced consultations, We can combine for strategic instant.
+            <p className="text-gray-600 text-sm leading-relaxed mb-10">
+              At Nepal Pest Control, we provide safe, effective, and
+              regulation-compliant pest management services for residential,
+              commercial, and industrial spaces.
+              <br />
+              <br />
+              Our certified technicians use proven treatment methods to
+              eliminate pests, protect hygiene standards, and prevent future
+              infestations — without disrupting your daily operations.
             </p>
 
-            <div className="border-l-2 border-primary-700 pl-4 sm:pl-6">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2">
-                150+
-              </div>
-              <div className="text-xs sm:text-sm text-gray-500 font-medium">
-                Successful Projects Delivered
+            <div className="border-l-2 border-primary-700 pl-6">
+              <div className="text-5xl font-bold text-gray-900 mb-2">150+</div>
+              <div className="text-sm text-gray-500 font-medium">
+                Successful Projects Completed
               </div>
             </div>
           </motion.div>
@@ -57,48 +62,41 @@ export const AboutSection = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="rounded-2xl overflow-hidden h-64 sm:h-80 md:h-[400px] w-full">
+            <div className="rounded-2xl overflow-hidden h-72 sm:h-96 md:h-[420px] w-full">
               <img
-                src="https://picsum.photos/id/1001/800/800"
-                alt="Team Portrait"
+                src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f"
+                alt="Professional Pest Control Technician at Work"
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
 
-          {/* Right Floating Card */}
+          {/* Right Card */}
           <motion.div
-            className="md:col-span-3 flex flex-col mt-10 md:mt-16 lg:mt-24 h-full"
+            className="md:col-span-3 flex flex-col mt-10 md:mt-16 lg:mt-24"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="bg-gray-50 p-5 sm:p-6 rounded-2xl mb-6 sm:mb-8">
+            <div className="bg-white p-6 rounded-2xl shadow-sm mb-8">
               <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-4">
                 <Pin size={16} fill="currentColor" />
               </div>
+
               <ul className="space-y-3 text-sm font-medium text-gray-800">
-                <li className="flex items-center gap-2">
-                  Pest Control Strategy & Planning
-                </li>
-                <li className="flex items-center gap-2">
-                  Process Pest Control Automation Solutions
-                </li>
-                <li className="flex items-center gap-2">
-                  Real-Time Pest Control Data Analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  Virtual Pest Control Services
-                </li>
+                <li>Residential Pest Control</li>
+                <li>Commercial & Industrial Pest Management</li>
+                <li>Termite & Rodent Control</li>
+                <li>Hygiene & Sanitization Services</li>
               </ul>
             </div>
 
             <Button
-              className="w-full justify-center cursor-pointer"
+              className="w-full justify-center"
               onClick={() => router.push("/contact")}
             >
-              Book a Free Call
+              Book a Free Inspection
             </Button>
           </motion.div>
         </div>

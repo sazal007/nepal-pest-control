@@ -24,12 +24,11 @@ export const FooterCTA = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
           >
-            <h2 className="text-2xl sm:text-4xl  font-semibold mb-4 sm:mb-6 leading-tight">
-              Contact Nepal Pest Control <br />
-              to achieve <br />
-              your pest control goals{" "}
+            <h2 className="text-2xl sm:text-4xl font-semibold mb-4 sm:mb-6 leading-tight">
+              Professional Pest Control Services <br />
+              for Homes & Businesses <br />
               <span className="font-serif italic font-normal">
-                Fast and Smart.
+                Safe. Certified. Reliable.
               </span>
             </h2>
 
@@ -44,7 +43,7 @@ export const FooterCTA = () => {
                 className="mb-6 sm:mb-8 lg:mb-10 text-primary-600 xs:w-auto cursor-pointer"
                 onClick={() => router.push("/contact")}
               >
-                Get Started
+                Book a Free Inspection
               </Button>
             </motion.div>
 
@@ -56,14 +55,13 @@ export const FooterCTA = () => {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
             >
               <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
-                <CheckCircle2 size={16} /> Schedule a Free Consultation
+                <CheckCircle2 size={16} /> Free Site Inspection & Assessment
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
-                <CheckCircle2 size={16} /> Discover Custom Solutions
+                <CheckCircle2 size={16} /> Safe & Effective Pest Treatments
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
-                <CheckCircle2 size={16} /> Start Building Your Competitive
-                Advantage
+                <CheckCircle2 size={16} /> Fast Response & Trusted Service
               </div>
             </motion.div>
           </motion.div>
