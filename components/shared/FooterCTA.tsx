@@ -41,7 +41,7 @@ export const FooterCTA = () => {
               <Button
                 variant="white"
                 className="mb-6 sm:mb-8 lg:mb-10 text-primary-600 xs:w-auto cursor-pointer"
-                onClick={() => router.push("/contact")}
+                onClick={() => router.push("/appointment")}
               >
                 Book a Free Inspection
               </Button>

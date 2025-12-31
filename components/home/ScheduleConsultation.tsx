@@ -84,7 +84,7 @@ export const ScheduleConsultation = () => {
                 <Button
                   variant="white"
                   className="w-full justify-center"
-                  onClick={() => router.push("/contact")}
+                  onClick={() => router.push("/appointment")}
                 >
                   Request a Free Inspection
                 </Button>

@@ -80,7 +80,7 @@ export const ServicesSection = () => {
           />
           <Button
             className="w-full md:w-auto"
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push("/appointment")}
           >
             Get a Free Inspection
           </Button>

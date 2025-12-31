@@ -178,7 +178,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
                 </div>
               </div>
 
-              <Link href="/contact">
+              <Link href="/appointment">
                 <Button className="w-full justify-center">Book a Call</Button>
               </Link>
             </div>

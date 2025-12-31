@@ -99,7 +99,7 @@ export const HomeHero = () => {
             <Button
               variant="primary"
               className="font-bold px-8 py-4 bg-blue-600 hover:bg-blue-700"
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push("/appointment")}
             >
               Get a Free Inspection
             </Button>

@@ -94,7 +94,7 @@ export const AboutSection = () => {
 
             <Button
               className="w-full justify-center"
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push("/appointment")}
             >
               Book a Free Inspection
             </Button>
