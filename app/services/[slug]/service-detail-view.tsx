@@ -60,8 +60,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
     );
   }
 
-  // Use service thumbnail or a default accounting-related background image
-  const heroImage = service.thumbnail_image || "/pest-control.png";
+
   return (
     <div className=" pb-0 bg-white">
       {/* Breadcrumb Navigation */}
@@ -98,7 +97,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src={heroImage}
+            src={service.thumbnail_image || "/pest-control.png"}
             alt={service.thumbnail_image_alt_description || service.title || ""}
             fill
             className="object-cover"
