@@ -136,7 +136,7 @@ export const PrinciplesSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+              src="/images/person-protective-suit-getting-ready-disinfect-room.jpg"
               alt="Nepal Pest Control Core Principles"
               className="w-full h-full object-cover"
             />

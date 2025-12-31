@@ -13,7 +13,7 @@ export const Hero = () => {
         transition={{ duration: 1.1, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="/images/PestControlinkathmandu.png"
           alt="Pest Control Service"
           className="w-full h-full object-cover opacity-60"
         />

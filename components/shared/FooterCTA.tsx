@@ -73,7 +73,7 @@ export const FooterCTA = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="/accounts.png" />
+            <img src="/images/cta.png" />
             <div className="absolute inset-0 bg-primary-900/20"></div>
           </motion.div>
         </motion.div>

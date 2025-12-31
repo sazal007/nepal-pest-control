@@ -18,7 +18,7 @@ const services = [
       "Safe Treatments for Homes & Apartments",
       "Preventive & Follow-Up Services",
     ],
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a",
+    image: "/images/residential-control.png",
   },
   {
     id: "02",
@@ -42,7 +42,7 @@ const services = [
       "Rodent Control & Proofing",
       "Long-Term Protection Solutions",
     ],
-    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f",
+    image: "/images/rodent-control.jpeg",
   },
   {
     id: "04",

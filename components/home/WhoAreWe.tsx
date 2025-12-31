@@ -108,7 +108,7 @@ export const WhoAreWe: React.FC<WhoAreWeProps> = ({ onNavigate }) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f"
+                src="/images/home-who-we-are.png"
                 alt="Professional Pest Control Technician"
                 className="w-full h-full object-cover"
               />

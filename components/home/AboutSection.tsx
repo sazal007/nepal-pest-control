@@ -64,9 +64,9 @@ export const AboutSection = () => {
           >
             <div className="rounded-2xl overflow-hidden h-72 sm:h-96 md:h-[420px] w-full">
               <img
-                src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f"
+                src="/images/home-about.png"
                 alt="Professional Pest Control Technician at Work"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
           </motion.div>
