@@ -63,59 +63,19 @@ export const AboutCleaning = () => {
                         </div>
                     </div>
 
-                    {/* Right Content - Visual Collage */}
-                    <div className="relative">
-                        {/* Main Orange Border Box */}
-                        <div className="border-8 border-primary-500 p-8 md:p-12 relative min-h-[500px] flex items-center justify-center">
-                            {/* Decorative elements */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-6 bg-gray-200" />
-
-                            <div className="grid grid-cols-2 gap-4 relative z-10 w-full">
-                                {/* Image 1 - Large vertical */}
-                                <div className="col-span-1 row-span-2 relative h-[350px] shadow-2xl rounded-sm transform -rotate-1">
-                                    <div className="absolute inset-0 border-4 border-primary-400/20" />
-                                    <Image
-                                        src="/services/cleaning.jpg"
-                                        alt="Cleaning Service 1"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-
-                                {/* Top Right Text */}
-                                <div className="flex flex-col justify-center text-center space-y-2 py-4">
-                                    <p className="text-gray-900 font-medium leading-tight">
-                                        फर्निचर होस् या कार्पेट <br /> भयाल होस् या सम्पूर्ण भवन
-                                    </p>
-                                    <p className="text-3xl md:text-3xl font-extrabold text-primary-500">
-                                        सबै सफा गर्नेछौ
-                                    </p>
-                                </div>
-
-                                {/* Bottom Images */}
-                                <div className="relative h-[180px] shadow-2xl rounded-sm transform rotate-2">
-                                    <div className="absolute inset-0 border-4 border-primary-400/20" />
-                                    <Image
-                                        src="/services/cleaning.jpg"
-                                        alt="Cleaning Service 2"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Float Contact Banner at Bottom */}
-                            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[85%] bg-primary-500 text-white p-4 rounded-full shadow-2xl flex items-center gap-4 px-6">
-                                <div className="bg-white/20 p-3 rounded-full">
-                                    <Phone className="w-6 h-6" />
-                                </div>
-                                <div className="flex flex-wrap gap-x-4 gap-y-1">
-                                    <span className="font-bold text-sm md:text-base">9843141616, 9843141614,</span>
-                                    <span className="font-bold text-sm md:text-base">9810306060, 9818679752</span>
-                                </div>
-                            </div>
-                        </div>
+                    {/* Right Content - Image */}
+                    <div className="relative w-full h-[410px] md:h-[530px] lg:h-[650px] rounded-xl overflow-hidden">
+                        <Image
+                            src="/services/cleaning.jpg"
+                            alt="Professional Cleaning Service in Nepal"
+                            fill
+                            priority
+                            className="object-cover"
+                        />
                     </div>
+
+
+
                 </div>
             </div>
         </section>

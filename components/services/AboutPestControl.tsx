@@ -44,48 +44,19 @@ export const AboutPestControl = () => {
                         </div>
                     </div>
 
-                    {/* Right Content - Illustration & Pest Icons */}
-                    <div className="lg:col-span-7 relative flex flex-col items-center">
-                        {/* Header Text */}
-                        <div className="text-center mb-8 space-y-2">
-                            <p className="text-gray-700 font-medium text-lg">आफ्नो घर, अफिस वा कुनै पनि ठाउँलाई</p>
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-primary-500">यी सबैबाट मुक्त राख्नुहोस्</h3>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
-                            {/* House & Family Illustration - Placeholder with Image since it's complex */}
-                            <div className="relative h-[300px] w-full">
-                                <Image
-                                    src="/services/pest-control.jpg"
-                                    alt="Pest Control Illustration"
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-
-                            {/* Pest Icons Grid */}
-                            <div className="grid grid-cols-2 gap-8">
-                                {[
-                                    { name: "किटा", icon: "🚫🪲" },
-                                    { name: "झिंगा", icon: "🚫🪰" },
-                                    { name: "साङ्ला", icon: "🚫🐜" },
-                                    { name: "धमिरा", icon: "🚫🐛" },
-                                    { name: "कमिला", icon: "🚫🐜" },
-                                    { name: "मुसा", icon: "🚫🐀" },
-                                ].map((pest, idx) => (
-                                    <div key={idx} className="flex flex-col items-center gap-2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-primary-500 flex items-center justify-center flex-col relative overflow-hidden group hover:bg-primary-50 transition-colors">
-                                            <span className="text-2xl">{pest.icon.substring(2)}</span>
-                                            <div className="absolute inset-0 border-[3px] border-red-500/80 rounded-full flex items-center justify-center transform -rotate-45 scale-[1.1]">
-                                                <div className="w-full h-1 bg-red-500/80" />
-                                            </div>
-                                        </div>
-                                        <span className="text-primary-600 font-bold text-sm tracking-wide">{pest.name}</span>
-                                    </div>
-                                ))}
-                            </div>
+                    {/* Right Content - Image */}
+                    <div className="lg:col-span-7 relative">
+                        <div className="relative w-full h-[400px] md:h-[520px] lg:h-[600px] rounded-xl overflow-hidden">
+                            <Image
+                                src="/services/pest-control.jpg"
+                                alt="Professional Pest Control Service in Nepal"
+                                fill
+                                priority
+                                className="object-cover"
+                            />
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
