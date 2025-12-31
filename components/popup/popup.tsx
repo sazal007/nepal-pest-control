@@ -143,9 +143,8 @@ const Popup: React.FC<PopupProps> = ({ open, onClose }) => {
 
         {/* Form Section */}
         <div
-          className={`order-2 flex flex-col justify-center overflow-y-auto p-4 md:order-0 md:p-6 lg:p-8 ${
-            !popupData.image ? "md:col-span-2" : ""
-          }`}
+          className={`order-2 flex flex-col justify-center overflow-y-auto p-4 md:order-0 md:p-6 lg:p-8 ${!popupData.image ? "md:col-span-2" : ""
+            }`}
         >
           <DialogHeader className="mb-3 text-left md:mb-4">
             <DialogTitle className="text-xl leading-tight font-bold md:text-2xl lg:text-3xl">
@@ -166,8 +165,19 @@ const Popup: React.FC<PopupProps> = ({ open, onClose }) => {
                   onChange={(e) =>
                     handleInputChange(field.name, e.target.value)
                   }
-                  className="peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pt-4 pb-2.5 text-sm text-gray-900 focus:border-blue-600 focus:ring-0 focus:outline-none md:text-base"
+                  className="
+    peer block w-full appearance-none rounded-lg
+    border border-gray-300 bg-transparent
+    px-2.5 pt-4 pb-2.5 text-sm text-gray-900
+    focus:border-blue-600
+    focus:ring-0
+    focus:outline-none
+    focus-visible:ring-0
+    focus-visible:ring-offset-0
+    md:text-base
+  "
                 />
+
                 <label
                   htmlFor={field.name}
                   className="pointer-events-none absolute start-1 top-2 z-10 origin-left -translate-y-4 scale-75 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600"
@@ -193,7 +203,7 @@ const Popup: React.FC<PopupProps> = ({ open, onClose }) => {
               type="submit"
               variant="primary"
               disabled={submitMutation.isPending}
-              className="mt-3 h-10 w-full text-sm font-medium text-white md:mt-4 md:h-11 md:text-base"
+              className="mt-3 h-10 w-full text-sm font-medium text-white md:mt-4 md:h-11 md:text-base justify-center"
             >
               {submitMutation.isPending ? "Submitting..." : "Submit Now"}
             </Button>
