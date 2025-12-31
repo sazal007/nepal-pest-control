@@ -12,6 +12,7 @@ import {
   nepalpestcontrolAddress,
   nepalpestcontrolEmail,
   nepalpestcontrolPhone,
+  nepalpestcontrolHotline,
 } from "@/constants/contact";
 import { footerConfig } from "@/config/footer.config";
 
@@ -77,12 +78,33 @@ export const Footer = () => {
                 <p className="text-white font-semibold uppercase text-xs tracking-wider">
                   {footerConfig.sections.contact.labels.phone}
                 </p>
-                <a
-                  href={`tel:${nepalpestcontrolPhone}`}
-                  className="text-slate-300/80 hover:text-white transition-colors"
-                >
-                  {nepalpestcontrolPhone}
-                </a>
+                <div className="space-y-2">
+                  {nepalpestcontrolPhone.map((phone, index) => (
+                    <a
+                      key={index}
+                      href={`tel:${phone.replace(/\s/g, "")}`}
+                      className="block text-slate-300/80 hover:text-white transition-colors"
+                    >
+                      {phone}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-1">
+                <p className="text-white font-semibold uppercase text-xs tracking-wider">
+                  Hotline
+                </p>
+                <div className="space-y-2">
+                  {nepalpestcontrolHotline.map((phone, index) => (
+                    <a
+                      key={index}
+                      href={`tel:${phone.replace(/\s/g, "")}`}
+                      className="block text-slate-300/80 hover:text-white transition-colors"
+                    >
+                      {phone}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

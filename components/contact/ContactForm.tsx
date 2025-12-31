@@ -7,6 +7,7 @@ import { useSubmitContactForm } from "@/hooks/use-contact";
 import {
   nepalpestcontrolEmail,
   nepalpestcontrolPhone,
+  nepalpestcontrolHotline,
 } from "@/constants/contact";
 
 export const ContactForm = () => {
@@ -70,15 +71,39 @@ export const ContactForm = () => {
                 <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center shrink-0">
                   <Phone size={18} />
                 </div>
-                <div>
-                  <div className="text-xs text-gray-500 mb-0.5">Call</div>
-                  <div className="font-bold text-gray-900 text-base">
-                    {nepalpestcontrolPhone}
+                <div className="space-y-2">
+                  <div>
+                    <div className="text-xs text-gray-500 mb-0.5">Call</div>
+                    <div className="space-y-1">
+                      {nepalpestcontrolPhone.map((phone, index) => (
+                        <a
+                          key={index}
+                          href={`tel:${phone.replace(/\s/g, "")}`}
+                          className="block font-bold text-gray-900 text-base hover:text-primary-600 transition-colors"
+                        >
+                          {phone}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 mb-0.5">Hotline</div>
+                    <div className="space-y-1">
+                      {nepalpestcontrolHotline.map((phone, index) => (
+                        <a
+                          key={index}
+                          href={`tel:${phone.replace(/\s/g, "")}`}
+                          className="block font-bold text-gray-900 text-base hover:text-primary-600 transition-colors"
+                        >
+                          {phone}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              {/* <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center shrink-0">
                   <MapPin size={18} />
                 </div>
@@ -93,7 +118,7 @@ export const ContactForm = () => {
                     See on Google Map
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -161,7 +186,7 @@ export const ContactForm = () => {
             </div>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d220.7463999086714!2d85.3389301!3d27.7190647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19bff3d17f55%3A0xdc3bee16a62f9746!2sX%20INFIN%20CONSULTANTS%20PVT%20LTD!5e0!3m2!1sen!2snp!4v1765271353133!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.317136166486!2d85.2849331320681!3d27.708954252240673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1767164164218!5m2!1sen!2snp"
             width="1200"
             height="450"
             style={{ border: 0, borderRadius: "20px" }}

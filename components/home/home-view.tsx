@@ -11,6 +11,7 @@ import { usePricing } from "@/hooks/use-pricing";
 import { PricingPlans } from "@/components/pricing/PricingPlans";
 import { TeamGridSection } from "../about/TeamGridSection";
 import { ScheduleConsultation } from "./ScheduleConsultation";
+import { FAQSection } from "../shared/FAQSection";
 
 export default function HomeView() {
   const { data: pricing } = usePricing();
@@ -37,6 +38,7 @@ export default function HomeView() {
       <TestimonialsSection />
       <TeamGridSection />
       <BlogSection />
+      <FAQSection />
     </>
   );
 }
