@@ -40,7 +40,7 @@ export const HomeHero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-            6+ Years Experience • 250+ Clients Served
+            10+ Years Experience • 250+ Clients Served
           </motion.div>
 
           {/* Hero Title */}
