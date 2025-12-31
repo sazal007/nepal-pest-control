@@ -9,6 +9,8 @@ import { CheckCircle2, ChevronRight } from "lucide-react";
 import { Loader } from "@/components/ui/loader";
 import { useGetServiceBySlug, useGetServices } from "@/hooks/use-services";
 import { sanitizeContent } from "@/lib/html-sanitizer";
+import { AboutCleaning } from "@/components/services/AboutCleaning";
+import { AboutPestControl } from "@/components/services/AboutPestControl";
 
 export default function ServiceDetailView({ slug }: { slug: string }) {
   const { data: service, isLoading, error } = useGetServiceBySlug(slug);
@@ -59,10 +61,7 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
   }
 
   // Use service thumbnail or a default accounting-related background image
-  const heroImage =
-    service.thumbnail_image ||
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80";
-
+  const heroImage = service.thumbnail_image || "/pest-control.png";
   return (
     <div className=" pb-0 bg-white">
       {/* Breadcrumb Navigation */}
@@ -127,6 +126,18 @@ export default function ServiceDetailView({ slug }: { slug: string }) {
           </div>
         </div>
       </div>
+
+      {/* Specialized About Sections */}
+      {slug === "cleaning" && (
+        <div className="mb-16">
+          <AboutCleaning />
+        </div>
+      )}
+      {slug === "pest-control" && (
+        <div className="mb-16">
+          <AboutPestControl />
+        </div>
+      )}
 
       {/* Main Content Section */}
       <div className="container mx-auto px-4 md:px-8 mb-12">

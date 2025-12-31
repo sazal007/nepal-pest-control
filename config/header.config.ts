@@ -38,10 +38,10 @@ export const headerConfig = {
         label: "Blog",
         href: "/blog",
       },
-      {
-        label: "Pricing",
-        href: "/pricing",
-      },
+      // {
+      //   label: "Pricing",
+      //   href: "/pricing",
+      // },
     ] as NavigationItem[],
     contactButton: {
       label: "Contact Us",
