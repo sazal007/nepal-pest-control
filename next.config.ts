@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "nepal-pest-control.nepdora.baliyoventures.com",
       },
+      {
+        protocol: "https",
+        hostname: "sgp1.digitaloceanspaces.com",
+      },
     ],
   },
   // ISR is configured per-page using the `revalidate` export
